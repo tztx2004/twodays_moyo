@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Gnb from './gnb'
 
 export default function Document() {
   return (
