@@ -8,6 +8,10 @@ const WrapperBx = styled.div`
     margin: 0 auto;
     height: 80px;
     border-bottom: 1px solid #f1f3f5;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: #fff;
     
     >header{
         display: flex;

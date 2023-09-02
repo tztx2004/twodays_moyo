@@ -6,6 +6,8 @@ import Promotion2 from "./promotion2";
 const WrapperBox = styled.div`
   margin: 0 auto;
   max-width: 620px;
+  position: relative;
+  top:80px;
 `;
 const Promotion1Bx = styled.div`
   > section {
@@ -91,6 +93,7 @@ const Promotion2Bx = styled.div`
       display: flex;
       align-items: center;
       gap: 20px;
+      cursor: pointer;
 
       >div:first-child{
         border-radius: 16px 0 0 16px;
