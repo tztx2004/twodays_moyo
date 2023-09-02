@@ -79,6 +79,9 @@ const Promotion2Bx = styled.div`
   h2{
     margin-top: 48px;
     margin-bottom: 10px;
+    font-weight: 700;
+    word-break: keep-all;
+    color: #2a3037;
   }
   section>div{
     display: flex;
@@ -110,6 +113,10 @@ const Promotion2Bx = styled.div`
       >div:nth-child(2){
         >h3{
           font-size: 22px;
+          font-weight: 700;
+          line-height: 1.25;
+          word-break: keep-all;
+          color: rgb(42 48 55/1);
         }
         >h4{
           font-size: 14px;

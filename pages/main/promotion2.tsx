@@ -16,7 +16,7 @@ const Promotion2 = () => {
       <h2>모요 요금제 랭킹</h2>
       <div>
         {arr.map((x, i) => (
-          <div>
+          <div key={i}>
             <div>
               <img src={x.images[0]} alt="랭킹이미지" />
             </div>

@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css'
 
 import MainPage from './main/main'
 import Gnb from './gnb'
+import Footer from './footer'
 
 
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Gnb/>
       <MainPage/>
+      <Footer/>
     </>
   )
 }
