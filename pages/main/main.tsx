@@ -74,7 +74,52 @@ const Promotion1Bx = styled.div`
 `;
 
 const Promotion2Bx = styled.div`
+  h2{
+    margin-top: 48px;
+    margin-bottom: 10px;
+  }
+  section>div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 
+    >div{
+      width: 300px;
+      box-shadow: 0px 6px 18px rgba(73,80,87,0.1);
+      border-radius: 18px;
+      border: 1px solid #dee2e6;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      >div:first-child{
+        border-radius: 16px 0 0 16px;
+        background-color: #e5eaff;
+        width: 76px;
+        padding: 30px 12px;
+        >img{
+          width: 100%;
+          display: flex;
+          margin: 0 auto;
+        }
+      }
+
+      >div:nth-child(2){
+        >h3{
+          font-size: 22px;
+        }
+        >h4{
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.25;
+          word-break: keep-all;
+          color: rgb(134 142 150/1)!important;
+
+          margin-top: 10px;
+        }
+      }
+    }
+  }
 `
 
 const MainPage = () => {

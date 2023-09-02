@@ -16,6 +16,7 @@ const WrapperBx = styled.div`
         height: 100%;
         align-items: center;
         justify-content: space-between;
+        padding: 0 20px;
     }
 
     nav{
@@ -27,6 +28,7 @@ const WrapperBx = styled.div`
                 color: #495057;
                 font-size: 14px;
                 cursor: pointer;
+                padding: 10px 14px;
             }
         }
     }
