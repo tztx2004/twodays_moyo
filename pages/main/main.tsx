@@ -164,7 +164,111 @@ const Promotion3Bx = styled.div`
   }
 `;
 const PhonePlanBx = styled.div`
-  
+  section{
+    h2 {
+      margin-top: 48px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      word-break: keep-all;
+      color: #2a3037;
+    }
+    >div{
+      position: relative;
+      display: block;
+      background-color: #ffffff;
+      border-style: solid;
+      border-color: #f1f3f5;
+      padding: 20px;
+      margin: 0;
+      overflow: hidden;
+      border-width: 1px;
+      border-radius: 16px;
+      margin: 0;
+      box-shadow: 0 2px 8px rgba(73, 80, 87, 0.06);
+
+    >div{
+      >div{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      div:nth-child(2){
+        margin-bottom:10px;
+        align-items: center;
+        >h4{
+          font-size: 14px;
+          color: var(--fontLightGray);
+          line-height: 150%;
+          font-weight: 400;
+        }
+      }
+
+      >h3{
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      >ul{
+        display: flex;
+        padding-top: 6px;
+        >li{
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          column-gap: 6px;
+          font-size: 14px;
+          line-height: 150%;
+          color: rgb(134, 142, 150);
+        }
+        >li:nth-child(2),
+        li:nth-child(4),
+        li:nth-child(6){
+          height: 10px;
+          margin: 0px 8px;
+          align-self: center;
+          border-left: 1px solid rgb(222, 226, 230);
+        }
+      }
+      >div:nth-child(5){
+        margin-top: 20px;
+        >div:first-child{
+          >div{
+            font-size: 18px;
+            display: flex;
+            gap: 4px;
+          }
+          font-weight: bold;
+          color: rgb(66, 90, 213);
+          display: flex;
+          width: 50%;
+          align-items: center;
+          justify-content: space-between;
+        }
+        div>p{
+          font-size: 12px;
+          color: var(--fontLightGray);
+        }
+        >div:nth-child(2){
+          >button{
+            height: 40px;
+            font-size: 12px;
+            border-radius: 8px;
+            border: none;
+            padding: 0 12px;
+            background-color: var(--buttonColor);
+            color: #ffffff;
+            width: 80px;
+            cursor: pointer;
+          }
+          :hover{
+            background-color: var(--buttonHover);
+          }
+        }
+      }
+    }
+    }
+  }
 `
 
 const MainPage = () => {
