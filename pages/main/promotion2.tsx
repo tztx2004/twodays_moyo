@@ -1,9 +1,10 @@
 'use client'
 import { useRouter } from "next/router";
 
-const router = useRouter()
+// const router = useRouter()
 const onClick =(id:string)=>{
-  router.push(`/${id}`)
+
+  console.log(id)
 }
 
 const Promotion2 = () => {
