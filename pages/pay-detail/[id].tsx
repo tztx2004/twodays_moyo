@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import DetailTitle from './detailTitle';
+import DetailTitle from './DetailTitle';
 
 const WrapperBox = styled.div`
 	margin: 0 auto;
