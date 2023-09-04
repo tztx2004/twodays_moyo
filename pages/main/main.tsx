@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import Promotion1 from "./promotion1";
 import Promotion2 from "./promotion2";
 import Promotion3 from "./promotion3";
+import PhonePlan from "./phoneplan";
 
 const WrapperBox = styled.div`
   margin: 0 auto;
@@ -162,6 +163,9 @@ const Promotion3Bx = styled.div`
     }
   }
 `;
+const PhonePlanBx = styled.div`
+  
+`
 
 const MainPage = () => {
   return (
@@ -172,6 +176,9 @@ const MainPage = () => {
       <Promotion2Bx>
         <Promotion2 />
       </Promotion2Bx>
+      <PhonePlanBx>
+        <PhonePlan/>
+      </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>

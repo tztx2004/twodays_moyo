@@ -1,3 +1,12 @@
+'use client'
+import { useRouter } from "next/router";
+
+// const router = useRouter()
+const onClick =(id:string)=>{
+
+  console.log(id)
+}
+
 const Promotion2 = () => {
   const arr = [
     {
@@ -18,7 +27,7 @@ const Promotion2 = () => {
         {arr.map((x, i) => (
           <div key={i}>
             <div>
-              <img src={x.images[0]} alt="랭킹이미지" />
+              <img src={x.images[0]} alt="랭킹이미지" onClick={()=>onClick(x.title[0])}/>
             </div>
             <div>
               <h3>{x.title[0]}<br/>{x.title[1]}</h3>

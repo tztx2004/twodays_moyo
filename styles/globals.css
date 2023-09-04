@@ -9,3 +9,12 @@ ul, ol{
 a{
   color: #000
 }
+:root{
+  --buttonColor: #566fee;
+  --buttonHover: #425ad5;
+  --buttonGray: #f1f3f5;
+  --imageBackground : #e5eaff;
+  --fontColor : #2a3037;
+  --fontGray : #868e96;
+  --fontLightGray: #adb5bd;
+}
