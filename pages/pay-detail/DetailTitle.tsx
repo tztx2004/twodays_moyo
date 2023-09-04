@@ -1,4 +1,10 @@
+import { useRef } from 'react';
+import { GoShare } from 'react-icons/go';
+import { AiOutlineHeart } from 'react-icons/ai';
+
 export default function DetailTitle() {
+	const SIZE = useRef<number>(23);
+
 	return (
 		<section>
 			<div>
@@ -15,9 +21,11 @@ export default function DetailTitle() {
 
 				<div>
 					<div>
+						<AiOutlineHeart size={SIZE.current} />
 						<p>찜</p>
 					</div>
 					<div>
+						<GoShare size={SIZE.current} />
 						<p>공유</p>
 					</div>
 				</div>

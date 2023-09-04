@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import DetailTitle from './DetailTitle';
+import DetailDataInfo from './DetailDataInfo';
 
 const WrapperBox = styled.div`
 	margin: 0 auto;
@@ -13,6 +15,8 @@ const DetailTitleBox = styled.div`
 		display: flex;
 		flex-direction: column;
 		gap: 0.7rem;
+		border-bottom: 1px solid var(--buttonGray);
+		height: 16vh;
 	}
 
 	section > {
@@ -40,7 +44,7 @@ const DetailTitleBox = styled.div`
 
 		div:nth-child(2) {
 			font-size: 1.5rem;
-			font-weight: 600;
+			font-weight: 900;
 		}
 
 		div:nth-child(3) {
@@ -50,11 +54,60 @@ const DetailTitleBox = styled.div`
 			> p {
 				color: #9298a0;
 			}
+		}
 
+		div:nth-child(3) > {
 			div {
 				display: flex;
 				gap: 2rem;
 				color: #495057;
+				margin: 0;
+
+				div {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+`;
+
+const DetailDataBox = styled.div`
+	section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem;
+		height: 14vh;
+		border-bottom: 1px solid var(--buttonGray);
+	}
+
+	section > {
+		div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			p:nth-child(1) {
+				font-size: 0.8rem;
+			}
+
+			p:nth-child(2) {
+				font-size: 1.8rem;
+				font-weight: 900;
+			}
+		}
+
+		p {
+			font-weight: 900;
+			font-size: 1.2rem;
+		}
+
+		div:nth-of-type(1) {
+			p:nth-child(2) {
+				color: var(--buttonHover);
 			}
 		}
 	}
@@ -66,6 +119,10 @@ export default function PayDetail() {
 			<DetailTitleBox>
 				<DetailTitle />
 			</DetailTitleBox>
+
+			<DetailDataBox>
+				<DetailDataInfo />
+			</DetailDataBox>
 		</WrapperBox>
 	);
 }
