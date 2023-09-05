@@ -35,7 +35,7 @@ const DetailTitleBox = styled.div`
 		flex-direction: column;
 		gap: 0.7rem;
 		border-bottom: 1px solid var(--buttonGray);
-		min-height: 130px;
+		height: 16vh;
 	}
 
 	section > {
@@ -45,7 +45,7 @@ const DetailTitleBox = styled.div`
 
 			div {
 				background-color: #f8f9fa;
-				min-width: 65px;
+				width: 5vw;
 				height: 3vh;
 				border-radius: 15px;
 				display: flex;
@@ -93,15 +93,14 @@ const DetailTitleBox = styled.div`
 
 		div:nth-child(4) {
 			position: absolute;
-			bottom: calc(100% + 15px);
-			width: auto;
-			right: calc(100% - 180px);
+			top: -60px;
+			left: -110px;
 		}
 
 		div:nth-child(5) {
 			position: absolute;
-			bottom: calc(100% + 15px);
-			right: calc(100% - 300px);
+			top: -60px;
+			left: -65px;
 		}
 	}
 `;
@@ -112,7 +111,7 @@ const DetailDataBox = styled.div`
 		justify-content: center;
 		align-items: center;
 		gap: 2.5rem;
-		min-height: 115px;
+		height: 14vh;
 		border-bottom: 1px solid var(--buttonGray);
 	}
 
@@ -150,7 +149,7 @@ const DetailOtherInfoBox = styled.div`
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		min-height: 115px;
+		height: 14vh;
 		border-bottom: 1px solid var(--buttonGray);
 
 		> div:not(:nth-child(1)) {
