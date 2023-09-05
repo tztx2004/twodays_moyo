@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import DetailTitle from './DetailTitle';
 import DetailDataInfo from './DetailDataInfo';
+import DetailOtherInfo from './DetailOtherInfo';
 
 const WrapperBox = styled.div`
 	margin: 0 auto;
@@ -113,6 +114,27 @@ const DetailDataBox = styled.div`
 	}
 `;
 
+const DetailOtherInfoBox = styled.div`
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 14vh;
+		border-bottom: 1px solid var(--buttonGray);
+
+		> div:not(:nth-child(1)) {
+			border-left: 1px solid var(--buttonGray);
+			padding-left: 4%;
+		}
+	}
+
+	p:nth-child(2) {
+		font-weight: 900;
+		font-size: 1.3rem;
+		margin-top: 0.3rem;
+	}
+`;
+
 export default function PayDetail() {
 	return (
 		<WrapperBox>
@@ -123,6 +145,10 @@ export default function PayDetail() {
 			<DetailDataBox>
 				<DetailDataInfo />
 			</DetailDataBox>
+
+			<DetailOtherInfoBox>
+				<DetailOtherInfo />
+			</DetailOtherInfoBox>
 		</WrapperBox>
 	);
 }
