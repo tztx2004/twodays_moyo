@@ -142,6 +142,32 @@ const DetailDataBox = styled.div`
 				color: var(--buttonHover);
 			}
 		}
+
+		div:nth-of-type(4) {
+			div {
+				display: flex;
+				align-items: center;
+				gap: 2px;
+
+				span:nth-of-type(1) {
+					width: 20px;
+					height: 20px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: #dee2e6;
+					border-radius: 50%;
+					color: white;
+					font-size: 14px;
+				}
+
+				div:nth-of-type(1) {
+					position: absolute;
+					bottom: calc(100% - 75px);
+					left: calc(100% - 100px);
+				}
+			}
+		}
 	}
 `;
 

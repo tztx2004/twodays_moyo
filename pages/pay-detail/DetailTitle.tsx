@@ -1,20 +1,22 @@
 import { useRef, useState } from 'react';
 import { GoShare } from 'react-icons/go';
 import { AiOutlineHeart } from 'react-icons/ai';
+
+import useHover from '../hooks/useHover';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
 
 export default function DetailTitle() {
 	const SIZE = useRef<number>(23);
-	const [hover, setHover] = useState<number>(0);
+	const [hover, mouseOver, mouseLeave] = useHover();
 
 	return (
 		<section>
 			<div>
-				<div onMouseOver={() => setHover(1)} onMouseLeave={() => setHover(0)}>
+				<div onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave}>
 					<div>모요개통</div>
 				</div>
 
-				<div onMouseOver={() => setHover(2)} onMouseLeave={() => setHover(0)}>
+				<div onMouseOver={() => mouseOver(2)} onMouseLeave={mouseLeave}>
 					<div>모요ONLY</div>
 				</div>
 			</div>

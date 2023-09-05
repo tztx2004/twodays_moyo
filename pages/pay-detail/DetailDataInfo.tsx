@@ -1,4 +1,9 @@
+import useHover from '../hooks/useHover';
+import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+
 export default function DetailDataInfo() {
+	const [hover, mouseHover, mouseLeave] = useHover();
+
 	return (
 		<section>
 			<div>
@@ -23,7 +28,17 @@ export default function DetailDataInfo() {
 			<p>+</p>
 
 			<div>
-				<p>소진시</p>
+				<div>
+					<p>소진시</p>
+					<span onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave}>
+						?
+					</span>
+					<div>
+						{hover === 1 ? (
+							<HoverTextBox text={'데이터 소진시 유튜브 화질 720p 볼 수 있어요'} />
+						) : null}
+					</div>
+				</div>
 				<p>3Mbps</p>
 			</div>
 		</section>
