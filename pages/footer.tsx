@@ -14,7 +14,6 @@ const FooterBox = styled.div`
     flex-direction: column;
     gap: 32px;
     color: #DEE2E6;
-    width: 100%;
     max-width: 980px;
     margin: 0 auto;
 
