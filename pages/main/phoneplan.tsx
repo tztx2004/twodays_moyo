@@ -16,7 +16,7 @@ function PhonePlan() {
   );
 }
 
-function PlanCard() {
+function PlanCard(data:any) {
   return (
     <div>
       <div>
@@ -63,9 +63,7 @@ function PlanCard() {
   );
 }
 
-async function getData() {
-  const res = await fetch("./data/data.json");
-  return res.json();
-}
+
+
 
 export default PhonePlan;

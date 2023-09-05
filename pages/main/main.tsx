@@ -4,15 +4,21 @@ import Promotion1 from "./promotion1";
 import Promotion2 from "./promotion2";
 import Promotion3 from "./promotion3";
 import PhonePlan from "./phoneplan";
+import TestPage from "./fetchdatapractice";
 
 const WrapperBox = styled.div`
   margin: 0 auto;
   max-width: 620px;
   position: relative;
   top: 80px;
+
+  @media screen and (max-width : 700px){
+    padding: 0 20px;
+  }
 `;
 const Promotion1Bx = styled.div`
   > section {
+    
     h2 {
       margin-top: 2rem;
       font-size: 24px;
@@ -286,6 +292,7 @@ const MainPage = () => {
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
+      <TestPage/>
     </WrapperBox>
   );
 };
