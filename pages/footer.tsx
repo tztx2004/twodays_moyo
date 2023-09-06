@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 const FooterBox = styled.div`
   position: relative;
-  transform: translateY(100%);
+  transform: translateY(50%);
   width: 100%;
   display: block;
   color: #dee2e6;
@@ -14,7 +14,6 @@ const FooterBox = styled.div`
     flex-direction: column;
     gap: 32px;
     color: #DEE2E6;
-    width: 100%;
     max-width: 980px;
     margin: 0 auto;
 
@@ -24,6 +23,14 @@ const FooterBox = styled.div`
         display: flex;
         gap: 32px;
         font-weight: 500;
+        @media screen and (max-width : 700px){
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          gap: 20px;
+          >li{
+            font-size: 14px;
+          }
+        }
         > li {
           cursor: pointer;
         }
@@ -33,8 +40,21 @@ const FooterBox = styled.div`
       display: flex;
       font-size: 14px;
       color: #868e96;
+      @media screen and (max-width : 700px){
+        flex-direction: column;
+        gap: 20px;
+        >div{
+          >p{
+            width: 100%;
+          }
+        }
+      }
+
       >div{
         width: 50%;
+        @media screen and (max-width : 700px){
+          width: 100%;
+        }
       }
     }
     > div:nth-child(4) {
@@ -50,6 +70,7 @@ const FooterBox = styled.div`
       gap: 12px;
     }
   }
+  
 `;
 
 const Footer = () => {

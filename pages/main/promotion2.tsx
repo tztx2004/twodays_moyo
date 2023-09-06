@@ -40,4 +40,6 @@ const Promotion2 = () => {
   );
 };
 
+
+
 export default Promotion2;
