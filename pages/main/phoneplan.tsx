@@ -18,9 +18,9 @@ function PhonePlan() {
 function PlanCard(data: any) {
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
-      e.target.classList.toggle("on");
-    };
-  
+    e.target.classList.toggle('on');
+  };
+
   const hoverHandler = (e: MouseEvent) => {
     // e.target?.
   };
@@ -40,8 +40,8 @@ function PlanCard(data: any) {
       net: '',
       mvnoRating: 4.4,
       numOfSignup: 4346,
-      desc1: "데이터 소진 시 유튜브 화질 1080p를 볼 수 있어요",
-      desc2: "",
+      desc1: '데이터 소진 시 유튜브 화질 1080p를 볼 수 있어요',
+      desc2: '',
     },
     {
       id: 2,
@@ -57,8 +57,8 @@ function PlanCard(data: any) {
       net: '',
       mvnoRating: 4.4,
       numOfSignup: 4346,
-      desc1: "데이터 소진 시 유튜브 화질 720p를 볼 수 있어요",
-      desc2: "",
+      desc1: '데이터 소진 시 유튜브 화질 720p를 볼 수 있어요',
+      desc2: '',
     },
   ];
 
@@ -79,7 +79,6 @@ function PlanCard(data: any) {
             </div>
             <h3>
               월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
-              
             </h3>
             <ul>
               <li>통화 무제한</li>

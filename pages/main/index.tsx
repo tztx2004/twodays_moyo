@@ -328,7 +328,7 @@ const PhonePlanBx = styled.div`
               width: 80px;
               cursor: pointer;
             }
-            a>button:hover {
+            a > button:hover {
               background-color: var(--buttonHover);
             }
           }
