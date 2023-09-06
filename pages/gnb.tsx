@@ -32,6 +32,10 @@ const WrapperBx = styled.div`
         font-size: 14px;
         cursor: pointer;
         padding: 10px 14px;
+        @media screen and (max-width : 700px){
+          font-size: 10px;
+          padding: 0px 10px;
+        }
       }
     }
   }
@@ -41,6 +45,10 @@ const WrapperBx = styled.div`
     border-radius: 12px;
     color: #425ad5;
     background-color: #f3f6ff;
+
+    @media screen and (max-width : 700px){
+      color: #000;
+    }
   }
 
   > nav:nth-child(2) {

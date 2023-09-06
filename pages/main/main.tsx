@@ -355,6 +355,10 @@ const PhonePlanBx = styled.div`
       }
     }
   }
+
+  .on{
+    color: red !important;
+  }
 `
 
 const MainPage = () => {

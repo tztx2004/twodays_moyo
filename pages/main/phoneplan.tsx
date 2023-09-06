@@ -1,6 +1,7 @@
+import { useState } from "react";
 import {
   AiFillQuestionCircle,
-  AiOutlineHeart,
+  AiFillHeart,
   AiFillStar,
 } from "react-icons/ai";
 function PhonePlan() {
@@ -17,6 +18,10 @@ function PhonePlan() {
 }
 
 function PlanCard(data:any) {
+  const clickHandler = (e:any)=>{
+    e.target.classList.toggle("on")
+  }
+
   return (
     <div>
       <div>
@@ -30,7 +35,9 @@ function PlanCard(data:any) {
         </div>
         <div>
           <h4>모두 충분 7GB+밀리의서재</h4>
-          <AiOutlineHeart size="24px" color="rgb(173 181 189/1)" />
+          <AiFillHeart size="24px" color="rgb(173 181 189/1)"
+          onClick={clickHandler}
+          />
         </div>
         <h3>
           월 7GB + 1Mbps <AiFillQuestionCircle color="#dee2e6" />
