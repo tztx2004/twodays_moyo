@@ -4,6 +4,7 @@ import DetailTitle from './DetailTitle';
 import DetailDataInfo from './DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailCoupon from './DetailCoupon';
+import DetailFee from './DetailFee';
 
 export default function PayDetail() {
 	return (
@@ -23,6 +24,10 @@ export default function PayDetail() {
 			<DetailCouponBox>
 				<DetailCoupon />
 			</DetailCouponBox>
+
+			<DetailFeeBox>
+				<DetailFee />
+			</DetailFeeBox>
 		</WrapperBox>
 	);
 }
@@ -134,7 +139,7 @@ const DetailDataBox = styled.div`
 					div:nth-of-type(1) {
 						position: absolute;
 						bottom: calc(100% - 75px);
-						left: calc(100% - 100px);
+						left: calc(100% - 102px);
 					}
 				}
 			}
@@ -210,3 +215,5 @@ const DetailCouponBox = styled.div`
 		}
 	}
 `;
+
+const DetailFeeBox = styled.div``;
