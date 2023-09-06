@@ -75,27 +75,27 @@ const FooterBox = styled.div`
 const Footer = () => {
   const icons = [
     {
-      url: './images/iconFooter1.svg',
+      url: '/images/iconFooter1.svg',
       title: '유튜브아이콘',
     },
     {
-      url: './images/iconFooter2.svg',
+      url: '/images/iconFooter2.svg',
       title: '블로그아이콘',
     },
     {
-      url: './images/iconFooter3.svg',
+      url: '/images/iconFooter3.svg',
       title: '인스타그램아이콘',
     },
     {
-      url: './images/iconFooter4.svg',
+      url: '/images/iconFooter4.svg',
       title: '페이스북아이콘',
     },
     {
-      url: './images/iconFooter5.svg',
+      url: '/images/iconFooter5.svg',
       title: '트위터아이콘',
     },
     {
-      url: './images/iconFooter6.svg',
+      url: '/images/iconFooter6.svg',
       title: '네이버아이콘',
     },
   ];
@@ -103,7 +103,7 @@ const Footer = () => {
     <FooterBox>
       <footer>
         <div>
-          <img src='./images/moyoFooter.svg' alt='모요단색아이콘' />
+          <img src='/images/moyoFooter.svg' alt='모요단색아이콘' />
         </div>
         <div>
           <ul>
