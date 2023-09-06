@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import { styled } from "styled-components";
+'use client';
+import Link from 'next/link';
+import { styled } from 'styled-components';
 
 const WrapperBx = styled.div`
   width: 100%;
@@ -32,7 +32,7 @@ const WrapperBx = styled.div`
         font-size: 14px;
         cursor: pointer;
         padding: 10px 14px;
-        @media screen and (max-width : 700px){
+        @media screen and (max-width: 700px) {
           font-size: 10px;
           padding: 0px 10px;
         }
@@ -46,7 +46,7 @@ const WrapperBx = styled.div`
     color: #425ad5;
     background-color: #f3f6ff;
 
-    @media screen and (max-width : 700px){
+    @media screen and (max-width: 700px) {
       color: #000;
     }
   }
@@ -81,19 +81,16 @@ function Gnb() {
     <WrapperBx>
       <header>
         <div>
-          <Link href={"/main"}>
+          <Link href={'/main'}>
             <picture>
-              <source
-                srcSet="./images/moyo-icon.svg"
-                media="(max-width : 700px)"
-              />
-              <img src="./images/moyo-full.svg" alt="메인로고" />
+              <source srcSet='./images/moyo-icon.svg' media='(max-width : 700px)' />
+              <img src='./images/moyo-full.svg' alt='메인로고' />
             </picture>
           </Link>
         </div>
         <nav>
           <ul>
-            <li className="selected">홈</li>
+            <li className='selected'>홈</li>
             <li>요금제찾기</li>
             <li>인터넷찾기</li>
             <li>휴대폰찾기</li>
@@ -104,7 +101,7 @@ function Gnb() {
       </header>
       <nav>
         <ul>
-          <li className="selected">홈</li>
+          <li className='selected'>홈</li>
           <li>요금제찾기</li>
           <li>인터넷찾기</li>
           <li>휴대폰찾기</li>
