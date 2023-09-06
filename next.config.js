@@ -11,14 +11,6 @@ const nextConfig = {
 		});
 		return config;
 	},
-	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: '*.cloudfront.net',
-			},
-		],
-	},
 };
 
 module.exports = nextConfig;
