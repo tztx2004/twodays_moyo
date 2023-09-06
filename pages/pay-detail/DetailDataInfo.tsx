@@ -1,5 +1,6 @@
 import useHover from '../hooks/useHover';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import QuestionMark from '../components/QuestionMark/QuestionMark';
 
 export default function DetailDataInfo() {
 	const [hover, mouseHover, mouseLeave] = useHover();
@@ -30,9 +31,7 @@ export default function DetailDataInfo() {
 			<div>
 				<div>
 					<p>소진시</p>
-					<span onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave}>
-						?
-					</span>
+					<QuestionMark onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave} />
 					<div>
 						{hover === 1 ? (
 							<HoverTextBox text={'데이터 소진시 유튜브 화질 720p 볼 수 있어요'} />

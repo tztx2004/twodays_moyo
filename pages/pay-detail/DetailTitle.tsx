@@ -4,6 +4,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 
 import useHover from '../hooks/useHover';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import Tag from '../components/Tag/Tag';
 
 export default function DetailTitle() {
 	const SIZE = useRef<number>(23);
@@ -12,13 +13,14 @@ export default function DetailTitle() {
 	return (
 		<section>
 			<div>
-				<div onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave}>
-					<div>모요개통</div>
-				</div>
+				<Tag title='모요개통' onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave} />
 
-				<div onMouseOver={() => mouseOver(2)} onMouseLeave={mouseLeave}>
-					<div>모요ONLY</div>
-				</div>
+				<Tag
+					title='모요ONLY'
+					color='#425ad5'
+					onMouseOver={() => mouseOver(2)}
+					onMouseLeave={mouseLeave}
+				/>
 			</div>
 			<div>
 				<p>[모요only] 슈가매니아 11GB+매일2GB+</p>
