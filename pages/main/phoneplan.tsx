@@ -1,4 +1,4 @@
-import { useState } from "react";
+import Link from 'next/link'
 import {
   AiFillQuestionCircle,
   AiFillHeart,
@@ -62,7 +62,10 @@ function PlanCard(data:any) {
             </p>
           </div>
           <div>
+            <Link href={"./pay-detail/1"}>
+
             <button>자세히 보기</button>
+            </Link>
           </div>
         </div>
       </div>

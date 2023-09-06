@@ -319,7 +319,7 @@ const PhonePlanBx = styled.div`
           color: var(--fontLightGray);
         }
         >div:nth-child(2){
-          >button{
+          a>button{
             height: 40px;
             font-size: 12px;
             border-radius: 8px;
@@ -376,7 +376,6 @@ const MainPage = () => {
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
-      {/* <TestPage/> */}
     </WrapperBox>
   );
 };
