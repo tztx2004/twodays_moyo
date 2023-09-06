@@ -1,5 +1,5 @@
-"use client";
-import { styled } from "styled-components";
+'use client';
+import { styled } from 'styled-components';
 
 const FooterBox = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ const FooterBox = styled.div`
     display: flex;
     flex-direction: column;
     gap: 32px;
-    color: #DEE2E6;
+    color: #dee2e6;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
@@ -33,7 +33,7 @@ const FooterBox = styled.div`
       display: flex;
       font-size: 14px;
       color: #868e96;
-      >div{
+      > div {
         width: 50%;
       }
     }
@@ -45,7 +45,7 @@ const FooterBox = styled.div`
         color: #868e96;
       }
     }
-    >div:nth-child(5){
+    > div:nth-child(5) {
       display: flex;
       gap: 12px;
     }
@@ -56,34 +56,34 @@ const Footer = () => {
   const icons = [
     {
       url: './images/iconFooter1.svg',
-      title: '유튜브아이콘'
+      title: '유튜브아이콘',
     },
     {
       url: './images/iconFooter2.svg',
-      title: '블로그아이콘'
+      title: '블로그아이콘',
     },
     {
       url: './images/iconFooter3.svg',
-      title: '인스타그램아이콘'
+      title: '인스타그램아이콘',
     },
     {
       url: './images/iconFooter4.svg',
-      title: '페이스북아이콘'
+      title: '페이스북아이콘',
     },
     {
       url: './images/iconFooter5.svg',
-      title: '트위터아이콘'
+      title: '트위터아이콘',
     },
     {
       url: './images/iconFooter6.svg',
-      title: '네이버아이콘'
+      title: '네이버아이콘',
     },
-  ]
+  ];
   return (
     <FooterBox>
       <footer>
         <div>
-          <img src="./images/moyoFooter.svg" alt="모요단색아이콘" />
+          <img src='./images/moyoFooter.svg' alt='모요단색아이콘' />
         </div>
         <div>
           <ul>
@@ -128,13 +128,11 @@ const Footer = () => {
           </ol>
         </div>
         <div>
-          {
-            icons.map((icon,idx)=>
-              <div key={icon.title}>
-                <img src={icon.url} alt={icon.title}/>
-              </div>
-            )
-          }
+          {icons.map((icon, idx) => (
+            <div key={icon.title}>
+              <img src={icon.url} alt={icon.title} />
+            </div>
+          ))}
         </div>
       </footer>
     </FooterBox>

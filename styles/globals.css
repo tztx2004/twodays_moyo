@@ -1,21 +1,21 @@
 html * {
-	margin: 0;
-	padding: 0;
-	box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
 }
 ul,
 ol {
-	list-style: none;
+  list-style: none;
 }
 a {
-	color: #000;
+  color: #000;
 }
 :root {
-	--buttonColor: #566fee;
-	--buttonHover: #425ad5;
-	--buttonGray: #f1f3f5;
-	--imageBackground: #e5eaff;
-	--fontColor: #2a3037;
-	--fontGray: #868e96;
-	--fontLightGray: #adb5bd;
+  --buttonColor: #566fee;
+  --buttonHover: #425ad5;
+  --buttonGray: #f1f3f5;
+  --imageBackground: #e5eaff;
+  --fontColor: #2a3037;
+  --fontGray: #868e96;
+  --fontLightGray: #adb5bd;
 }

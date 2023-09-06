@@ -8,11 +8,11 @@ import Footer from './footer';
 import PayDetail from './pay-detail/[id]';
 
 export default function Home() {
-	return (
-		<>
-			<Gnb />
-			<MainPage />
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Gnb />
+      <MainPage />
+      <Footer />
+    </>
+  );
 }

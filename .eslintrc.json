@@ -1,6 +1,66 @@
 {
-	"extends": "next/core-web-vitals",
-	"rules": {
-		"react/display-name": "off"
-	}
+  "root": true,
+
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "jsx": true
+  },
+
+  "extends": [
+    "next/core-web-vitals",
+    "eslint-config-prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "import", "prettier", "react", "react-hooks"],
+  "rules": {
+    "react/display-name": "off",
+    "prettier/prettier": "error",
+    "no-implicit-coercion": "error",
+
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "semi": "off",
+
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+
+    "getter-return": "warn",
+
+    "@typescript-eslint/explicit-function-return-type": "off",
+
+    "@typescript-eslint/no-use-before-define": "off",
+
+    "@typescript-eslint/no-empty-interface": "off",
+
+    "@typescript-eslint/no-parameter-properties": "off",
+
+    "no-async-promise-executor": "warn",
+    "@typescript-eslint/prefer-as-const": "warn",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "selector": "variable",
+        "leadingUnderscore": "allow"
+      },
+      { "format": ["camelCase", "PascalCase"], "selector": "function" },
+      { "format": ["PascalCase"], "selector": "interface" },
+      { "format": ["PascalCase"], "selector": "typeAlias" }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
+    "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }]
+  }
 }

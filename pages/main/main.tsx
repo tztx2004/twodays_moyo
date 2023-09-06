@@ -1,9 +1,9 @@
-"use client";
-import { styled } from "styled-components";
-import Promotion1 from "./promotion1";
-import Promotion2 from "./promotion2";
-import Promotion3 from "./promotion3";
-import PhonePlan from "./phoneplan";
+'use client';
+import { styled } from 'styled-components';
+import Promotion1 from './promotion1';
+import Promotion2 from './promotion2';
+import Promotion3 from './promotion3';
+import PhonePlan from './phoneplan';
 
 const WrapperBox = styled.div`
   margin: 0 auto;
@@ -133,8 +133,8 @@ const Promotion2Bx = styled.div`
 `;
 
 const Promotion3Bx = styled.div`
-  section{
-    >h2{
+  section {
+    > h2 {
       margin-top: 48px;
       margin-bottom: 10px;
       padding-bottom: 10px;
@@ -142,18 +142,18 @@ const Promotion3Bx = styled.div`
       word-break: keep-all;
       color: #2a3037;
     }
-    >div{
+    > div {
       margin-top: 20px;
-      >ul{
+      > ul {
         display: grid;
-        grid-template-columns: repeat(4,minmax(0,1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 8px;
 
-        >li{
+        > li {
           padding: 16px;
           display: flex;
           justify-content: center;
-          >img{
+          > img {
             height: 40px;
             width: 100%;
             object-fit: contain;
@@ -163,9 +163,7 @@ const Promotion3Bx = styled.div`
     }
   }
 `;
-const PhonePlanBx = styled.div`
-  
-`
+const PhonePlanBx = styled.div``;
 
 const MainPage = () => {
   return (
@@ -177,7 +175,7 @@ const MainPage = () => {
         <Promotion2 />
       </Promotion2Bx>
       <PhonePlanBx>
-        <PhonePlan/>
+        <PhonePlan />
       </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />

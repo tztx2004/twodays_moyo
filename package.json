@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --cache .",
+    "format": "prettier --cache --write ."
   },
   "dependencies": {
     "@types/node": "20.5.7",
@@ -24,6 +26,12 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.1.4"
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-styled-components": "^0.0.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
   }
 }
