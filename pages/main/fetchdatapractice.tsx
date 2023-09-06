@@ -8,7 +8,7 @@ export default function TestPage(){
         fetchData().then((fetchedData)=> setData(fetchedData))
     },[])
     return(
-        <div></div>
+        <div>{data}</div>
     )
 }
 

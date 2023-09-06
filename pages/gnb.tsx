@@ -47,6 +47,7 @@ const WrapperBx = styled.div`
     display: none;
   }
   @media screen and (max-width: 700px) {
+    height: 64px;
     border: none;
     header > nav {
       display: none;

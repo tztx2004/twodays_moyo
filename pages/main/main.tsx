@@ -14,6 +14,7 @@ const WrapperBox = styled.div`
 
   @media screen and (max-width : 700px){
     padding: 0 20px;
+    top: 40px;
   }
 `;
 const Promotion1Bx = styled.div`
@@ -78,6 +79,55 @@ const Promotion1Bx = styled.div`
         background-color: #425ad5;
       }
     }
+    >div:nth-child(3){
+      display: none;
+    }
+  }
+
+  @media screen and (max-width : 700px){
+    section{
+      >div:nth-child(2){
+        display:none;
+      }
+      >div:nth-child(3){
+        border: 1px solid #f1f3f5;
+        box-shadow: 0px 6px 18px rgba(73,80,87,0.1);
+        border-radius: 16px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+        padding: 28px 20px 20px 20px;
+        >div:first-child{
+          grid-row: 1/2;
+          grid-column: 1/3;
+          position: relative;
+          z-index: 1;
+          >h4{
+            font-size: 14px;
+          }
+          >h3{
+            font-size: 18px;
+            white-space: nowrap;
+          }
+        }
+        >div:nth-child(2){
+          display: flex;
+          flex-direction: row-reverse;
+          grid-row: 1/3;
+          grid-column: 2/3;
+        }
+        >div:nth-child(3){
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          >button{
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -136,6 +186,16 @@ const Promotion2Bx = styled.div`
       }
     }
   }
+
+  @media screen and (max-width : 700px){
+    section>div{
+      flex-direction: column;
+      gap: 20px;
+      >div{
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const Promotion3Bx = styled.div`
@@ -155,6 +215,9 @@ const Promotion3Bx = styled.div`
         grid-template-columns: repeat(4,minmax(0,1fr));
         gap: 8px;
 
+        @media screen and (max-width : 700px){
+          grid-template-columns: repeat(3,minmax(0,1fr));
+        }
         >li{
           padding: 16px;
           display: flex;
@@ -275,6 +338,23 @@ const PhonePlanBx = styled.div`
     }
     }
   }
+
+  @media screen and (max-width : 700px){
+    section{
+      >div>div>div:nth-child(5){
+        flex-direction: column;
+        gap: 20px;
+        >div:nth-child(1){
+          width: 100%;
+        }
+        >div:nth-child(2){
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
 `
 
 const MainPage = () => {
@@ -292,7 +372,7 @@ const MainPage = () => {
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
-      <TestPage/>
+      {/* <TestPage/> */}
     </WrapperBox>
   );
 };
