@@ -81,7 +81,7 @@ function Gnb() {
     <WrapperBx>
       <header>
         <div>
-          <Link href={"./"}>
+          <Link href={"/main"}>
             <picture>
               <source
                 srcSet="./images/moyo-icon.svg"
