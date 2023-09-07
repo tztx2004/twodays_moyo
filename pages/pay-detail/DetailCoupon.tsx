@@ -33,7 +33,6 @@ const WrapperBox = styled.section`
   div:nth-of-type(1) {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 `;
 
