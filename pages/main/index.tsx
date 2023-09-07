@@ -361,17 +361,17 @@ const PhonePlanBx = styled.div`
 `;
 
 const Promotion4Bx = styled.div`
-  section{
-    >h2{
+  section {
+    > h2 {
       margin-top: 48px;
       margin-bottom: 20px;
       font-weight: 700;
       word-break: keep-all;
       color: #2a3037;
     }
-    >div{
+    > div {
       cursor: pointer;
-      >ul{
+      > ul {
         display: grid;
         grid-template-columns: 64px auto 20px;
         -webkit-column-gap: 16px;
@@ -381,10 +381,10 @@ const Promotion4Bx = styled.div`
         border: 1px solid #e5eaff;
         box-shadow: 0px 2px 8px 0px #4950570f;
         margin-bottom: 10px;
-        >li{
+        > li {
           display: flex;
         }
-        >li:first-child{
+        > li:first-child {
           font-size: 20px;
           font-weight: 700;
           line-height: 1.6;
@@ -393,18 +393,18 @@ const Promotion4Bx = styled.div`
           justify-content: center;
           align-items: center;
         }
-        >li:nth-child(2){
+        > li:nth-child(2) {
           flex-direction: column;
           justify-content: center;
           flex-wrap: wrap;
-          >h3{
+          > h3 {
             font-size: inherit;
             font-weight: 700;
             line-height: 1.6;
             color: #495057;
             word-break: keep-all;
           }
-          >p{
+          > p {
             font-size: 14px;
             font-weight: 500;
             line-height: 1.6;
@@ -412,14 +412,14 @@ const Promotion4Bx = styled.div`
             word-break: keep-all;
           }
         }
-        >li:nth-child(3){
+        > li:nth-child(3) {
           justify-content: center;
           align-items: center;
         }
       }
     }
   }
-`
+`;
 
 const MainPage = () => {
   return (
