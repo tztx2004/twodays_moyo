@@ -26,7 +26,7 @@ function PlanCard(data: any) {
 
   const hoverHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
-    console.log(e.target)
+    console.log(e.target);
   };
 
   const tempData = [
@@ -82,8 +82,13 @@ function PlanCard(data: any) {
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
             <h3>
-              월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave}/>
-          {/* <div>
+              월 7GB + 1Mbps{' '}
+              <AiFillQuestionCircle
+                color='#dee2e6'
+                onMouseOver={() => mouseHover(1)}
+                onMouseLeave={mouseLeave}
+              />
+              {/* <div>
             {hover === 0 ? (
               <HoverTextBox text={x.desc1} />
             ) : null}
