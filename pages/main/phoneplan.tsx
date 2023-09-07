@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
+import useHover from '../hooks/useHover';
 
 function PhonePlan() {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
@@ -16,13 +18,15 @@ function PhonePlan() {
 }
 
 function PlanCard(data: any) {
+  const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
   };
 
   const hoverHandler = (e: MouseEvent) => {
-    // e.target?.
+    if (!(e.target instanceof Element)) return;
+    console.log(e.target)
   };
 
   const tempData = [
@@ -78,7 +82,12 @@ function PlanCard(data: any) {
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
             <h3>
-              월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
+              월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave}/>
+          {/* <div>
+            {hover === 0 ? (
+              <HoverTextBox text={x.desc1} />
+            ) : null}
+          </div> */}
             </h3>
             <ul>
               <li>통화 무제한</li>

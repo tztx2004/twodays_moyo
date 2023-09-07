@@ -41,7 +41,7 @@ function Promotion1() {
 async function fetchData() {
   const res = await fetch('https://port-0-mini-1xxfe2blm041iap.sel5.cloudtype.app');
   const data = await res.text();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 
