@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import DetailFee from './DetailFee';
 import DetailTitle from './DetailTitle';
-import DetailCoupon from './DetailCoupon';
+import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo';
