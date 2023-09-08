@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { GoShare } from 'react-icons/go';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-import useHover from '../../hooks/useHover';
+import useHover from '../../hooks/useHover/useHover';
 import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
 import Tag from '../../components/Tag/Tag';
 import { styled } from 'styled-components';

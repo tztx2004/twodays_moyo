@@ -1,7 +1,7 @@
 import { render, renderHook, screen } from '@testing-library/react';
 
 import DetailFee from './DetailFee';
-import useHover from '@/pages/hooks/useHover';
+import useHover from '@/pages/hooks/useHover/useHover';
 import QuestionMarker from '@/pages/components/QuestionMarker/QuestionMarker';
 import userEvent from '@testing-library/user-event';
 
