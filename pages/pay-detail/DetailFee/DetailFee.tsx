@@ -19,7 +19,7 @@ export default function DetailFee() {
           {hover ? (
             <HoverTextBoxArea>
               <HoverTextBox>
-                <HoverTextContent>
+                <HoverTextContent data-testid='hover-text'>
                   <TopText>12개월까지만 사용해도 위약금이 발생하지 않아요</TopText>
 
                   <BottomText>
