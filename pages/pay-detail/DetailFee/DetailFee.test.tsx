@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { render, renderHook, screen } from '@testing-library/react';
+
 import DetailFee from './DetailFee';
+import useHover from '@/pages/hooks/useHover';
 import QuestionMarker from '@/pages/components/QuestionMarker/QuestionMarker';
+import userEvent from '@testing-library/user-event';
 
 const context = describe;
+
+const user = userEvent.setup();
 
 describe('DetailFee', () => {
   beforeEach(() => {
@@ -28,6 +33,33 @@ describe('DetailFee', () => {
   });
 
   context('hover을 하지 않으면', () => {
-    it('추가 정보를 나타내지 않습니다.');
+    it('추가 정보를 나타내지 않습니다.', () => {
+      const { result } = renderHook(() => useHover());
+
+      expect(result.current[0]).toBe(0);
+
+      const text = screen.queryByText(/12개월까지만 사용해도 위약금이 발생하지 않아요/);
+
+      expect(text).toBeNull();
+    });
+  });
+
+  context('hover을 하면', () => {
+    it('추가 정보를 나타냅니다.', async () => {
+      const questionMarker = screen.getByText('?');
+
+      await user.hover(questionMarker);
+
+      const hoverTextBox = await screen.findByTestId('hover-text');
+
+      expect(hoverTextBox).toBeInTheDocument();
+    });
+  });
+
+  it('신청하기 버튼이 존재합니다.', () => {
+    const btn = screen.getByRole('button');
+
+    expect(btn).toBeInTheDocument();
+    expect(btn).toHaveTextContent('신청하기');
   });
 });

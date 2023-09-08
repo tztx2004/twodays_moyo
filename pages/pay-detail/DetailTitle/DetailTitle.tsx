@@ -2,9 +2,9 @@ import { useRef } from 'react';
 import { GoShare } from 'react-icons/go';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-import useHover from '../hooks/useHover';
-import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
-import Tag from '../components/Tag/Tag';
+import useHover from '../../hooks/useHover';
+import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
+import Tag from '../../components/Tag/Tag';
 import { styled } from 'styled-components';
 
 export default function DetailTitle() {
@@ -24,7 +24,7 @@ export default function DetailTitle() {
         />
       </TagBox>
 
-      <PlanName>[모요only] 슈가매니아 11GB+매일2GB+</PlanName>
+      <PlanName data-testid='title'>[모요only] 슈가매니아 11GB+매일2GB+</PlanName>
 
       <AdditionalInfoBox>
         <NumberOfSubscribers>44,966명이 선택</NumberOfSubscribers>
