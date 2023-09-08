@@ -8,7 +8,7 @@ export default function Coupon() {
 
       <InnerBox>
         <CouponInfoBox>
-          <Image src={'/images/naver_pay.png'} alt='naver_pay' width={50} height={20} />
+          <Image src={'/images/naver_pay.png'} alt='pay_icon' width={50} height={20} />
           <Price>3,000원</Price>
           <Content>쿠폰 받고 요금제 개통하면 100% 지급</Content>
         </CouponInfoBox>

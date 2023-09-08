@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import useHover from '../../hooks/useHover';
+import useHover from '../../hooks/useHover/useHover';
 import QuestionMarker from '../../components/QuestionMarker/QuestionMarker';
 import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
 
