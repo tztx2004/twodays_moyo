@@ -1,10 +1,35 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
-import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+// import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 import useHover from '../hooks/useHover';
 import { useEffect, useState } from 'react';
+import getServerSideProps from './fetchdata'
 
-function PhonePlan() {
+interface PrivateObject {
+  call: string;
+  carrier: string;
+  carrier_logo: null;
+  daily_data: string;
+  discount_period: number;
+  discounted_price: number;
+  monthly_data: string;
+  network: string;
+  original_price: number;
+  plan_title: string;
+  postExhaustedSpeed: string;
+  short_message: string;
+  thread_id: number;
+}
+
+interface PlanData {
+  pageObject: object;
+  threads: PrivateObject[];
+}
+interface Data {
+  data: PlanData;
+}
+
+export async function PhonePlan({data}:Data) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
     <section>
@@ -12,13 +37,14 @@ function PhonePlan() {
         요금제가 고민이신가요? <br />
         모요가 추천해 드릴게요
       </h2>
-      <PlanCard />
+      <PlanCard data={data} />
     </section>
   );
 }
 
-function PlanCard() {
-  
+export async function PlanCard({data}:Data) {
+  console.log({data})
+
   const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
@@ -67,7 +93,9 @@ function PlanCard() {
     },
   ];
 
-  
+  if(!{data}){
+    <div>로딩중</div>
+  }
   
   return (
     <>
@@ -81,7 +109,7 @@ function PlanCard() {
               <div>{x.개통 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
             </div>
             <div>
-              <h4>모두 충분 7GB+밀리의서재</h4>
+              <h4>{data ? data.threads[i].plan_title : '로딩중'}</h4>
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
             <h3>
@@ -98,13 +126,19 @@ function PlanCard() {
           </div> */}
             </h3>
             <ul>
-              <li>통화 무제한</li>
+              <li>
+                {data?.threads[i].call === 'Unlimited' ? '통화 무제한' : data?.threads[i].call}
+              </li>
               <li></li>
-              <li>문자 무제한</li>
+              <li>
+                {data?.threads[i].short_message === 'Unlimited'
+                  ? '문자 무제한'
+                  : data?.threads[i].short_message}
+              </li>
               <li></li>
               <li>KT망</li>
               <li></li>
-              <li>LTE</li>
+              <li>{data?.threads[i].network}</li>
             </ul>
             <div>
               <div>
@@ -129,11 +163,11 @@ function PlanCard() {
   );
 }
 
-async function getData(){
-  const res = await fetch("http://172.30.1.68:3000/plans?page=1")
-  const data = res.json()
-  console.log(data)
-  return data
-}
-getData
+// export async function getServerSideProps() {
+//   const res = await fetch('http://172.30.1.68:3000/plans?page=1')
+//   const data = await res.json()
+
+//   return { props: { data } }
+// }
+
 export default PhonePlan;
