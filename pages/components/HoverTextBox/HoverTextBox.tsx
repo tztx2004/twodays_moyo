@@ -1,11 +1,12 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-export default function HoverTextBox({ text = '' }) {
-  return (
-    <WrapperBox>
-      <Text>{text}</Text>
-    </WrapperBox>
-  );
+interface IHoverTextBox {
+  children: ReactNode;
+}
+
+export default function HoverTextBox({ children }: IHoverTextBox) {
+  return <WrapperBox>{children}</WrapperBox>;
 }
 
 const WrapperBox = styled.div`
@@ -22,7 +23,7 @@ const WrapperBox = styled.div`
   position: relative;
   white-space: nowrap;
 
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -35,8 +36,4 @@ const WrapperBox = styled.div`
     margin-left: -20px;
     margin-bottom: -7px;
   }
-`;
-
-const Text = styled.p`
-  padding: 15px;
 `;

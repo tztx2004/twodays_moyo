@@ -27,6 +27,8 @@ export default function Coupon() {
 
 const WrapperBox = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
 `;
 
 const InnerBox = styled.div`
