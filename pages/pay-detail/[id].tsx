@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import DetailFee from './DetailFee';
+import DetailFee from './DetailFee/DetailFee';
 import DetailTitle from './DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
