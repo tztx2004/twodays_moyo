@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
-import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
+// import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 import useHover from '../hooks/useHover';
 import { useEffect, useState } from 'react';
 

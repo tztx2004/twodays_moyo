@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function QuestionMarkBox({ ...props }) {
+export default function QuestionMarker({ ...props }) {
   return <QuestionMark {...props}>?</QuestionMark>;
 }
 
@@ -14,4 +14,5 @@ const QuestionMark = styled.span`
   border-radius: 50%;
   color: white;
   font-size: 14px;
+  position: relative;
 `;
