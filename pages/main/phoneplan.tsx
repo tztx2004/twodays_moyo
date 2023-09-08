@@ -25,7 +25,7 @@ interface PlanData {
   pageObject: object;
   threads: Array<PrivateObject>;
 }
-interface Data{
+interface Data {
   data: PlanData;
 }
 
@@ -42,8 +42,7 @@ function PhonePlan() {
   );
 }
 
-function PlanCard({data}:Data) {
-  
+function PlanCard({ data }: Data) {
   const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
@@ -121,9 +120,15 @@ function PlanCard({data}:Data) {
           </div> */}
             </h3>
             <ul>
-              <li>{data?.threads[i].call==="Unlimited"? "통화 무제한" : data?.threads[i].call}</li>
+              <li>
+                {data?.threads[i].call === 'Unlimited' ? '통화 무제한' : data?.threads[i].call}
+              </li>
               <li></li>
-              <li>{data?.threads[i].short_message==="Unlimited"? "문자 무제한" : data?.threads[i].short_message}</li>
+              <li>
+                {data?.threads[i].short_message === 'Unlimited'
+                  ? '문자 무제한'
+                  : data?.threads[i].short_message}
+              </li>
               <li></li>
               <li>KT망</li>
               <li></li>
@@ -151,7 +156,5 @@ function PlanCard({data}:Data) {
     </>
   );
 }
-
-
 
 export default PhonePlan;

@@ -3,6 +3,6 @@ export default async function getData() {
   const data = res.json();
   console.log(data);
   return {
-    props: {data}
+    props: { data },
   };
 }
