@@ -7,7 +7,7 @@ import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService';
-import DetailExtraInfo from './DetailExtraInfo';
+import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 
 export default function PayDetail() {
   return (
