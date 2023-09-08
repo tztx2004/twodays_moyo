@@ -4,10 +4,10 @@ import DetailTitle from './DetailTitle';
 import DetailFee from './DetailFee/DetailFee';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
-import DetailFeeExtraService from './DetailFeeExtraService';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
+import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
 
 export default function PayDetail() {
   return (
