@@ -12,17 +12,33 @@ describe('DetailFeeBaseInfo', () => {
     expect(title).toBeInTheDocument();
   });
 
-  it('기본 정보들을 가지고 있습니다.', () => {
+  it('통신사 약정을 가지고 있습니다.', () => {
     const carrierAgreement = screen.getByText(/통신사 약정/);
-    const regularSIMdelivery = screen.getByText(/일반 유심 배송/);
-    const extraCall = screen.getByText(/부가통화/);
-    const nfcSIMdelivery = screen.getByText(/NFC 유심 배송/);
-    const eSIM = screen.getByText(/eSIM/);
 
     expect(carrierAgreement).toBeInTheDocument();
+  });
+
+  it('일반 유심 배송을 가지고 있습니다.', () => {
+    const regularSIMdelivery = screen.getByText(/일반 유심 배송/);
+
     expect(regularSIMdelivery).toBeInTheDocument();
+  });
+
+  it('부가통화를 가지고 있습니다.', () => {
+    const extraCall = screen.getByText(/부가통화/);
+
     expect(extraCall).toBeInTheDocument();
+  });
+
+  it('NFC 유심 배송을 가지고 있습니다.', () => {
+    const nfcSIMdelivery = screen.getByText(/NFC 유심 배송/);
+
     expect(nfcSIMdelivery).toBeInTheDocument();
+  });
+
+  it('eSIM을 가지고 있습니다.', () => {
+    const eSIM = screen.getByText(/eSIM/);
+
     expect(eSIM).toBeInTheDocument();
   });
 });
