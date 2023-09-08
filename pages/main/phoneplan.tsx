@@ -4,6 +4,9 @@ import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
 // import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 import useHover from '../hooks/useHover';
 import { useEffect, useState } from 'react';
+import GetData from './fetchdata';
+
+
 
 interface PrivateObject {
   call: string;
@@ -37,12 +40,14 @@ function PhonePlan() {
         요금제가 고민이신가요? <br />
         모요가 추천해 드릴게요
       </h2>
-      {/* <PlanCard /> */}
+      <PlanCard />
     </section>
   );
 }
 
-function PlanCard({ data }: Data) {
+function PlanCard() {
+  let [data,setData] = useState<PlanData[] | null>(null)
+  
   const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;

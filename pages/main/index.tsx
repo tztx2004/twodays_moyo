@@ -4,7 +4,7 @@ import Promotion1 from './promotion1';
 import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
 import PhonePlan from './phoneplan';
-import TestPage from './fetchdatapractice';
+import TestPage from './fetchdata';
 import Promotion4 from './promotion4';
 
 const WrapperBox = styled.div`

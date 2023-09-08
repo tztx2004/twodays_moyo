@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
-import useHover from '../hooks/useHover';
-import QuestionMarker from '../components/QuestionMarker/QuestionMarker';
-import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import useHover from '../../hooks/useHover';
+import QuestionMarker from '../../components/QuestionMarker/QuestionMarker';
+import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
 
 export default function DetailFee() {
   const [hover, mouseOver, mouseLeave] = useHover();
