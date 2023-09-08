@@ -3,7 +3,7 @@ import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 // import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 import useHover from '../hooks/useHover';
 import { useEffect, useState } from 'react';
-import getServerSideProps from './fetchdata'
+import getServerSideProps from './fetchdata';
 
 interface PrivateObject {
   call: string;
@@ -29,7 +29,7 @@ interface Data {
   data: PlanData;
 }
 
-export async function PhonePlan({data}:Data) {
+export async function PhonePlan({ data }: Data) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
     <section>
@@ -42,8 +42,8 @@ export async function PhonePlan({data}:Data) {
   );
 }
 
-export async function PlanCard({data}:Data) {
-  console.log({data})
+export async function PlanCard({ data }: Data) {
+  console.log({ data });
 
   const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
@@ -93,10 +93,10 @@ export async function PlanCard({data}:Data) {
     },
   ];
 
-  if(!{data}){
-    <div>로딩중</div>
+  if (!{ data }) {
+    <div>로딩중</div>;
   }
-  
+
   return (
     <>
       {tempData.map((x, i) => (

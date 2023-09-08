@@ -18,7 +18,6 @@ function PhonePlan() {
 }
 
 function PlanCard() {
-  
   const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
@@ -67,8 +66,6 @@ function PlanCard() {
     },
   ];
 
-  
-  
   return (
     <>
       {tempData.map((x, i) => (
@@ -129,11 +126,11 @@ function PlanCard() {
   );
 }
 
-async function getData(){
-  const res = await fetch("http://172.30.1.68:3000/plans?page=1")
-  const data = res.json()
-  console.log(data)
-  return data
+async function getData() {
+  const res = await fetch('http://172.30.1.68:3000/plans?page=1');
+  const data = res.json();
+  console.log(data);
+  return data;
 }
-getData
+getData;
 export default PhonePlan;
