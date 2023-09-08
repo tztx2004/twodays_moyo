@@ -7,6 +7,7 @@ import DetailDataInfo from './DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService';
+import DetailExtraInfo from './DetailExtraInfo';
 
 export default function PayDetail() {
   return (
@@ -24,6 +25,8 @@ export default function PayDetail() {
       <DetailFeeBaseInfo />
 
       <DetailFeeExtraService />
+
+      <DetailExtraInfo />
     </WrapperBox>
   );
 }

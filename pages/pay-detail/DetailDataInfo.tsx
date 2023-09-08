@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 
 import useHover from '../hooks/useHover';
 import QuestionMarker from '../components/QuestionMarker/QuestionMarker';
+import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
 
 export default function DetailDataInfo() {
   const [hover, mouseHover, mouseLeave] = useHover();
@@ -30,13 +31,19 @@ export default function DetailDataInfo() {
       <p>+</p>
 
       <Div>
-        <ExplanationText>소진시</ExplanationText>
+        <EmptyDataBox>
+          <ExplanationText>소진시</ExplanationText>
+          <QuestionMarker onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave} />
 
-        <QuestionMarkerBox>
-          <QuestionMarker hover={hover} onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave}>
-            <HoverText>데이터 소진시 유튜브 화질 720p 볼 수 있어요</HoverText>
-          </QuestionMarker>
-        </QuestionMarkerBox>
+          {hover ? (
+            <HoverTextBoxArea>
+              <HoverTextBox>
+                <HoverText>데이터 소진시 유튜브 화질 720p 볼 수 있어요</HoverText>
+              </HoverTextBox>
+            </HoverTextBoxArea>
+          ) : null}
+        </EmptyDataBox>
+
         <DataText>3Mbps</DataText>
       </Div>
     </WrapperBox>
@@ -71,14 +78,23 @@ const DataText = styled.p`
 
 const EmphasisDataText = styled.p`
   color: var(--buttonHover);
+  font-weight: 900;
+  font-size: 1.8rem;
 `;
 
-const QuestionMarkerBox = styled.div`
+const EmptyDataBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+const HoverTextBoxArea = styled.div`
   position: absolute;
-  top: calc(100% - 1012px);
-  right: calc(100% - 405px);
+  bottom: calc(100% - 150px);
+  left: calc(100% - 220px);
 `;
 
 const HoverText = styled.p`
   padding: 15px;
+  font-weight: 400;
 `;

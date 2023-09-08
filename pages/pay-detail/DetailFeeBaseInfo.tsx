@@ -34,8 +34,8 @@ const baseInfo = [
   },
 ];
 
-export default function DetailFeeBaseInfo() {
-  const SIZE = useRef<number>(28);
+export default function DetailFeBaseInfo() {
+  const SIZE = useRef<number>(22);
 
   return (
     <WrapperBox>
@@ -44,7 +44,7 @@ export default function DetailFeeBaseInfo() {
       <InformationBox>
         {baseInfo.map((info, index) => {
           return (
-            <InformationContentBox key={info.content}>
+            <InformationContentBox key={info.title}>
               <Image
                 src={`/images/${info.icon}.svg`}
                 alt={`${info}`}
@@ -70,7 +70,7 @@ const WrapperBox = styled.section`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  margin-top: 50px;
+  margin-top: 80px;
 `;
 
 const Title = styled.p`
@@ -82,6 +82,7 @@ const InformationBox = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
+  font-size: 0.9rem;
 `;
 
 const InformationContentBox = styled.div`
