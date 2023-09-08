@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DetailFee from './DetailFee';
 import DetailTitle from './DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
-import DetailDataInfo from './DetailDataInfo';
+import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService';

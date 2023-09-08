@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
-import useHover from '../hooks/useHover';
-import QuestionMarker from '../components/QuestionMarker/QuestionMarker';
-import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import useHover from '../../hooks/useHover';
+import QuestionMarker from '../../components/QuestionMarker/QuestionMarker';
+import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
 
 export default function DetailDataInfo() {
   const [hover, mouseHover, mouseLeave] = useHover();
@@ -38,7 +38,9 @@ export default function DetailDataInfo() {
           {hover ? (
             <HoverTextBoxArea>
               <HoverTextBox>
-                <HoverText>데이터 소진시 유튜브 화질 720p 볼 수 있어요</HoverText>
+                <HoverText data-testid='hover-text'>
+                  데이터 소진시 유튜브 화질 720p 볼 수 있어요
+                </HoverText>
               </HoverTextBox>
             </HoverTextBoxArea>
           ) : null}
