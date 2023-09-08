@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
+import DetailTitle from './DetailTitle/DetailTitle';
 import DetailFee from './DetailFee/DetailFee';
-import DetailTitle from './DetailTitle';
+import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
-import DetailOtherInfo from './DetailOtherInfo';
-import DetailFeeBaseInfo from './DetailFeeBaseInfo';
-import DetailFeeExtraService from './DetailFeeExtraService';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
+import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
+import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
 
 export default function PayDetail() {
   return (
