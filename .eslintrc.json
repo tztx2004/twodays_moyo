@@ -63,6 +63,6 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
     "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
-    "@typescript-eslint/no-var-requires": "true"
+    "@typescript-eslint/no-var-requires": 0
   }
 }
