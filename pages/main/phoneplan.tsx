@@ -23,7 +23,7 @@ interface PrivateObject {
 
 interface PlanData {
   pageObject: object;
-  threads: Array<PrivateObject>;
+  threads: PrivateObject[];
 }
 interface Data {
   data: PlanData;
