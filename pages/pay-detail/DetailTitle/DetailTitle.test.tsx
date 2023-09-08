@@ -17,4 +17,16 @@ describe('DetailTitle', () => {
 
     expect(selectNum).toBeInTheDocument();
   });
+
+  it('찜 버튼이 존재합니다.', () => {
+    const like = screen.queryByText(/찜/);
+
+    expect(like).toBeInTheDocument();
+  });
+
+  it('공유 버튼이 존재합니다.', () => {
+    const share = screen.queryByText(/공유/);
+
+    expect(share).toBeInTheDocument();
+  });
 });

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
-import useHover from '../hooks/useHover';
+// import useHover from '../hooks/useHover';
 import { useEffect, useState } from 'react';
 
 function PhonePlan() {
@@ -18,7 +18,7 @@ function PhonePlan() {
 }
 
 function PlanCard() {
-  const [hover, mouseHover, mouseLeave] = useHover();
+  // const [hover, mouseHover, mouseLeave] = useHover();
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -85,8 +85,8 @@ function PlanCard() {
               월 7GB + 1Mbps{' '}
               <AiFillQuestionCircle
                 color='#dee2e6'
-                onMouseOver={() => mouseHover(1)}
-                onMouseLeave={mouseLeave}
+                // onMouseOver={() => mouseHover(1)}
+                // onMouseLeave={mouseLeave}
               />
               {/* <div>
             {hover === 0 ? (

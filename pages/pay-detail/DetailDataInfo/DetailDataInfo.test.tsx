@@ -1,7 +1,7 @@
 import { render, renderHook, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import useHover from '@/pages/hooks/useHover';
+import useHover from '@/pages/hooks/useHover/useHover';
 import DetailDataInfo from './DetailDataInfo';
 import QuestionMarker from '@/pages/components/QuestionMarker/QuestionMarker';
 
