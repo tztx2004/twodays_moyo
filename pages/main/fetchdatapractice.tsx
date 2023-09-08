@@ -1,17 +1,8 @@
-'use client';
-import { use, useEffect, useState } from 'react';
-
-export default function TestPage() {
-  const [data, setData] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchData().then(fetchedData => setData(fetchedData));
-  }, []);
-  return <div>{data}</div>;
-}
-
-export async function fetchData() {
-  const res = await fetch('http://api.smartchoice.or.kr/api/openAPI.xml?authkey=9acf252856');
-  const data = await res.text();
-  return data;
+export default async function getData() {
+  const res = await fetch('http://172.30.1.68:3000/plans?page=1');
+  const data = res.json();
+  console.log(data);
+  return {
+    props: {data}
+  };
 }
