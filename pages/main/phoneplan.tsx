@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
-import HoverTextBox from '../components/HoverTextBox/HoverTextBox';
+import HoverTextBox from '../../src/components/HoverTextBox/HoverTextBox';
 function PhonePlan() {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
