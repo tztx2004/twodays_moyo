@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 // import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
-import useHover from '../hooks/useHover';
-import { useEffect, useState } from 'react';
-import getServerSideProps from './fetchdata';
+
 
 interface PrivateObject {
   call: string;
@@ -45,7 +43,7 @@ export async function PhonePlan({ data }: Data) {
 export async function PlanCard({ data }: Data) {
   console.log({ data });
 
-  const [hover, mouseHover, mouseLeave] = useHover();
+  
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -116,8 +114,6 @@ export async function PlanCard({ data }: Data) {
               월 7GB + 1Mbps{' '}
               <AiFillQuestionCircle
                 color='#dee2e6'
-                onMouseOver={() => mouseHover(1)}
-                onMouseLeave={mouseLeave}
               />
               {/* <div>
             {hover === 0 ? (

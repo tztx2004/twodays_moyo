@@ -22,12 +22,14 @@ const Promotion2 = () => {
   return (
     <section>
       <h2>모요 요금제 랭킹</h2>
+      
       <div>
         {arr.map((x, i) => (
           <div key={i}>
             <div>
               <img src={x.images[0]} alt='랭킹이미지' onClick={() => onClick(x.title[0])} />
             </div>
+            
             <div>
               <h3>
                 {x.title[0]}

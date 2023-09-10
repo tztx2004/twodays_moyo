@@ -146,6 +146,7 @@ export default function Promotion3() {
       <h2>
         모요는 <br /> 아래 통신사와 함께하고 있어요.
       </h2>
+      
       <div>
         <ul>
           {arr.map((x, i) => (
