@@ -20,7 +20,6 @@ function Promotion1() {
         </div>
       </div>
 
-
       <div>
         <div>
           <h4>모요개통 요금제 첫 개통 혜택!</h4>
@@ -30,16 +29,13 @@ function Promotion1() {
         <div>
           <img src='./images/benefit_naver_with_coin.png' alt='네이버코인이미지' />
         </div>
-        
+
         <div>
           <button>혜택 쿠폰 받기</button>
         </div>
       </div>
-
     </section>
   );
 }
-
-
 
 export default Promotion1;

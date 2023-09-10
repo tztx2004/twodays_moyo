@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 
-
 function PhonePlan() {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
@@ -68,7 +67,6 @@ function PlanCard() {
       {tempData.map((x, i) => (
         <div key={x.id}>
           <div>
-            
             <div>
               <div>
                 <img src={x.src} alt='kTskylife' />
@@ -76,20 +74,14 @@ function PlanCard() {
               <div>{x.개통 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
             </div>
 
-
             <div>
               <h4>{x.title}</h4>
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
 
-
             <h3>
-              월 {x.dataPlan} + 1Mbps{' '}
-              <AiFillQuestionCircle
-                color='#dee2e6'
-              />
+              월 {x.dataPlan} + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
             </h3>
-
 
             <ul>
               <li>{x.callPlan}</li>
@@ -100,7 +92,6 @@ function PlanCard() {
               <li></li>
               <li>{x.net}</li>
             </ul>
-
 
             <div>
               <div>

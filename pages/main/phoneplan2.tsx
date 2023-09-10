@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 // import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 
-
 interface PrivateObject {
   call: string;
   carrier: string;
@@ -43,7 +42,6 @@ export async function PhonePlan({ data }: Data) {
 export async function PlanCard({ data }: Data) {
   console.log({ data });
 
-  
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -111,10 +109,7 @@ export async function PlanCard({ data }: Data) {
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
             <h3>
-              월 7GB + 1Mbps{' '}
-              <AiFillQuestionCircle
-                color='#dee2e6'
-              />
+              월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
               {/* <div>
             {hover === 0 ? (
               <HoverTextBox text={x.desc1} />
