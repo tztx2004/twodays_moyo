@@ -4,7 +4,7 @@ export interface Idata {
 
 export interface Iobject {
   pageObject: object;
-  plans: Array<Iobj>;
+  plans: Iobj[];
 }
 
 export interface Iobj {
