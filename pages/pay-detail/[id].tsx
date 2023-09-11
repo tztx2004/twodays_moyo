@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import DetailFee from './DetailFee/DetailFee';
-import httpMethod from '@/src/utils/httpMethod';
+import httpMethod from '@/src/utils/httpMethod/httpMethod';
 import DetailTitle from './DetailTitle/DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';

@@ -1,16 +1,9 @@
-import httpClient from './httpClient/httpClient';
+import httpClient from '../httpClient/httpClient';
 
 class HttpMethod {
   GET(url: string, options = {}) {
     return httpClient.fetch(url, {
       method: 'get',
-      ...options,
-    });
-  }
-
-  POST(url: string, options = {}) {
-    return httpClient.fetch(url, {
-      method: 'post',
       ...options,
     });
   }
