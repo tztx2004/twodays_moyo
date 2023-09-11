@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Comma from '../components/Comma/Comma';
+import Comma from '../../src/components/Comma/Comma';
 
 export default function Promotion4() {
   const arr = [
