@@ -113,7 +113,7 @@ function PlanCard({ data }: any) {
               </div>
 
               <div>
-                <Link href={`./pay-detail/${x.plan_id}`}>
+                <Link href={`/pay-detail/${x.plan_id}`}>
                   <button>자세히 보기</button>
                 </Link>
               </div>

@@ -1,21 +1,30 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Idata } from '../type';
+import { useState } from 'react';
 
-interface IPagination {
-  currnetPage: number;
-  totalPage: number;
-  chunkPage: number;
-}
+const Wrapper = styled.div`
+  .active {
+    background-color: var(--buttonColor);
+    color: #fff !important;
+  }
+`;
 
-const Wrapper = styled.div``;
+export const Pagination = ({ data }: Idata) => {
+  const [activeButton, setActiveButton] = useState<number | null>(null);
 
-export const Pagination = ({ data }: any) => {
-  console.log(data);
+  const handleButtonClick = (idx: number) => {
+    setActiveButton(idx);
+  };
+
   return (
     <Wrapper>
       {Object.keys(data).map((x: any, idx: number) => (
-        <button key={idx}>
-          <Link href={`/?page=${idx + 1}`}>{idx + 1}</Link>
+        <button key={idx} onClick={() => handleButtonClick(idx)}>
+          <Link className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
+            href={`?page=${idx + 1}`}>
+            {idx + 1}
+          </Link>
         </button>
       ))}
     </Wrapper>
