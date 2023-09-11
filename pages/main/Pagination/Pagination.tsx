@@ -17,20 +17,25 @@ export const Pagination = ({ data }: Idata) => {
     setActiveButton(idx);
   };
 
-  return (
-    <Wrapper>
-      {Object.keys(data).map((x: any, idx: number) => (
-        <button key={idx} onClick={() => handleButtonClick(idx)}>
-          <Link
-            className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
-            href={`?page=${idx + 1}`}
-          >
-            {idx + 1}
-          </Link>
-        </button>
-      ))}
-    </Wrapper>
-  );
+  if (!data.pageObject.startPage || !data.pageObject.endPage) {
+    return null; // startPage 또는 lastPage가 없으면 아무것도 렌더링하지 않음
+  }
+
+  const buttons = [];
+  for (let i = data.pageObject.startPage; i <= data.pageObject.endPage; i++) {
+    buttons.push(
+      <button
+        key={i}
+        onClick={() => handleButtonClick(i)}
+      >
+        <Link href={`?page=${i}`}
+        className={i === activeButton || (activeButton === null && i === data.pageObject.startPage) ? 'active' : ''}
+        >{i}</Link>
+      </button>
+    );
+  }
+
+  return <Wrapper>{buttons}</Wrapper>;
 };
 
 export default Pagination;

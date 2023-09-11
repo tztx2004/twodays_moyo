@@ -3,11 +3,11 @@ export interface Idata {
 }
 
 export interface Iobject {
-  pageObject: object;
-  plans: Iobj[];
+  pageObject: IpageObject;
+  plans: Iplans[];
 }
 
-export interface Iobj {
+export interface Iplans {
   carrier_logo: string;
   plan_id: number;
   carrier: string;
@@ -22,4 +22,15 @@ export interface Iobj {
   original_price: number;
   discount_period: number;
   discounted_price: number;
+}
+
+export interface IpageObject {
+  numberOfPlans: number;
+  numberOfPlansPerPage: number;
+  maxDisplayedPages: number;
+  startIndex: number;
+  endIndex: number;
+  startPage: number;
+  current_page: number;
+  endPage: number;
 }
