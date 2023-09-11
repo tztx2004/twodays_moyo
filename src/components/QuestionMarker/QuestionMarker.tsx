@@ -15,4 +15,11 @@ const QuestionMark = styled.span`
   color: white;
   font-size: 14px;
   position: relative;
+
+  @media all and (max-width: 479px) {
+    width: 15px;
+    height: 13px;
+    font-size: 12px;
+    padding-top: 2px;
+  }
 `;

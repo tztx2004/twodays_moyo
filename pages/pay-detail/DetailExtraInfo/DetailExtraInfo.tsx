@@ -11,7 +11,7 @@ const tmpData = [
   },
   {
     title: '외국인 가입',
-    content: '미지원',
+    content: '본인확인 절차 진행 후 온라인 또는 전화상담으로 신청서 작성 가능',
   },
   {
     title: '번호이동 수수료',
@@ -80,6 +80,15 @@ const WrapperBox = styled.section`
   flex-direction: column;
   margin-top: 50px;
   gap: 30px;
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    padding: 0 20px;
+  }
+
+  @media all and (max-width: 479px) {
+    margin: 40px 0 0 0;
+    padding: 0 20px;
+  }
 `;
 
 const Title = styled.p`
@@ -90,6 +99,11 @@ const Title = styled.p`
 const Contents = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+
+  @media all and (max-width: 479px) {
+    grid-template-columns: 130px 1fr;
+    font-size: 0.8rem;
+  }
 `;
 
 const ContentsTitle = styled.p`
@@ -99,16 +113,34 @@ const ContentsTitle = styled.p`
 
 const OverUseText = styled.p`
   font-weight: 600;
+
+  @media all and (max-width: 479px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const TableBox = styled.div`
   display: flex;
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    flex-wrap: wrap;
+  }
+
+  @media all and (max-width: 479px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const TableContents = styled.div`
   min-height: 45px;
   display: inline-block;
   min-width: 100px;
+
+  @media all and (max-width: 479px) {
+    min-width: auto;
+    flex: 0 1 30%;
+    white-space: nowrap;
+  }
 `;
 
 const Radius = 8;
@@ -138,4 +170,8 @@ const TableValue = styled.p`
 const NoticeText = styled.p`
   font-size: 0.8rem;
   color: var(--fontGray);
+
+  @media all and (max-width: 479px) {
+    font-size: 0.73rem;
+  }
 `;

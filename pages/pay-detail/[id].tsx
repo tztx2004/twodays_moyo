@@ -1,16 +1,16 @@
 'use client';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
-import DetailTitle from './DetailTitle/DetailTitle';
 import DetailFee from './DetailFee/DetailFee';
-import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
+import httpMethod from '@/src/utils/httpMethod';
+import DetailTitle from './DetailTitle/DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
+import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
-import { useEffect } from 'react';
-import httpMethod from '@/src/utils/httpMethod';
 
 export default function PayDetail() {
   useEffect(() => {
@@ -29,7 +29,11 @@ export default function PayDetail() {
 
       <DetailOtherInfo />
 
+      <DivideBox />
+
       <DetailCoupon />
+
+      <DivideBox />
 
       <DetailFee />
 
@@ -47,4 +51,12 @@ const WrapperBox = styled.div`
   max-width: 620px;
   position: relative;
   top: 80px;
+`;
+
+const DivideBox = styled.div`
+  @media all and (max-width: 479px) {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 15px;
+  }
 `;
