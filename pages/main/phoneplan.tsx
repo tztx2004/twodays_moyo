@@ -11,7 +11,7 @@ function PhonePlan() {
         모요가 추천해 드릴게요
       </h2>
       <PlanCard />
-      <Pagenation currnetPage={1} totalPage={120} chunkPage={50}/>
+      <Pagenation currnetPage={1} totalPage={120} chunkPage={50} />
     </section>
   );
 }
