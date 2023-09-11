@@ -1,9 +1,9 @@
 import { render, renderHook, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import useHover from '@/pages/hooks/useHover/useHover';
+import useHover from '@/src/hooks/useHover/useHover';
 import DetailDataInfo from './DetailDataInfo';
-import QuestionMarker from '@/pages/components/QuestionMarker/QuestionMarker';
+import QuestionMarker from '@/src/components/QuestionMarker/QuestionMarker';
 
 const context = describe;
 
