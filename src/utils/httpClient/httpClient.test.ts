@@ -21,7 +21,7 @@ describe('httpClient', () => {
 
     window.fetch = mockFetch;
 
-    const url = 'tests';
+    const url = 'plans/22';
     const options = {
       method: 'get',
       headers: {

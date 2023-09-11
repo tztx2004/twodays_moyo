@@ -11,11 +11,16 @@ import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
 import DetailJoiningCondition from './DetailJoiningCondition/DetailJoiningCondition';
+import { useRouter } from 'next/router';
 
 export default function PayDetail() {
+  const {
+    query: { id },
+  } = useRouter();
+
   useEffect(() => {
     (async () => {
-      const res = await httpMethod.GET('tests');
+      const res = await httpMethod.GET(`plans/${id}`);
       const data = await res.json();
 
       console.log(data);

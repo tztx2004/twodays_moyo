@@ -17,7 +17,7 @@ describe('httpMethod', () => {
 
     window.fetch = mockFetch;
 
-    const endPoint = 'tests';
+    const endPoint = 'plans/22';
 
     const res = await httpMethod.GET(endPoint);
 
