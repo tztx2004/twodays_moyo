@@ -24,14 +24,18 @@ export const Pagination = ({ data }: Idata) => {
   const buttons = [];
   for (let i = data.pageObject.startPage; i <= data.pageObject.endPage; i++) {
     buttons.push(
-      <button
-        key={i}
-        onClick={() => handleButtonClick(i)}
-      >
-        <Link href={`?page=${i}`}
-        className={i === activeButton || (activeButton === null && i === data.pageObject.startPage) ? 'active' : ''}
-        >{i}</Link>
-      </button>
+      <button key={i} onClick={() => handleButtonClick(i)}>
+        <Link
+          href={`?page=${i}`}
+          className={
+            i === activeButton || (activeButton === null && i === data.pageObject.startPage)
+              ? 'active'
+              : ''
+          }
+        >
+          {i}
+        </Link>
+      </button>,
     );
   }
 
