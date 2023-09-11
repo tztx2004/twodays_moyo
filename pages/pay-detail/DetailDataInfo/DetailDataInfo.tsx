@@ -61,6 +61,11 @@ const WrapperBox = styled.section`
   width: 100%;
   border-bottom: 1px solid var(--buttonGray);
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    gap: 1.4rem;
+    border: 0;
+  }
+
   @media all and (max-width: 479px) {
     gap: 1.4rem;
     border: 0;
@@ -120,6 +125,28 @@ const HoverTextBoxArea = styled.div`
   position: absolute;
   bottom: calc(100% - 150px);
   left: calc(100% - 220px);
+
+  @media all and (min-width: 701px) and (max-width: 767px) {
+    bottom: calc(100% - 145px);
+    left: calc(100% - 281px);
+
+    & > div {
+      &::before {
+        left: 70%;
+      }
+    }
+  }
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    bottom: calc(100% - 145px);
+    left: calc(100% - 304px);
+
+    & > div {
+      &::before {
+        left: 60%;
+      }
+    }
+  }
 
   @media all and (max-width: 479px) {
     bottom: calc(100% - 135px);

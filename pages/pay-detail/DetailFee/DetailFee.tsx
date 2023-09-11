@@ -50,6 +50,11 @@ export default function DetailFee() {
 const WrapperBox = styled.section`
   color: var(--fontColor);
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
   @media all and (max-width: 479px) {
     position: fixed;
     background-color: white;
@@ -59,9 +64,9 @@ const WrapperBox = styled.section`
     min-height: 90px;
     justify-content: center;
     align-items: center;
-    margin-top: 51px;
     gap: 5px;
     border-top: 1px solid #f1f3f5;
+    bottom: calc(51px);
   }
 `;
 
@@ -112,18 +117,17 @@ const MonthFeeContent = styled.p`
 
 const HoverTextBoxArea = styled.div`
   position: absolute;
-  top: calc(100% - 175px);
+  top: calc(100% - 180px);
   left: calc(100% - 293px);
-
-  & > div {
-    &::before {
-      left: 25%;
-    }
-  }
 
   @media all and (max-width: 479px) {
     top: calc(100% - 143px);
     left: calc(100% - 186px);
+    & > div {
+      &::before {
+        left: 25%;
+      }
+    }
   }
 `;
 

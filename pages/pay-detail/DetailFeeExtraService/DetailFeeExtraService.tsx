@@ -87,6 +87,10 @@ const WrapperBox = styled.section`
   margin-top: 80px;
   gap: 25px;
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    padding: 0 20px;
+  }
+
   @media all and (max-width: 479px) {
     margin: 40px 0 0 0;
     padding: 0 20px;

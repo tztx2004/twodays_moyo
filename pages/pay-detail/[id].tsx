@@ -1,16 +1,16 @@
 'use client';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
-import DetailTitle from './DetailTitle/DetailTitle';
 import DetailFee from './DetailFee/DetailFee';
-import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
+import httpMethod from '@/src/utils/httpMethod';
+import DetailTitle from './DetailTitle/DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
+import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
-import { useEffect } from 'react';
-import httpMethod from '@/src/utils/httpMethod';
 
 export default function PayDetail() {
   useEffect(() => {

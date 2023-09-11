@@ -67,6 +67,11 @@ const WrapperBox = styled.section`
   border-bottom: 1px solid var(--buttonGray);
   min-height: 130px;
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    padding: 0 20px;
+    border: 0;
+  }
+
   @media all and (max-width: 479px) {
     padding: 0 20px;
     border: 0;
@@ -132,11 +137,41 @@ const FirstHoverTextBox = styled.div`
   right: calc(100% - 185px);
   z-index: 1000;
 
-  @media all and (max-width: 479px) {
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 260px);
+    & > div {
+      &::before {
+        left: 25%;
+      }
+    }
+  }
+
+  @media all and (min-width: 480px) and (max-width: 767px) {
     bottom: calc(100% + 15px);
     right: calc(100% - 275px);
     & > div {
-      font-size: 0.8rem;
+      &::before {
+        left: 20%;
+      }
+    }
+  }
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 325px);
+    & > div {
+      &::before {
+        left: 10%;
+      }
+    }
+  }
+
+  @media all and (max-width: 479px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 265px);
+    & > div {
+      font-size: 0.75rem;
       &::before {
         left: 15%;
       }
@@ -150,14 +185,29 @@ const SecondHoverTextBox = styled.div`
   right: calc(100% - 300px);
   z-index: 1000;
 
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 400px);
+    & > div {
+      &::before {
+        left: 25%;
+      }
+    }
+  }
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 420px);
+  }
+
   @media all and (max-width: 479px) {
     bottom: calc(100% + 15px);
-    right: calc(100% - 395px);
+    right: calc(100% - 365px);
     & > div {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       white-space: normal;
       &::before {
-        left: 20%;
+        left: 25%;
       }
     }
   }

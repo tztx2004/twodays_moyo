@@ -33,6 +33,11 @@ const WrapperBox = styled.section`
   min-height: 115px;
   border-bottom: 1px solid var(--buttonGray);
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    border: 0;
+    padding: 0 20px;
+  }
+
   @media all and (max-width: 479px) {
     border: 0;
     min-height: 80px;

@@ -81,6 +81,10 @@ const WrapperBox = styled.section`
   margin-top: 50px;
   gap: 30px;
 
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    padding: 0 20px;
+  }
+
   @media all and (max-width: 479px) {
     margin: 40px 0 0 0;
     padding: 0 20px;
@@ -117,6 +121,10 @@ const OverUseText = styled.p`
 
 const TableBox = styled.div`
   display: flex;
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 
   @media all and (max-width: 479px) {
     flex-wrap: wrap;
