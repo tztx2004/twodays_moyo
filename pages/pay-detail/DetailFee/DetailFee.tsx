@@ -39,7 +39,7 @@ export default function DetailFee() {
           ) : null}
         </MonthFeeBox>
 
-        <p>12개월 이후 38,000원</p>
+        <ExtraFeeInfoText>12개월 이후 38,000원</ExtraFeeInfoText>
       </InnerBox>
 
       <ApplyBtn>신청하기</ApplyBtn>
@@ -49,6 +49,25 @@ export default function DetailFee() {
 
 const WrapperBox = styled.section`
   color: var(--fontColor);
+
+  @media all and (min-width: 480px) and (max-width: 700px) {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  @media all and (max-width: 479px) {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    min-height: 90px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-top: 1px solid #f1f3f5;
+    bottom: calc(51px);
+  }
 `;
 
 const WrongInfo = styled.span`
@@ -56,6 +75,12 @@ const WrongInfo = styled.span`
   color: var(--fontGray);
   text-decoration: underline;
   cursor: pointer;
+
+  @media all and (max-width: 479px) {
+    text-align: center;
+    font-size: 0.9rem;
+    width: 70px;
+  }
 `;
 
 const InnerBox = styled.div`
@@ -83,12 +108,27 @@ const MonthFeeContent = styled.p`
   color: var(--buttonHover);
   font-size: 1.5rem;
   font-weight: 600;
+
+  @media all and (max-width: 479px) {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
 `;
 
 const HoverTextBoxArea = styled.div`
   position: absolute;
-  top: calc(100% - 175px);
+  top: calc(100% - 180px);
   left: calc(100% - 293px);
+
+  @media all and (max-width: 479px) {
+    top: calc(100% - 143px);
+    left: calc(100% - 186px);
+    & > div {
+      &::before {
+        left: 25%;
+      }
+    }
+  }
 `;
 
 const HoverTextContent = styled.div`
@@ -130,6 +170,12 @@ const BottomRightText = styled.div`
   }
 `;
 
+const ExtraFeeInfoText = styled.p`
+  @media all and (max-width: 479px) {
+    display: none;
+  }
+`;
+
 const ApplyBtn = styled.button`
   width: 100%;
   margin-top: 20px;
@@ -141,4 +187,9 @@ const ApplyBtn = styled.button`
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
+
+  @media all and (max-width: 479px) {
+    width: 40%;
+    margin: 0 0 0 5%;
+  }
 `;
