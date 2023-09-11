@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import { styled } from 'styled-components';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 import Coupon from '../../../src/components/Coupon/Coupon';
-import { styled } from 'styled-components';
 
 export default function DetailCoupon() {
   return (
