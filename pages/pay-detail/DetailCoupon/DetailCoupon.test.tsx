@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import DetailCoupon from './DetailCoupon';
-import Coupon from '@/pages/components/Coupon/Coupon';
+import Coupon from '@/src/components/Coupon/Coupon';
 
 describe('DetailCoupon', () => {
   it('혜택에 대한 설명이 있다.', () => {

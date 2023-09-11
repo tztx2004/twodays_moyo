@@ -2,9 +2,9 @@ import { useRef } from 'react';
 import { GoShare } from 'react-icons/go';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-import useHover from '../../hooks/useHover/useHover';
-import HoverTextBox from '../../components/HoverTextBox/HoverTextBox';
-import Tag from '../../components/Tag/Tag';
+import useHover from '../../../src/hooks/useHover/useHover';
+import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
+import Tag from '../../../src/components/Tag/Tag';
 import { styled } from 'styled-components';
 
 export default function DetailTitle() {
