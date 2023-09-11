@@ -312,10 +312,10 @@ const PhonePlanBx = styled.div`
             width: 50%;
             align-items: center;
             justify-content: space-between;
-            >div{
+            > div {
               width: 100%;
             }
-            >div:nth-child(2){
+            > div:nth-child(2) {
               justify-content: space-between;
             }
           }
@@ -343,14 +343,14 @@ const PhonePlanBx = styled.div`
       }
     }
 
-    >div:last-child{
+    > div:last-child {
       display: flex;
       border: none;
       box-shadow: none;
       gap: 8px;
       justify-content: center;
 
-      button{
+      button {
         width: 40px;
         height: 40px;
         border-radius: 8px;
@@ -358,7 +358,7 @@ const PhonePlanBx = styled.div`
         background: none;
         cursor: pointer;
 
-        >a{
+        > a {
           text-decoration: none;
           font-size: 16px;
           color: rgb(134 142 150/1);
@@ -459,8 +459,7 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-const MainPage = ({data}:any) => {
-  
+const MainPage = ({ data }: any) => {
   return (
     <WrapperBox>
       <Promotion1Bx>
@@ -473,7 +472,7 @@ const MainPage = ({data}:any) => {
         <Promotion2 />
       </Promotion2Bx>
       <PhonePlanBx>
-        <PhonePlan data = {data}/>
+        <PhonePlan data={data} />
       </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />

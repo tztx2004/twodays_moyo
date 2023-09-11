@@ -2,7 +2,6 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Gnb from '../src/components/Gnb/Gnb';
 
-
 if (process.env.NODE_ENV === 'development') {
   if (typeof window === 'undefined') {
     (async () => {

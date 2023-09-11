@@ -9,19 +9,15 @@ interface IPagination {
 
 const Wrapper = styled.div``;
 
-export const Pagination= ({
-  data
-}:any) => {
-  console.log(data)
+export const Pagination = ({ data }: any) => {
+  console.log(data);
   return (
     <Wrapper>
-      {Object.keys(data).map((x:any,idx:number)=>
+      {Object.keys(data).map((x: any, idx: number) => (
         <button key={idx}>
-          <Link href={`/?page=${idx+1}`}>
-            {idx+1}
-          </Link>
+          <Link href={`/?page=${idx + 1}`}>{idx + 1}</Link>
         </button>
-      )}
+      ))}
     </Wrapper>
   );
 };

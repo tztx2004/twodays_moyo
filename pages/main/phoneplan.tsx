@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import Pagenation from './Pagination/Pagination';
 
-function PhonePlan({data}:any) {
+function PhonePlan({ data }: any) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
     <section>
@@ -10,13 +10,13 @@ function PhonePlan({data}:any) {
         요금제가 고민이신가요? <br />
         모요가 추천해 드릴게요
       </h2>
-      <PlanCard data={data}/>
+      <PlanCard data={data} />
       <Pagenation data={data} />
     </section>
   );
 }
 
-function PlanCard({data}:any) {
+function PlanCard({ data }: any) {
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -66,14 +66,16 @@ function PlanCard({data}:any) {
 
   return (
     <>
-      {data.plans.map((x:any, i:number) => (
+      {data.plans.map((x: any, i: number) => (
         <div key={x.plan_id}>
           <div>
             <div>
               <div>
                 <img src={x.carrier_logo} alt='kTskylife' />
               </div>
-              <div>{/* x.개통 && */ <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
+              <div>
+                {/* x.개통 && */ <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}
+              </div>
             </div>
 
             <div>
@@ -104,7 +106,8 @@ function PlanCard({data}:any) {
                 <div>
                   <p>{`${x.discount_period}개월 이후 ${x.original_price}원`}</p>
                   <p>
-                    <AiFillStar color='rgb(252 196 25/1)' /> {/* {x.mvnoRating} | {x.numOfSignup} */} 4.4 | 1000명이 선택
+                    <AiFillStar color='rgb(252 196 25/1)' />{' '}
+                    {/* {x.mvnoRating} | {x.numOfSignup} */} 4.4 | 1000명이 선택
                   </p>
                 </div>
               </div>
