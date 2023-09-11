@@ -1,4 +1,4 @@
-import httpClient from './httpClient';
+import httpClient from './httpClient/httpClient';
 
 class HttpMethod {
   GET(url: string, options = {}) {
