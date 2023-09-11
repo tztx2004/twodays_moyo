@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { GoShare } from 'react-icons/go';
+import { styled } from 'styled-components';
 import { AiOutlineHeart } from 'react-icons/ai';
 
+import Tag from '../../../src/components/Tag/Tag';
 import useHover from '../../../src/hooks/useHover/useHover';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
-import Tag from '../../../src/components/Tag/Tag';
-import { styled } from 'styled-components';
 
 export default function DetailTitle() {
   const SIZE = useRef<number>(23);

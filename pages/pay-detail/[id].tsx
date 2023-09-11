@@ -1,21 +1,26 @@
-'use client';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import DetailFee from './DetailFee/DetailFee';
-import httpMethod from '@/src/utils/httpMethod';
 import DetailTitle from './DetailTitle/DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
+import httpMethod from '@/src/utils/httpMethod/httpMethod';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
+import DetailJoiningCondition from './DetailJoiningCondition/DetailJoiningCondition';
+import { useRouter } from 'next/router';
 
 export default function PayDetail() {
+  const {
+    query: { id },
+  } = useRouter();
+
   useEffect(() => {
     (async () => {
-      const res = await httpMethod.GET('tests');
+      const res = await httpMethod.GET(`plans/${id}`);
       const data = await res.json();
 
       console.log(data);
@@ -36,6 +41,8 @@ export default function PayDetail() {
       <DivideBox />
 
       <DetailFee />
+
+      <DetailJoiningCondition />
 
       <DetailFeeBaseInfo />
 
