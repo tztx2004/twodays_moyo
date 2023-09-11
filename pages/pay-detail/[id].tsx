@@ -1,16 +1,16 @@
-'use client';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import DetailFee from './DetailFee/DetailFee';
-import httpMethod from '@/src/utils/httpMethod/httpMethod';
 import DetailTitle from './DetailTitle/DetailTitle';
 import DetailCoupon from './DetailCoupon/DetailCoupon';
+import httpMethod from '@/src/utils/httpMethod/httpMethod';
 import DetailDataInfo from './DetailDataInfo/DetailDataInfo';
 import DetailOtherInfo from './DetailOtherInfo/DetailOtherInfo';
 import DetailExtraInfo from './DetailExtraInfo/DetailExtraInfo';
 import DetailFeeBaseInfo from './DetailFeeBaseInfo/DetailFeeBaseInfo';
 import DetailFeeExtraService from './DetailFeeExtraService/DetailFeeExtraService';
+import DetailJoiningCondition from './DetailJoiningCondition/DetailJoiningCondition';
 
 export default function PayDetail() {
   useEffect(() => {
@@ -36,6 +36,8 @@ export default function PayDetail() {
       <DivideBox />
 
       <DetailFee />
+
+      <DetailJoiningCondition />
 
       <DetailFeeBaseInfo />
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { styled } from 'styled-components';
 import { useRef } from 'react';
+import { styled } from 'styled-components';
 
 const baseInfo = [
   {

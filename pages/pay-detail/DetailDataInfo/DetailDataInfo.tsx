@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import useHover from '../../../src/hooks/useHover/useHover';
-import QuestionMarker from '../../../src/components/QuestionMarker/QuestionMarker';
+import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
 export default function DetailDataInfo() {
