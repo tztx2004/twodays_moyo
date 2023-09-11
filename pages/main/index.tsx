@@ -460,8 +460,6 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-
-
 const MainPage = ({ data }: Idata) => {
   return (
     <WrapperBox>

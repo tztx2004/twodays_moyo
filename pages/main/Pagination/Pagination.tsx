@@ -21,8 +21,10 @@ export const Pagination = ({ data }: Idata) => {
     <Wrapper>
       {Object.keys(data).map((x: any, idx: number) => (
         <button key={idx} onClick={() => handleButtonClick(idx)}>
-          <Link className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
-            href={`?page=${idx + 1}`}>
+          <Link
+            className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
+            href={`?page=${idx + 1}`}
+          >
             {idx + 1}
           </Link>
         </button>
