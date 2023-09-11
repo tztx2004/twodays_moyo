@@ -54,7 +54,9 @@ const WrapperBox = styled.div`
 `;
 
 const DivideBox = styled.div`
-  background-color: #f5f5f5;
-  width: 100%;
-  height: 15px;
+  @media all and (max-width: 479px) {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 15px;
+  }
 `;
