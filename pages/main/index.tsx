@@ -308,9 +308,16 @@ const PhonePlanBx = styled.div`
             font-weight: bold;
             color: rgb(66, 90, 213);
             display: flex;
+            flex-direction: column;
             width: 50%;
             align-items: center;
             justify-content: space-between;
+            >div{
+              width: 100%;
+            }
+            >div:nth-child(2){
+              justify-content: space-between;
+            }
           }
           div > p {
             font-size: 12px;
@@ -332,6 +339,38 @@ const PhonePlanBx = styled.div`
               background-color: var(--buttonHover);
             }
           }
+        }
+      }
+    }
+
+    >div:last-child{
+      display: flex;
+      border: none;
+      box-shadow: none;
+      gap: 8px;
+      justify-content: center;
+
+      button{
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        >a{
+          text-decoration: none;
+          font-size: 16px;
+          color: rgb(134 142 150/1);
+
+          /* background: var(--buttonColor); */
+          /* color: #ffffff; */
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
         }
       }
     }
@@ -420,7 +459,8 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-const MainPage = () => {
+const MainPage = ({data}:any) => {
+  
   return (
     <WrapperBox>
       <Promotion1Bx>
@@ -433,7 +473,7 @@ const MainPage = () => {
         <Promotion2 />
       </Promotion2Bx>
       <PhonePlanBx>
-        <PhonePlan />
+        <PhonePlan data = {data}/>
       </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />

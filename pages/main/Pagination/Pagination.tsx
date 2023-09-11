@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 interface IPagination {
@@ -8,18 +9,19 @@ interface IPagination {
 
 const Wrapper = styled.div``;
 
-export const Pagination: React.FC<IPagination> = ({
-  currnetPage,
-  totalPage,
-  chunkPage,
-}: IPagination) => {
+export const Pagination= ({
+  data
+}:any) => {
+  console.log(data)
   return (
     <Wrapper>
-      {/* {
-        totalPage.map((_: number, idx: number) => (
-          <div key={idx}>{idx}</div>
-        ))
-      } */}
+      {Object.keys(data).map((x:any,idx:number)=>
+        <button key={idx}>
+          <Link href={`/?page=${idx+1}`}>
+            {idx+1}
+          </Link>
+        </button>
+      )}
     </Wrapper>
   );
 };

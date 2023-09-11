@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import Pagenation from './Pagination/Pagination';
 
-function PhonePlan() {
+function PhonePlan({data}:any) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
     <section>
@@ -10,13 +10,13 @@ function PhonePlan() {
         요금제가 고민이신가요? <br />
         모요가 추천해 드릴게요
       </h2>
-      <PlanCard />
-      <Pagenation currnetPage={1} totalPage={120} chunkPage={50} />
+      <PlanCard data={data}/>
+      <Pagenation data={data} />
     </section>
   );
 }
 
-function PlanCard() {
+function PlanCard({data}:any) {
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -66,48 +66,51 @@ function PlanCard() {
 
   return (
     <>
-      {tempData.map((x, i) => (
-        <div key={x.id}>
+      {data.plans.map((x:any, i:number) => (
+        <div key={x.plan_id}>
           <div>
             <div>
               <div>
-                <img src={x.src} alt='kTskylife' />
+                <img src={x.carrier_logo} alt='kTskylife' />
               </div>
-              <div>{x.개통 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
+              <div>{/* x.개통 && */ <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
             </div>
 
             <div>
-              <h4>{x.title}</h4>
+              <h4>{x.plan_title}</h4>
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
 
             <h3>
-              월 {x.dataPlan} + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
+              월 {x.monthly_data} + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
             </h3>
 
             <ul>
-              <li>{x.callPlan}</li>
+              <li>{x.voice}분</li>
               <li></li>
-              <li>{x.smsPlan}</li>
+              <li>{x.SMS}</li>
               <li></li>
-              <li>{x.mno}</li>
+              <li>{x.parent_carrier}</li>
               <li></li>
-              <li>{x.net}</li>
+              <li>{x.network}</li>
             </ul>
 
             <div>
               <div>
                 <div>
-                  월 {x.price.toLocaleString()}원
+                  월 {x.discounted_price.toLocaleString()}원
                   <AiFillQuestionCircle color='#dee2e6' />
                 </div>
-                <p>
-                  <AiFillStar color='rgb(252 196 25/1)' /> {x.mvnoRating} | {x.numOfSignup}명이 선택
-                </p>
+                <div>
+                  <p>{`${x.discount_period}개월 이후 ${x.original_price}원`}</p>
+                  <p>
+                    <AiFillStar color='rgb(252 196 25/1)' /> {/* {x.mvnoRating} | {x.numOfSignup} */} 4.4 | 1000명이 선택
+                  </p>
+                </div>
               </div>
 
               <div>
-                <Link href={`./pay-detail/${x.id}`}>
+                <Link href={`./pay-detail/${x.plan_id}`}>
                   <button>자세히 보기</button>
                 </Link>
               </div>
@@ -119,11 +122,4 @@ function PlanCard() {
   );
 }
 
-async function getData() {
-  const res = await fetch('http://172.30.1.68:3000/plans?page=1');
-  const data = res.json();
-  console.log(data);
-  return data;
-}
-getData;
 export default PhonePlan;

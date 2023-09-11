@@ -82,7 +82,7 @@ function Gnb() {
     <WrapperBx>
       <header>
         <div>
-          <Link href={'/main'}>
+          <Link href={'/'}>
             <picture>
               <source srcSet='/images/moyo-icon.svg' media='(max-width : 700px)' />
               <img src='/images/moyo-full.svg' alt='메인로고' />
