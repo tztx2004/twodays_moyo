@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
+import Pagenation from './Pagination/Pagination';
 
 function PhonePlan() {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
@@ -10,6 +11,7 @@ function PhonePlan() {
         모요가 추천해 드릴게요
       </h2>
       <PlanCard />
+      <Pagenation currnetPage={1} totalPage={120} chunkPage={50}/>
     </section>
   );
 }
