@@ -32,11 +32,11 @@ export default function DetailTitle() {
         <LikeAndShareBtnBox>
           <LikeAndShareBtn>
             <AiOutlineHeart size={SIZE.current} />
-            <p>찜</p>
+            <ButtonText>찜</ButtonText>
           </LikeAndShareBtn>
           <LikeAndShareBtn>
             <GoShare size={SIZE.current} />
-            <p>공유</p>
+            <ButtonText>공유</ButtonText>
           </LikeAndShareBtn>
         </LikeAndShareBtnBox>
       </AdditionalInfoBox>
@@ -66,6 +66,11 @@ const WrapperBox = styled.section`
   gap: 0.7rem;
   border-bottom: 1px solid var(--buttonGray);
   min-height: 130px;
+
+  @media all and (max-width: 479px) {
+    padding: 0 20px;
+    border: 0;
+  }
 `;
 
 const TagBox = styled.div`
@@ -76,6 +81,10 @@ const TagBox = styled.div`
 const PlanName = styled.p`
   font-size: 1.5rem;
   font-weight: 900;
+
+  @media all and (max-width: 479px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const AdditionalInfoBox = styled.div`
@@ -85,6 +94,10 @@ const AdditionalInfoBox = styled.div`
 
 const NumberOfSubscribers = styled.p`
   color: #9298a0;
+
+  @media all and (max-width: 479px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const LikeAndShareBtnBox = styled.div`
@@ -92,6 +105,11 @@ const LikeAndShareBtnBox = styled.div`
   gap: 2rem;
   color: #495057;
   margin: 0;
+
+  @media all and (max-width: 479px) {
+    margin-top: 20px;
+    gap: 1rem;
+  }
 `;
 
 const LikeAndShareBtn = styled.div`
@@ -101,12 +119,29 @@ const LikeAndShareBtn = styled.div`
   cursor: pointer;
 `;
 
+const ButtonText = styled.p`
+  @media all and (max-width: 479px) {
+    display: none;
+  }
+`;
+
 const FirstHoverTextBox = styled.div`
   position: absolute;
-  bottom: calc(100% + 15px);
   width: auto;
+  bottom: calc(100% + 15px);
   right: calc(100% - 185px);
   z-index: 1000;
+
+  @media all and (max-width: 479px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 275px);
+    & > div {
+      font-size: 0.8rem;
+      &::before {
+        left: 15%;
+      }
+    }
+  }
 `;
 
 const SecondHoverTextBox = styled.div`
@@ -114,6 +149,18 @@ const SecondHoverTextBox = styled.div`
   bottom: calc(100% + 15px);
   right: calc(100% - 300px);
   z-index: 1000;
+
+  @media all and (max-width: 479px) {
+    bottom: calc(100% + 15px);
+    right: calc(100% - 395px);
+    & > div {
+      font-size: 0.8rem;
+      white-space: normal;
+      &::before {
+        left: 20%;
+      }
+    }
+  }
 `;
 
 const HoverText = styled.p`

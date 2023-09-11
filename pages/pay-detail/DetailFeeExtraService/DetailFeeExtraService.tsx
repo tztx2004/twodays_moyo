@@ -86,6 +86,11 @@ const WrapperBox = styled.section`
   flex-direction: column;
   margin-top: 80px;
   gap: 25px;
+
+  @media all and (max-width: 479px) {
+    margin: 40px 0 0 0;
+    padding: 0 20px;
+  }
 `;
 
 const ContentsBox = styled.div`

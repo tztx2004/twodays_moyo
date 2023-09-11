@@ -34,6 +34,12 @@ const WrapperBox = styled.section`
     display: flex;
     justify-content: center;
   }
+
+  @media all and (max-width: 479px) {
+    padding: 0 20px;
+    font-weight: 600;
+    margin: 35px 0;
+  }
 `;
 
 const Title = styled.p`

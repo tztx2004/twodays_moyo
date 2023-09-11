@@ -71,6 +71,11 @@ const WrapperBox = styled.section`
   flex-direction: column;
   gap: 25px;
   margin-top: 80px;
+
+  @media all and (max-width: 479px) {
+    margin: 40px 0 0 0;
+    padding: 0 20px;
+  }
 `;
 
 const Title = styled.p`

@@ -58,7 +58,14 @@ const WrapperBox = styled.section`
   align-items: center;
   gap: 2.5rem;
   min-height: 115px;
+  width: 100%;
   border-bottom: 1px solid var(--buttonGray);
+
+  @media all and (max-width: 479px) {
+    gap: 1.4rem;
+    border: 0;
+    min-height: 80px;
+  }
 `;
 
 const Div = styled.div`
@@ -67,21 +74,40 @@ const Div = styled.div`
   align-items: center;
   font-weight: 900;
   font-size: 1.2rem;
+
+  @media all and (max-width: 479px) {
+    gap: 5px;
+  }
 `;
 
 const ExplanationText = styled.p`
   font-size: 0.8rem;
+
+  @media all and (max-width: 479px) {
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
 `;
 
 const DataText = styled.p`
   font-size: 1.8rem;
   font-weight: 900;
+
+  @media all and (max-width: 479px) {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 `;
 
 const EmphasisDataText = styled.p`
   color: var(--buttonHover);
   font-weight: 900;
   font-size: 1.8rem;
+
+  @media all and (max-width: 479px) {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 `;
 
 const EmptyDataBox = styled.div`
@@ -94,6 +120,17 @@ const HoverTextBoxArea = styled.div`
   position: absolute;
   bottom: calc(100% - 150px);
   left: calc(100% - 220px);
+
+  @media all and (max-width: 479px) {
+    bottom: calc(100% - 135px);
+    left: calc(100% - 305px);
+
+    & > div {
+      &::before {
+        left: 85%;
+      }
+    }
+  }
 `;
 
 const HoverText = styled.p`
