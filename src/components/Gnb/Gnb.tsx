@@ -68,6 +68,7 @@ const WrapperBx = styled.div`
       height: 50px;
       background: #fff;
       display: flex;
+      border-top: 1px solid rgb(241, 243, 245);
       > ul {
         margin: 0 auto;
         justify-content: center;
@@ -83,8 +84,8 @@ function Gnb() {
         <div>
           <Link href={'/main'}>
             <picture>
-              <source srcSet='./images/moyo-icon.svg' media='(max-width : 700px)' />
-              <img src='./images/moyo-full.svg' alt='메인로고' />
+              <source srcSet='/images/moyo-icon.svg' media='(max-width : 700px)' />
+              <img src='/images/moyo-full.svg' alt='메인로고' />
             </picture>
           </Link>
         </div>

@@ -5,6 +5,7 @@ import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
 import PhonePlan from './phoneplan';
 import TestPage from './fetchdatapractice';
+import Promotion4 from './promotion4';
 
 const WrapperBox = styled.div`
   margin: 0 auto;
@@ -328,7 +329,7 @@ const PhonePlanBx = styled.div`
               width: 80px;
               cursor: pointer;
             }
-            :hover {
+            a > button:hover {
               background-color: var(--buttonHover);
             }
           }
@@ -359,12 +360,76 @@ const PhonePlanBx = styled.div`
   }
 `;
 
+const Promotion4Bx = styled.div`
+  section {
+    > h2 {
+      margin-top: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      word-break: keep-all;
+      color: #2a3037;
+    }
+    > div {
+      cursor: pointer;
+      > ul {
+        display: grid;
+        grid-template-columns: 64px auto 20px;
+        -webkit-column-gap: 16px;
+        column-gap: 16px;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border: 1px solid #e5eaff;
+        box-shadow: 0px 2px 8px 0px #4950570f;
+        margin-bottom: 10px;
+        > li {
+          display: flex;
+        }
+        > li:first-child {
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.6;
+          color: #8195ff;
+          word-break: keep-all;
+          justify-content: center;
+          align-items: center;
+        }
+        > li:nth-child(2) {
+          flex-direction: column;
+          justify-content: center;
+          flex-wrap: wrap;
+          > h3 {
+            font-size: inherit;
+            font-weight: 700;
+            line-height: 1.6;
+            color: #495057;
+            word-break: keep-all;
+          }
+          > p {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #868e96;
+            word-break: keep-all;
+          }
+        }
+        > li:nth-child(3) {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+`;
+
 const MainPage = () => {
   return (
     <WrapperBox>
       <Promotion1Bx>
         <Promotion1 />
       </Promotion1Bx>
+      <Promotion4Bx>
+        <Promotion4 />
+      </Promotion4Bx>
       <Promotion2Bx>
         <Promotion2 />
       </Promotion2Bx>
