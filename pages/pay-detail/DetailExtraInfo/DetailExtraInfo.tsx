@@ -80,6 +80,7 @@ const WrapperBox = styled.section`
   flex-direction: column;
   margin-top: 50px;
   gap: 30px;
+  margin-bottom: 400px;
 
   @media all and (min-width: 480px) and (max-width: 700px) {
     padding: 0 20px;
