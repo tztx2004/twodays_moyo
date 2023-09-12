@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Idata } from '../type';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
   .active {
@@ -12,16 +13,18 @@ const Wrapper = styled.div`
 
 export const Pagination = ({ data }: Idata) => {
   const [activeButton, setActiveButton] = useState<number | null>(null);
+  const router = useRouter(); // 추가
+
+  useEffect(() => {
+    if(typeof window!=='undefined' && window?.location.search.length>0){
+      window.scrollTo({top:940}); // 추가
+    }
+  }, [router.asPath]); // 라우터의 경로가 변경될 때마다 실행
 
   const handleButtonClick = (idx: number) => {
     setActiveButton(idx);
   };
 
-  // 버튼 클릭 시 해당 컴포넌트의 제목까지 스크롤 됨
-  const scrollTO = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    typeof window !== 'undefined' ? window.scrollTo({ top: 950, behavior: 'smooth' }) : null;
-  };
 
   return (
     <Wrapper>
@@ -30,7 +33,6 @@ export const Pagination = ({ data }: Idata) => {
           <Link
             className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
             href={`?page=${idx + 1}`}
-            onClick={scrollTO}
           >
             {idx + 1}
           </Link>
