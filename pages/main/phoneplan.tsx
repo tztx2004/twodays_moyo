@@ -1,9 +1,14 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 import Pagenation from './Pagination/Pagination';
+import Image from 'next/image';
+import { Idata } from './type';
 
-function PhonePlan({ data }: any) {
+function PhonePlan({ data }: Idata) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
+
+  
+
   return (
     <section>
       <h2>
@@ -16,7 +21,7 @@ function PhonePlan({ data }: any) {
   );
 }
 
-function PlanCard({ data }: any) {
+function PlanCard({ data }: Idata) {
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -70,8 +75,8 @@ function PlanCard({ data }: any) {
         <div key={x.plan_id}>
           <div>
             <div>
-              <div>
-                <img src={x.carrier_logo} alt='kTskylife' />
+              <div style={{display: "block"}}>
+                <Image src={"/images/kTskylife.svg"} alt="kt" width={50} height={20} layout='responsive'/>
               </div>
               <div>
                 {/* x.개통 && */ <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}
@@ -84,7 +89,7 @@ function PlanCard({ data }: any) {
             </div>
 
             <h3>
-              월 {x.monthly_data} + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
+              월 {x.monthly_data} + {x.postExhaustedDataSpeed}Mbps <AiFillQuestionCircle color='#dee2e6' />
             </h3>
 
             <ul>
@@ -106,8 +111,7 @@ function PlanCard({ data }: any) {
                 <div>
                   <p>{`${x.discount_period}개월 이후 ${x.original_price}원`}</p>
                   <p>
-                    <AiFillStar color='rgb(252 196 25/1)' />{' '}
-                    {/* {x.mvnoRating} | {x.numOfSignup} */} 4.4 | 1000명이 선택
+                    <AiFillStar color='rgb(252 196 25/1)' />{' '}{x.starPoint.score} | {x.starPoint.numberOfParticipants}명이 선택
                   </p>
                 </div>
               </div>
