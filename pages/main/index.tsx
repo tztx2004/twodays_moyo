@@ -260,6 +260,10 @@ const PhonePlanBx = styled.div`
           justify-content: space-between;
         }
 
+        div:nth-child(1) {
+          height: 30px;
+          margin-bottom: 10px;
+        }
         div:nth-child(2) {
           margin-bottom: 10px;
           align-items: center;
