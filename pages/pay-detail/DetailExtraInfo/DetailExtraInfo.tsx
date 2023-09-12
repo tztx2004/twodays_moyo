@@ -1,25 +1,6 @@
 import { styled } from 'styled-components';
 
-const tmpData = [
-  {
-    title: '가입시 인증 방법',
-    content: '네이버인증, 신용카드 인증',
-  },
-  {
-    title: '미성년자 가입',
-    content: '온라인 신청 가능',
-  },
-  {
-    title: '외국인 가입',
-    content: '본인확인 절차 진행 후 온라인 또는 전화상담으로 신청서 작성 가능',
-  },
-  {
-    title: '번호이동 수수료',
-    content: '없음',
-  },
-];
-
-const tableData = [
+const extraFeeData = [
   {
     title: '영상 통화',
     value: '3.3원/초',
@@ -42,11 +23,35 @@ const tableData = [
   },
 ];
 
-export default function DetailExtraInfo() {
+export default function DetailExtraInfo({
+  authMethod = '',
+  underAge = 0,
+  foreigner = 0,
+  transferCharge = 0,
+}) {
+  const extraInfoData = [
+    {
+      title: '가입시 인증 방법',
+      content: authMethod,
+    },
+    {
+      title: '미성년자 가입',
+      content: underAge ? '온라인 신청 가능' : '미지원',
+    },
+    {
+      title: '외국인 가입',
+      content: foreigner ? foreigner : '미지원',
+    },
+    {
+      title: '번호이동 수수료',
+      content: transferCharge ? `${transferCharge}원` : '없음',
+    },
+  ];
+
   return (
     <WrapperBox>
       <Title>기타 정보</Title>
-      {tmpData.map(data => {
+      {extraInfoData.map(data => {
         return (
           <Contents key={data.title}>
             <ContentsTitle>{data.title}</ContentsTitle>
@@ -58,7 +63,7 @@ export default function DetailExtraInfo() {
       <OverUseText>기본 제공 초과 시</OverUseText>
 
       <TableBox>
-        {tableData.map((data, index) => {
+        {extraFeeData.map((data, index) => {
           return (
             <TableContents key={data.title}>
               <TableTitle index={index}>{data.title}</TableTitle>
@@ -80,14 +85,14 @@ const WrapperBox = styled.section`
   flex-direction: column;
   margin-top: 50px;
   gap: 30px;
-  margin-bottom: 400px;
+  margin-bottom: 250px;
 
   @media all and (min-width: 480px) and (max-width: 700px) {
     padding: 0 20px;
   }
 
   @media all and (max-width: 479px) {
-    margin: 40px 0 0 0;
+    margin-top: 40px;
     padding: 0 20px;
   }
 `;

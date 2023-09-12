@@ -7,7 +7,7 @@ import Tag from '../../../src/components/Tag/Tag';
 import useHover from '../../../src/hooks/useHover/useHover';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
-export default function DetailTitle() {
+export default function DetailTitle({ title = '요금제 이름', userNum = 0 }) {
   const SIZE = useRef<number>(23);
   const [hover, mouseOver, mouseLeave] = useHover();
 
@@ -24,10 +24,10 @@ export default function DetailTitle() {
         />
       </TagBox>
 
-      <PlanName data-testid='title'>[모요only] 슈가매니아 11GB+매일2GB+</PlanName>
+      <PlanName data-testid='title'>{title}</PlanName>
 
       <AdditionalInfoBox>
-        <NumberOfSubscribers>44,966명이 선택</NumberOfSubscribers>
+        <NumberOfSubscribers>{`${userNum.toLocaleString()}명이 선택`}</NumberOfSubscribers>
 
         <LikeAndShareBtnBox>
           <LikeAndShareBtn>

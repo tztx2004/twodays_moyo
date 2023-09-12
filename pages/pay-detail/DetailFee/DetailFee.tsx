@@ -4,7 +4,7 @@ import useHover from '../../../src/hooks/useHover/useHover';
 import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
-export default function DetailFee() {
+export default function DetailFee({ originalPrice = 0, period = 0, discountPrice = 0 }) {
   const [hover, mouseOver, mouseLeave] = useHover();
 
   return (
@@ -14,23 +14,33 @@ export default function DetailFee() {
       <InnerBox>
         <MonthFeeBox>
           <QuestionMarker onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave} />
-          <MonthFeeContent>월 25,790원</MonthFeeContent>
+          <MonthFeeContent>{`월 ${discountPrice.toLocaleString()}원`}</MonthFeeContent>
 
           {hover ? (
             <HoverTextBoxArea>
               <HoverTextBox>
                 <HoverTextContent data-testid='hover-text'>
-                  <TopText>12개월까지만 사용해도 위약금이 발생하지 않아요</TopText>
+                  <TopText>{`${period}개월까지만 사용해도 위약금이 발생하지 않아요`}</TopText>
 
                   <BottomText>
                     <BottomLeftText>
                       <p>12개월 사용 시</p>
-                      <p>총 309,480원</p>
+                      <p>{`총 ${periodPrice(
+                        period,
+                        originalPrice,
+                        discountPrice,
+                        12,
+                      ).toLocaleString()}원`}</p>
                     </BottomLeftText>
 
                     <BottomRightText>
                       <p>24개월 사용 시</p>
-                      <p>총 765,480원</p>
+                      <p>{`총 ${periodPrice(
+                        period,
+                        originalPrice,
+                        discountPrice,
+                        24,
+                      ).toLocaleString()}원`}</p>
                     </BottomRightText>
                   </BottomText>
                 </HoverTextContent>
@@ -39,13 +49,16 @@ export default function DetailFee() {
           ) : null}
         </MonthFeeBox>
 
-        <ExtraFeeInfoText>12개월 이후 38,000원</ExtraFeeInfoText>
+        <ExtraFeeInfoText>{`${period}개월 이후 ${originalPrice.toLocaleString()}원`}</ExtraFeeInfoText>
       </InnerBox>
 
       <ApplyBtn>신청하기</ApplyBtn>
     </WrapperBox>
   );
 }
+
+const periodPrice = (period = 0, originalPrice = 0, discountPrice = 0, totalPeriod = 0) =>
+  discountPrice * period + (totalPeriod - period) * originalPrice;
 
 const WrapperBox = styled.section`
   color: var(--fontColor);
@@ -117,12 +130,12 @@ const MonthFeeContent = styled.p`
 
 const HoverTextBoxArea = styled.div`
   position: absolute;
-  top: calc(100% - 180px);
-  left: calc(100% - 293px);
+  top: calc(100% - 175px);
+  left: calc(100% - 298px);
 
   @media all and (max-width: 479px) {
-    top: calc(100% - 143px);
-    left: calc(100% - 186px);
+    top: calc(100% - 190px);
+    left: calc(100% - 190px);
     & > div {
       &::before {
         left: 25%;
@@ -172,7 +185,7 @@ const BottomRightText = styled.div`
 
 const ExtraFeeInfoText = styled.p`
   @media all and (max-width: 479px) {
-    display: none;
+    width: 115px;
   }
 `;
 
@@ -190,6 +203,6 @@ const ApplyBtn = styled.button`
 
   @media all and (max-width: 479px) {
     width: 40%;
-    margin: 0 0 0 5%;
+    margin: 0 0 0 2.5%;
   }
 `;
