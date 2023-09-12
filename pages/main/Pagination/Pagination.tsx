@@ -18,10 +18,10 @@ export const Pagination = ({ data }: Idata) => {
   };
 
   // 버튼 클릭 시 해당 컴포넌트의 제목까지 스크롤 됨
-  const scrollTO = (e:React.MouseEvent<HTMLAnchorElement>)=>{
+  const scrollTO = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    typeof window !== 'undefined'? window.scrollTo({top: 950, behavior:'smooth'}) : null
-  }
+    typeof window !== 'undefined' ? window.scrollTo({ top: 950, behavior: 'smooth' }) : null;
+  };
 
   return (
     <Wrapper>
@@ -30,7 +30,7 @@ export const Pagination = ({ data }: Idata) => {
           <Link
             className={idx === activeButton || (activeButton === null && idx === 0) ? 'active' : ''}
             href={`?page=${idx + 1}`}
-            onClick = {scrollTO}
+            onClick={scrollTO}
           >
             {idx + 1}
           </Link>

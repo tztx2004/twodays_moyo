@@ -7,8 +7,6 @@ import { Idata } from './type';
 function PhonePlan({ data }: Idata) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
 
-  
-
   return (
     <section>
       <h2>
@@ -75,8 +73,14 @@ function PlanCard({ data }: Idata) {
         <div key={x.plan_id}>
           <div>
             <div>
-              <div style={{display: "block"}}>
-                <Image src={"/images/kTskylife.svg"} alt="kt" width={50} height={20} layout='responsive'/>
+              <div style={{ display: 'block' }}>
+                <Image
+                  src={'/images/kTskylife.svg'}
+                  alt='kt'
+                  width={50}
+                  height={20}
+                  layout='responsive'
+                />
               </div>
               <div>
                 {/* x.개통 && */ <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}
@@ -89,7 +93,8 @@ function PlanCard({ data }: Idata) {
             </div>
 
             <h3>
-              월 {x.monthly_data} + {x.postExhaustedDataSpeed}Mbps <AiFillQuestionCircle color='#dee2e6' />
+              월 {x.monthly_data} + {x.postExhaustedDataSpeed}Mbps{' '}
+              <AiFillQuestionCircle color='#dee2e6' />
             </h3>
 
             <ul>
@@ -111,7 +116,8 @@ function PlanCard({ data }: Idata) {
                 <div>
                   <p>{`${x.discount_period}개월 이후 ${x.original_price}원`}</p>
                   <p>
-                    <AiFillStar color='rgb(252 196 25/1)' />{' '}{x.starPoint.score} | {x.starPoint.numberOfParticipants}명이 선택
+                    <AiFillStar color='rgb(252 196 25/1)' /> {x.starPoint.score} |{' '}
+                    {x.starPoint.numberOfParticipants}명이 선택
                   </p>
                 </div>
               </div>
