@@ -4,31 +4,37 @@ import useHover from '../../../src/hooks/useHover/useHover';
 import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
-export default function DetailDataInfo() {
+interface IDetailDataInfo {
+  monthData: number;
+  dailyData?: number;
+  exhaustedData?: number;
+}
+
+export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: IDetailDataInfo) {
   const [hover, mouseHover, mouseLeave] = useHover();
 
   return (
     <WrapperBox>
       <Div>
         <ExplanationText>총 데이터</ExplanationText>
-        <EmphasisDataText>71GB</EmphasisDataText>
+        <EmphasisDataText>{`${addData(monthData, dailyData)}GB`}</EmphasisDataText>
       </Div>
 
       <p>=</p>
 
       <Div>
         <ExplanationText>매월</ExplanationText>
-        <DataText>11GB</DataText>
+        <DataText>{`${monthData}GB`}</DataText>
       </Div>
 
-      <p>+</p>
+      {dailyData ? <p>+</p> : <p></p>}
 
       <Div>
         <ExplanationText>매일</ExplanationText>
-        <DataText>2GB</DataText>
+        <DataText>{`${dailyData}GB`}</DataText>
       </Div>
 
-      <p>+</p>
+      {exhaustedData ? <p>+</p> : <p></p>}
 
       <Div>
         <EmptyDataBox>
@@ -46,11 +52,15 @@ export default function DetailDataInfo() {
           ) : null}
         </EmptyDataBox>
 
-        <DataText>3Mbps</DataText>
+        <DataText>{`${exhaustedData}Mbps`}</DataText>
       </Div>
     </WrapperBox>
   );
 }
+
+const addData = (month = 0, daily = 0) => {
+  return month + daily * 30;
+};
 
 const WrapperBox = styled.section`
   display: flex;
@@ -124,7 +134,7 @@ const EmptyDataBox = styled.div`
 const HoverTextBoxArea = styled.div`
   position: absolute;
   bottom: calc(100% - 150px);
-  left: calc(100% - 220px);
+  left: calc(100% - 216px);
 
   @media all and (min-width: 701px) and (max-width: 767px) {
     bottom: calc(100% - 145px);

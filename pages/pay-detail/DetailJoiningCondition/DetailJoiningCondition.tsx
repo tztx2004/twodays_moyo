@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import InfoMarker from '@/src/components/InfoMarker/InfoMarker';
 
-export default function DetailJoiningCondition() {
+export default function DetailJoiningCondition({ requirement = '' }) {
   return (
     <WapperBox>
       <TitleBox>
@@ -12,9 +12,7 @@ export default function DetailJoiningCondition() {
 
       <ContentsBox>
         <p>•</p>
-        <Content>
-          해당 요금제는 번호이동 시 이전통신사 90일 이상 사용하신 경우에만 가입 가능합니다.
-        </Content>
+        <Content>{requirement}</Content>
       </ContentsBox>
     </WapperBox>
   );

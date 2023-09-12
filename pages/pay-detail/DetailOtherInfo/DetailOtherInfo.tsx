@@ -1,26 +1,26 @@
 import { styled } from 'styled-components';
 
-export default function DetailOtherInfo() {
+export default function DetailOtherInfo({ voice = '', SMS = '', carrier = '', network = '' }) {
   return (
     <WrapperBox>
       <div>
         <p>통화</p>
-        <p>무제한</p>
+        <p>{voice}</p>
       </div>
 
       <div>
         <p>문자</p>
-        <p>무제한</p>
+        <p>{SMS}</p>
       </div>
 
       <div>
         <p>통신망</p>
-        <p>LGU+망</p>
+        <p>{carrier}</p>
       </div>
 
       <div>
         <p>통신기술</p>
-        <p>LTE</p>
+        <p>{network}</p>
       </div>
     </WrapperBox>
   );
