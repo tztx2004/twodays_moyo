@@ -83,7 +83,9 @@ function PlanCard({ data }: Idata) {
                 />
               </div>
               <div>
-                { x.isAppliableHere===1 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}
+                {x.isAppliableHere === 1 && (
+                  <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />
+                )}
               </div>
             </div>
 

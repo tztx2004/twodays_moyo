@@ -16,15 +16,14 @@ export const Pagination = ({ data }: Idata) => {
   const router = useRouter(); // 추가
 
   useEffect(() => {
-    if(typeof window!=='undefined' && window?.location.search.length>0){
-      window.scrollTo({top:940}); // 추가
+    if (typeof window !== 'undefined' && window?.location.search.length > 0) {
+      window.scrollTo({ top: 940 }); // 추가
     }
   }, [router.asPath]); // 라우터의 경로가 변경될 때마다 실행
 
   const handleButtonClick = (idx: number) => {
     setActiveButton(idx);
   };
-
 
   return (
     <Wrapper>
