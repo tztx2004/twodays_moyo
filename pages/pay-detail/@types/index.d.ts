@@ -46,4 +46,5 @@ interface Plan {
   MMS_video_price: number;
   family_combination: number;
   mobile_hotSpot: number;
+  [extraService: string]: number;
 }

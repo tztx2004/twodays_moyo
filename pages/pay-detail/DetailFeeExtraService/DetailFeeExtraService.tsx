@@ -2,35 +2,29 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
-const provideData = [
-  {
-    icon: '모바일핫스팟',
-    title: '모바일 핫스팟',
-    content: '10GB 제공',
-  },
-  {
-    icon: '해외로밍',
-    title: '해외로밍',
-    content: '신청은 통신사에 문의',
-  },
-];
+interface IDataName {
+  [name: string]: string;
+}
 
-const noneProvideData = [
-  {
-    icon: '가족결합',
-    title: '가족 결합',
-  },
-  {
-    icon: '소액결제',
-    title: '소액결제',
-  },
-  {
-    icon: '데이터쉐어링',
-    title: '데이터 쉐어링',
-  },
-];
+const dataName: IDataName = {
+  micropayment: '소액 결제',
+  roaming: '해외 로밍',
+  family_combination: '가족 결합',
+  mobile_hotSpot: '모바일 핫스팟',
+  data_sharing: '데이터 쉐어링',
+};
 
-export default function DetailFeeExtraService() {
+interface IDetailFeeExtraService {
+  isSupported: string[];
+  isUnSupported: string[];
+  plan: Partial<Plan>;
+}
+
+export default function DetailFeeExtraService({
+  isSupported,
+  isUnSupported,
+  plan,
+}: IDetailFeeExtraService) {
   const SIZE = useRef<number>(22);
 
   return (
@@ -41,19 +35,20 @@ export default function DetailFeeExtraService() {
         <ProvideBox>
           <ProvideTitle>지원</ProvideTitle>
 
-          {provideData.map(data => {
+          {isSupported.map(data => {
+            console.log(dataName[data]);
             return (
-              <ProvideItemBox key={data.title}>
+              <ProvideItemBox key={dataName[data]}>
                 <Image
-                  src={`/images/${data.icon}.svg`}
-                  alt={`${data.icon}`}
+                  src={`/images/${dataName[data].replace(' ', '')}.svg`}
+                  alt={`${dataName[data].replace(' ', '')}`}
                   width={SIZE.current}
                   height={SIZE.current}
                 />
 
                 <ProvideContent>
-                  <p>{data.title}</p>
-                  <p>{data.content}</p>
+                  <p>{dataName[data]}</p>
+                  <p>{plan[data]}</p>
                 </ProvideContent>
               </ProvideItemBox>
             );
@@ -62,16 +57,16 @@ export default function DetailFeeExtraService() {
 
         <NoneProvideBox>
           <NoneProvideTitle>미지원</NoneProvideTitle>
-          {noneProvideData.map(data => {
+          {isUnSupported.map(data => {
             return (
-              <NoneProvideItemBox key={data.title}>
+              <NoneProvideItemBox key={dataName[data]}>
                 <Image
-                  src={`/images/${data.icon}.svg`}
-                  alt={`${data.icon}`}
+                  src={`/images/${dataName[data].replace(' ', '')}.svg`}
+                  alt={`${dataName[data].replace(' ', '')}`}
                   width={SIZE.current}
                   height={SIZE.current}
                 />
-                <p>{data.title}</p>
+                <p>{dataName[data]}</p>
               </NoneProvideItemBox>
             );
           })}

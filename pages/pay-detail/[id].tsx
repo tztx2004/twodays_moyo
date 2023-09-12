@@ -72,7 +72,11 @@ export default function PayDetail() {
             eSIM={data?.plan.eSIM}
           />
 
-          <DetailFeeExtraService />
+          <DetailFeeExtraService
+            isSupported={data?.additional_service.isSupported ?? []}
+            isUnSupported={data?.additional_service.isUnsupported ?? []}
+            plan={data?.plan ?? {}}
+          />
 
           <DetailExtraInfo
             authMethod={data?.plan.authentication_method}
