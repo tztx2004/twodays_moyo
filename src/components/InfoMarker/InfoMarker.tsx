@@ -19,6 +19,7 @@ const QuestionMark = styled.span<{ color: string; bg: string }>`
   color: ${props => props.color};
   font-size: 14px;
   position: relative;
+  font-weight: 900;
 
   @media all and (max-width: 479px) {
     width: 15px;
