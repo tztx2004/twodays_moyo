@@ -13,7 +13,7 @@ interface Plan {
   plan_id: number;
   carrier: string;
   plan_title: string;
-  monthly_data: string;
+  monthly_data: number;
   daily_data: number;
   postExhaustedDataSpeed: number;
   requirement: string;
