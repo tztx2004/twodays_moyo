@@ -1,33 +1,15 @@
 import { styled } from 'styled-components';
 
-const extraFeeData = [
-  {
-    title: '영상 통화',
-    value: '3.3원/초',
-  },
-  {
-    title: '부가 통화',
-    value: '1.98원/초',
-  },
-  {
-    title: '긴 문자',
-    value: '33원/개',
-  },
-  {
-    title: '사진 포함 긴 문자',
-    value: '220원/개',
-  },
-  {
-    title: '영상 포함 긴 문자',
-    value: '3.3원/초',
-  },
-];
-
 export default function DetailExtraInfo({
   authMethod = '',
   underAge = 0,
   foreigner = 0,
   transferCharge = 0,
+  videoPrice = 0,
+  callPrice = 0,
+  LMS = 0,
+  MMSImg = 0,
+  MMSVideo = 0,
 }) {
   const extraInfoData = [
     {
@@ -45,6 +27,29 @@ export default function DetailExtraInfo({
     {
       title: '번호이동 수수료',
       content: transferCharge ? `${transferCharge}원` : '없음',
+    },
+  ];
+
+  const extraFeeData = [
+    {
+      title: '영상 통화',
+      value: `${videoPrice}원/초`,
+    },
+    {
+      title: '부가 통화',
+      value: `${callPrice}원/초`,
+    },
+    {
+      title: '긴 문자',
+      value: `${LMS}원/개`,
+    },
+    {
+      title: '사진 포함 긴 문자',
+      value: `${MMSImg}원/개`,
+    },
+    {
+      title: '영상 포함 긴 문자',
+      value: `${MMSVideo}원/초`,
     },
   ];
 

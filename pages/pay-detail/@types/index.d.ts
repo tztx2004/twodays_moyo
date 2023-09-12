@@ -13,7 +13,7 @@ interface Plan {
   plan_id: number;
   carrier: string;
   plan_title: string;
-  monthly_data: number;
+  monthly_data: string;
   daily_data: number;
   postExhaustedDataSpeed: number;
   requirement: string;
@@ -36,4 +36,12 @@ interface Plan {
   discounted_price: number;
   parent_carrier: string;
   addition_call: string;
+  data_price: string;
+  call_price: number;
+  video_price: number;
+  SMS_price: number;
+  LMS_price: number;
+  MMS_text_price: number;
+  MMS_image_price: number;
+  MMS_video_price: number;
 }
