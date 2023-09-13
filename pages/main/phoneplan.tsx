@@ -75,16 +75,28 @@ function PlanCard({ data }: Idata) {
             </ul>
 
             <div>
-              <div style={{ flexDirection: x.discount_period >= 999999 ? 'row' : 'column' }}>
+              <div
+                style={{
+                  flexDirection:
+                    x.discount_period >= 999999 || x.discount_period === 0 ? 'row' : 'column',
+                }}
+              >
                 <div>
                   월 {x.discounted_price.toLocaleString()}원
                   <AiFillQuestionCircle color='#dee2e6' />
                 </div>
                 <div>
-                  {x.discount_period >= 999999 ? (
+                  {x.discount_period >= 999999 || x.discount_period === 0 ? (
                     ''
                   ) : (
-                    <p>{`${x.discount_period}개월 이후 ${x.original_price.toLocaleString()}원`}</p>
+                    <p>
+                      {`${
+                        x.discount_period === 456789
+                          ? `계단식 할인`
+                          : `${x.discount_period}개월 이후 `
+                      }
+                      ${x.original_price.toLocaleString()}원`}
+                    </p>
                   )}
                   <p>
                     <AiFillStar color='rgb(252 196 25/1)' /> {x.starPoint.score} |{' '}
