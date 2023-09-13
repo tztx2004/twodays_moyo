@@ -11,10 +11,10 @@ const nextConfig = {
     });
     return config;
   },
-  experimental: {
-    scrollRestoration: true,
-  },
-  pageExtensions: ['!.test.ts(x)'],
+  // experimental: {
+  //   scrollRestoration: true,
+  // },
+  pageExtensions: ['!.test.ts(x)', 'tsx', 'ts'],
 };
 
 module.exports = nextConfig;
