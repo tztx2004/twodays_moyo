@@ -11,7 +11,7 @@ const user = userEvent.setup();
 
 describe('DetailDataInfo', () => {
   beforeEach(() => {
-    render(<DetailDataInfo />);
+    render(<DetailDataInfo dailyData={0} monthData={0} exhaustedData={0} />);
   });
 
   it('총 데이터를 보여주는 section이 존재한다.', () => {

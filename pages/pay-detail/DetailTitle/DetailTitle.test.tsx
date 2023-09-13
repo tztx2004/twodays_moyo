@@ -4,7 +4,7 @@ import DetailTitle from './DetailTitle';
 
 describe('DetailTitle', () => {
   beforeEach(() => {
-    render(<DetailTitle />);
+    render(<DetailTitle title={''} userNum={1000} />);
   });
 
   it('타이틀을 가지고 있습니다.', () => {
