@@ -7,7 +7,12 @@ import Tag from '../../../src/components/Tag/Tag';
 import useHover from '../../../src/hooks/useHover/useHover';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
-export default function DetailTitle({ title = '요금제 이름', userNum = 0 }) {
+interface IDetailTitle {
+  title: string | null;
+  userNum: number;
+}
+
+export default function DetailTitle({ title, userNum }: IDetailTitle) {
   const SIZE = useRef<number>(23);
   const [hover, mouseOver, mouseLeave] = useHover();
 

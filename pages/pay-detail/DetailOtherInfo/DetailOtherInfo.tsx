@@ -1,6 +1,13 @@
 import { styled } from 'styled-components';
 
-export default function DetailOtherInfo({ voice = '', SMS = '', carrier = '', network = '' }) {
+interface IDetailOtherInfo {
+  voice: string | null;
+  SMS: string | null;
+  carrier: string | null;
+  network: string | null;
+}
+
+export default function DetailOtherInfo({ voice, SMS, carrier, network }: IDetailOtherInfo) {
   return (
     <WrapperBox>
       <div>

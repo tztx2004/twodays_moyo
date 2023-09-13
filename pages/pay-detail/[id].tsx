@@ -33,19 +33,19 @@ export default function PayDetail() {
     <WrapperBox>
       <ErrorBoundary fallback={<ErrorMessage message={'잠시 후 다시 시도해주세요'} />}>
         <Suspense fallback={<Loading />}>
-          <DetailTitle title={data?.plan.plan_title} userNum={data?.numberOfUser} />
+          <DetailTitle title={data?.plan.plan_title ?? null} userNum={data?.numberOfUser ?? 0} />
 
           <DetailDataInfo
             monthData={data?.plan.monthly_data ?? 0}
-            dailyData={data?.plan.daily_data}
-            exhaustedData={data?.plan.postExhaustedDataSpeed}
+            dailyData={data?.plan.daily_data ?? null}
+            exhaustedData={data?.plan.postExhaustedDataSpeed ?? null}
           />
 
           <DetailOtherInfo
-            voice={data?.plan.voice}
-            SMS={data?.plan.SMS}
-            carrier={data?.plan.parent_carrier}
-            network={data?.plan.network}
+            voice={data?.plan.voice ?? null}
+            SMS={data?.plan.SMS ?? null}
+            carrier={data?.plan.parent_carrier ?? null}
+            network={data?.plan.network ?? null}
           />
 
           <DivideBox />
