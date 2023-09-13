@@ -14,6 +14,7 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  pageExtensions: ['!.test.ts(x)'],
 };
 
 module.exports = nextConfig;
