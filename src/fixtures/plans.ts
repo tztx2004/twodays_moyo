@@ -1,4 +1,4 @@
-export const plans = {
+export const plans: Data = {
   numberOfUser: 25102,
   additional_service: {
     isSupported: ['micropayment', 'roaming', 'family_combination', 'mobile_hotSpot'],

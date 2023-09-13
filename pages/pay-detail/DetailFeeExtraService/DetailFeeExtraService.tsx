@@ -41,7 +41,7 @@ export default function DetailFeeExtraService({
               <ProvideItemBox key={dataName[data]}>
                 <Image
                   src={`/images/${dataName[data].replace(' ', '')}.svg`}
-                  alt={`${dataName[data].replace(' ', '')}`}
+                  alt={`${dataName[data]}`}
                   width={SIZE.current}
                   height={SIZE.current}
                 />
