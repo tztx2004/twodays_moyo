@@ -5,7 +5,6 @@ import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
 import PhonePlan from './phoneplan';
 import Promotion4 from './promotion4';
-import { Idata } from './type';
 
 const WrapperBox = styled.div`
   margin: 0 auto;

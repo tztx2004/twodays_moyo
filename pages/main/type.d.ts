@@ -1,13 +1,13 @@
-export interface Idata {
+interface Idata {
   data: Iobject;
 }
 
-export interface Iobject {
+interface Iobject {
   pageObject: IpageObject;
   plans: Iplans[];
 }
 
-export interface Iplans {
+interface Iplans {
   carrier_logo: string;
   plan_id: number;
   carrier: string;
@@ -24,7 +24,7 @@ export interface Iplans {
   discounted_price: number;
 }
 
-export interface IpageObject {
+interface IpageObject {
   numberOfPlans: number;
   numberOfPlansPerPage: number;
   maxDisplayedPages: number;
