@@ -31,7 +31,7 @@ export default function PayDetail() {
 
   return (
     <WrapperBox>
-      <ErrorBoundary FallbackComponent={ErrorMessage}>
+      <ErrorBoundary fallback={<ErrorMessage message={'잠시 후 다시 시도해주세요'} />}>
         <Suspense fallback={<Loading />}>
           <DetailTitle title={data?.plan.plan_title} userNum={data?.numberOfUser} />
 
@@ -100,6 +100,10 @@ const WrapperBox = styled.div`
   max-width: 620px;
   position: relative;
   top: 140px;
+
+  @media all and (max-width: 700px) {
+    top: 90px;
+  }
 `;
 
 const DivideBox = styled.div`

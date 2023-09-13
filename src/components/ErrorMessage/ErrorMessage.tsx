@@ -1,15 +1,16 @@
+import { useErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 
 interface IErrorMessage {
-  error: Error;
-  resetErrorBoundary: () => void;
+  message: string;
 }
 
-export default function ErrorMessage({ error, resetErrorBoundary }: IErrorMessage) {
+export default function ErrorMessage({ message }: IErrorMessage) {
+  const { resetBoundary } = useErrorBoundary();
   return (
     <WrapperBox>
-      <Msg>{error.message}</Msg>
-      <Btn onClick={() => resetErrorBoundary()}>다시 시도</Btn>
+      <Msg>{message}</Msg>
+      <Btn onClick={() => resetBoundary()}>다시 시도</Btn>
     </WrapperBox>
   );
 }
