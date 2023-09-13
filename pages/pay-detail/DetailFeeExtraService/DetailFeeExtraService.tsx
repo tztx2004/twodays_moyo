@@ -36,7 +36,6 @@ export default function DetailFeeExtraService({
           <ProvideTitle>지원</ProvideTitle>
 
           {isSupported.map(data => {
-            console.log(dataName[data]);
             return (
               <ProvideItemBox key={dataName[data]}>
                 <Image

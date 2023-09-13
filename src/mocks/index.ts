@@ -4,6 +4,21 @@ export async function initMocks() {
     server.listen();
   } else {
     const { worker } = await import('./browser');
-    worker.start();
+    worker.start({
+      // turn off MSW warnings for specific routes
+      onUnhandledRequest(req, print) {
+        // specify routes to exclude
+        const excludedRoutes = ['/images', '/_next/image'];
+
+        // check if the req.url.pathname contains excludedRoutes
+        const isExcluded = excludedRoutes.some(route => req.url.pathname.includes(route));
+
+        if (isExcluded) {
+          return;
+        }
+
+        print.warning();
+      },
+    });
   }
 }

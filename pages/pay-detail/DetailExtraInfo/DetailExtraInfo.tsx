@@ -68,10 +68,10 @@ export default function DetailExtraInfo({
       <OverUseText>기본 제공 초과 시</OverUseText>
 
       <TableBox>
-        {extraFeeData.map((data, index) => {
+        {extraFeeData.map((data, index: number) => {
           return (
             <TableContents key={data.title}>
-              <TableTitle index={index}>{data.title}</TableTitle>
+              <TableTitle $index={index}>{data.title}</TableTitle>
               <TableValue>{data.value}</TableValue>
             </TableContents>
           );
@@ -156,13 +156,13 @@ const TableContents = styled.div`
 
 const Radius = 8;
 
-const TableTitle = styled.p<{ index: number }>`
+const TableTitle = styled.p<{ $index: number }>`
   background-color: var(--buttonGray);
   padding: 8px 16px;
   border-radius: ${props =>
-    props.index === 0
+    props.$index === 0
       ? `${Radius}px 0 0 ${Radius}px`
-      : props.index === 4
+      : props.$index === 4
       ? `0 ${Radius}px ${Radius}px 0`
       : '0'};
 
