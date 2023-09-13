@@ -309,6 +309,7 @@ const PhonePlanBx = styled.div`
               font-size: 18px;
               display: flex;
               gap: 4px;
+              align-items: center;
             }
             font-weight: bold;
             color: rgb(66, 90, 213);

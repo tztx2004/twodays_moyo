@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 
-function Promotion1() {
-  return (
-    <section>
-      <h2>요금제 바꾸고 헤택도 받아보세요</h2>
-
-      <div>
+const PromotionCard = ()=>{
+  return(
+    <div>
         <div>
           <img src='./images/benefit_naver_with_coin.png' alt='네이버코인이미지' />
         </div>
@@ -19,7 +16,15 @@ function Promotion1() {
           <button>혜택 쿠폰 받기</button>
         </div>
       </div>
+  )
+}
 
+function Promotion1() {
+  return (
+    <section>
+      <h2>요금제 바꾸고 헤택도 받아보세요</h2>
+      <PromotionCard/>
+      {/* 미디어쿼리 */}
       <div>
         <div>
           <h4>모요개통 요금제 첫 개통 혜택!</h4>
