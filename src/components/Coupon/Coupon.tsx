@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Coupon() {
   return (
     <WrapperBox>
-      <Image src={'/images/coupon.png'} alt='coupon-img' width={360} height={160} />
+      <Image priority={true} src={'/images/coupon.png'} alt='coupon-img' width={360} height={160} />
 
       <InnerBox>
         <CouponInfoBox>

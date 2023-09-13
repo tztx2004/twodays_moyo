@@ -6,8 +6,8 @@ import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
 
 interface IDetailDataInfo {
   monthData: number;
-  dailyData?: number;
-  exhaustedData?: number;
+  dailyData: number | null;
+  exhaustedData: number | null;
 }
 
 export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: IDetailDataInfo) {
@@ -58,7 +58,9 @@ export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: 
   );
 }
 
-const addData = (month = 0, daily = 0) => {
+const addData = (month = 0, daily: number | null) => {
+  if (!daily) return null;
+
   return month + daily * 30;
 };
 

@@ -5,9 +5,9 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json({
-        numberOfUser: 11329,
+        numberOfUser: 25102,
         additional_service: {
-          isSupported: ['micropayment', 'roaming'],
+          isSupported: ['micropayment', 'roaming', 'family_combination', 'mobile_hotSpot'],
           isUnsupported: ['data_sharing'],
         },
         plan: {
@@ -37,7 +37,7 @@ export const handlers = [
           discounted_price: 25000,
           parent_carrier: 'KT',
           addition_call: '사용량 초과 요금 부과',
-          data_price: '22.53',
+          data_price: 22.53,
           call_price: 1.98,
           video_price: 3.3,
           SMS_price: 22,
@@ -45,6 +45,8 @@ export const handlers = [
           MMS_text_price: 33,
           MMS_image_price: 220,
           MMS_video_price: 220,
+          family_combination: 1,
+          mobile_hotSpot: 1,
         },
       }),
     );

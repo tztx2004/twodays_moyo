@@ -47,7 +47,7 @@ export default function DetailFeBaseInfo({
       <Title>기본 정보</Title>
 
       <InformationBox>
-        {baseInfo.map((info, index) => {
+        {baseInfo.map(info => {
           return (
             <InformationContentBox key={info.title}>
               <Image
@@ -58,7 +58,7 @@ export default function DetailFeBaseInfo({
               />
 
               <InformationText>
-                <InformationTitleBox index={index}>
+                <InformationTitleBox>
                   <p>{info.title}</p>
                 </InformationTitleBox>
                 <InformationContent>{info.content}</InformationContent>
@@ -111,7 +111,7 @@ const InformationText = styled.div`
   gap: 5px;
 `;
 
-const InformationTitleBox = styled.div<{ index: number }>`
+const InformationTitleBox = styled.div`
   display: flex;
   gap: 5px;
   align-items: end;

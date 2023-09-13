@@ -36,7 +36,7 @@ interface Plan {
   discounted_price: number;
   parent_carrier: string;
   addition_call: string;
-  data_price: string;
+  data_price: number;
   call_price: number;
   video_price: number;
   SMS_price: number;
@@ -44,4 +44,7 @@ interface Plan {
   MMS_text_price: number;
   MMS_image_price: number;
   MMS_video_price: number;
+  family_combination: number;
+  mobile_hotSpot: number;
+  [extraService: string]: number;
 }
