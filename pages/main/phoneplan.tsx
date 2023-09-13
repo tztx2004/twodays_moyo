@@ -30,7 +30,6 @@ function PlanCard({ data }: Idata) {
     console.log(e.target);
   };
 
-
   return (
     <>
       {data.plans.map((x: any, i: number) => (
@@ -61,14 +60,14 @@ function PlanCard({ data }: Idata) {
 
             <h3>
               월 {x.monthly_data}GB
-              {x.postExhaustedDataSpeed!==0?` + ${x.postExhaustedDataSpeed}Mbps`:``}{' '}
-              {x.postExhaustedDataSpeed?<AiFillQuestionCircle color='#dee2e6' />:"" }
+              {x.postExhaustedDataSpeed !== 0 ? ` + ${x.postExhaustedDataSpeed}Mbps` : ``}{' '}
+              {x.postExhaustedDataSpeed ? <AiFillQuestionCircle color='#dee2e6' /> : ''}
             </h3>
 
             <ul>
-              <li>{x.voice==="기본제공"?x.voice:`${x.voice}분`}</li>
+              <li>{x.voice === '기본제공' ? x.voice : `${x.voice}분`}</li>
               <li></li>
-              <li>{x.SMS==="기본제공"?x.SMS:`${x.SMS}건`}</li>
+              <li>{x.SMS === '기본제공' ? x.SMS : `${x.SMS}건`}</li>
               <li></li>
               <li>{x.parent_carrier}</li>
               <li></li>
@@ -82,10 +81,11 @@ function PlanCard({ data }: Idata) {
                   <AiFillQuestionCircle color='#dee2e6' />
                 </div>
                 <div>
-                  {x.discount_period>=999999?
-                  "":
-                  <p>{`${x.discount_period}개월 이후 ${x.original_price.toLocaleString()}원`}</p>
-                  }
+                  {x.discount_period >= 999999 ? (
+                    ''
+                  ) : (
+                    <p>{`${x.discount_period}개월 이후 ${x.original_price.toLocaleString()}원`}</p>
+                  )}
                   <p>
                     <AiFillStar color='rgb(252 196 25/1)' /> {x.starPoint.score} |{' '}
                     {x.starPoint.numberOfParticipants.toLocaleString()}명이 선택

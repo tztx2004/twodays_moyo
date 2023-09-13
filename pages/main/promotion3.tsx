@@ -151,7 +151,7 @@ export default function Promotion3() {
         <ul>
           {arr.map((x, i) => (
             <li key={x.title}>
-              <img src={x.url} alt={x.title} loading="lazy"/>
+              <img src={x.url} alt={x.title} loading='lazy' />
             </li>
           ))}
         </ul>

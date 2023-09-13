@@ -19,7 +19,7 @@ export const Pagination = ({ data }: Idata) => {
     if (typeof window !== 'undefined' && window?.location.search.length > 0) {
       window.scrollTo({ top: 940 }); // 추가
     }
-    const currentPage = parseInt(router.query.page as string || '1');
+    const currentPage = parseInt((router.query.page as string) || '1');
     setActiveButton(currentPage);
   }, [router.asPath]); // 라우터의 경로가 변경될 때마다 실행
 
