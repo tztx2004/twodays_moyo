@@ -15,7 +15,6 @@ export async function PhonePlan() {
 }
 
 export async function PlanCard() {
-
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
     e.target.classList.toggle('on');
@@ -63,7 +62,6 @@ export async function PlanCard() {
     },
   ];
 
-
   return (
     <>
       {tempData.map((x, i) => (
@@ -88,13 +86,9 @@ export async function PlanCard() {
           </div> */}
             </h3>
             <ul>
-              <li>
-                {x.dataPlan}
-              </li>
+              <li>{x.dataPlan}</li>
               <li></li>
-              <li>
-                {x.callPlan}
-              </li>
+              <li>{x.callPlan}</li>
               <li></li>
               <li>{x.mno}</li>
               <li></li>
