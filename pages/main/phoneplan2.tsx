@@ -79,11 +79,6 @@ export async function PlanCard() {
             </div>
             <h3>
               월 7GB + 1Mbps <AiFillQuestionCircle color='#dee2e6' />
-              {/* <div>
-            {hover === 0 ? (
-              <HoverTextBox text={x.desc1} />
-            ) : null}
-          </div> */}
             </h3>
             <ul>
               <li>{x.dataPlan}</li>
@@ -116,12 +111,5 @@ export async function PlanCard() {
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch('http://172.30.1.68:3000/plans?page=1')
-//   const data = await res.json()
-
-//   return { props: { data } }
-// }
 
 export default PhonePlan;
