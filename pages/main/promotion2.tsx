@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const onClick = (id: string) => {
   console.log(id);
 };
@@ -5,12 +7,12 @@ const onClick = (id: string) => {
 const Promotion2 = () => {
   const arr = [
     {
-      images: ['./images/ranking.png'],
+      images: ['/images/ranking.png'],
       title: [`모요 주간`, `TOP 20 요금제`],
       subtitle: ['9월 주간 랭킹'],
     },
     {
-      images: ['./images/data-inf.png'],
+      images: ['/images/data-inf.png'],
       title: [`데이터 · 통화`, `무제한 요금제`],
       subtitle: ['9월 월간 랭킹'],
     },
@@ -23,7 +25,7 @@ const Promotion2 = () => {
         {arr.map((x, i) => (
           <div key={i}>
             <div>
-              <img src={x.images[0]} alt='랭킹이미지' onClick={() => onClick(x.title[0])} />
+              <Image src={x.images[0]} alt='랭킹이미지' onClick={() => onClick(x.title[0])} width={76} height={76}/>
             </div>
 
             <div>

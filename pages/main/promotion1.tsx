@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const PromotionCard = () => {
   return (
@@ -35,7 +35,7 @@ function Promotion1() {
         </div>
 
         <div>
-          <img src='./images/benefit_naver_with_coin.png' alt='네이버코인이미지' />
+          <Image src='/images/benefit_naver_with_coin.png' alt='네이버코인이미지' width={112} height={100}/>
         </div>
 
         <div>
