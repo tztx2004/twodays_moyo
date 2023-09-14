@@ -5,7 +5,12 @@ const PromotionCard = () => {
   return (
     <div>
       <div>
-        <img src='./images/benefit_naver_with_coin.png' alt='네이버코인이미지' />
+        <Image
+          src='/images/benefit_naver_with_coin.png'
+          alt='네이버코인이미지'
+          width={112}
+          height={100}
+        />
       </div>
 
       <div>

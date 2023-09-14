@@ -32,7 +32,7 @@ export default function Promotion4() {
     <section>
       <h2>데이터 얼마나 필요하세요?</h2>
 
-      {arr.map((x, i) => (
+      {arr.map(x => (
         <div key={x.id}>
           <ul>
             <li>{x.dataplan}GB</li>

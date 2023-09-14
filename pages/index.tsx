@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import MainPage from './main';
 import Footer from '@/src/components/Footer/Footer';
 import { GetServerSidePropsContext } from 'next';
