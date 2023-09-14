@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { styled } from 'styled-components';
 
 const FooterBox = styled.div`
@@ -103,7 +104,7 @@ const Footer = () => {
     <FooterBox>
       <footer>
         <div>
-          <img src='/images/moyoFooter.svg' alt='모요단색아이콘' />
+          <Image src='/images/moyoFooter.svg' alt='모요단색아이콘' width={100} height={23} />
         </div>
         <div>
           <ul>
@@ -148,9 +149,9 @@ const Footer = () => {
           </ol>
         </div>
         <div>
-          {icons.map((icon, idx) => (
+          {icons.map(icon => (
             <div key={icon.title}>
-              <img src={icon.url} alt={icon.title} />
+              <Image src={icon.url} alt={icon.title} width={32} height={32} />
             </div>
           ))}
         </div>

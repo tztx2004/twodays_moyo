@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { styled } from 'styled-components';
 
@@ -84,8 +85,13 @@ function Gnb() {
         <div>
           <Link href={'/'}>
             <picture>
-              <source srcSet='/images/moyo-icon.svg' media='(max-width : 700px)' />
-              <img src='/images/moyo-full.svg' alt='메인로고' />
+              <source
+                srcSet='/images/moyo-icon.svg'
+                media='(max-width : 700px)'
+                width={40}
+                height={24}
+              />
+              <Image src='/images/moyo-full.svg' alt='메인로고' width={130} height={30} />
             </picture>
           </Link>
         </div>
