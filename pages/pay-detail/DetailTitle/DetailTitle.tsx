@@ -33,7 +33,7 @@ export default function DetailTitle({ title, userNum }: IDetailTitle) {
       <PlanName data-testid='title'>{title}</PlanName>
 
       <AdditionalInfoBox>
-        <NumberOfSubscribers>{`${userNum.toLocaleString()}명이 선택`}</NumberOfSubscribers>
+        <NumberOfSubscribers>{`${userNum?.toLocaleString()}명이 선택`}</NumberOfSubscribers>
 
         <LikeAndShareBtnBox>
           <LikeAndShareBtn>

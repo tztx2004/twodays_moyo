@@ -36,7 +36,7 @@ export default function DetailFeeExtraService({
         <ProvideBox>
           <ProvideTitle>지원</ProvideTitle>
 
-          {isSupported.map(data => {
+          {isSupported?.map(data => {
             return (
               <ProvideItemBox key={dataName[data]}>
                 <Image
@@ -57,7 +57,7 @@ export default function DetailFeeExtraService({
 
         <NoneProvideBox>
           <NoneProvideTitle>미지원</NoneProvideTitle>
-          {isUnSupported.map(data => {
+          {isUnSupported?.map(data => {
             return (
               <NoneProvideItemBox key={dataName[data]}>
                 <Image
