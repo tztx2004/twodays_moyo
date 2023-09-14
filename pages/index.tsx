@@ -3,10 +3,10 @@ import MainPage from './main';
 import Footer from '@/src/components/Footer/Footer';
 import { GetServerSidePropsContext } from 'next';
 
-export default function Home({ data }: Idata) {
+export default function Home() {
   return (
     <>
-      <MainPage data={data} />
+      <MainPage />
       <Footer />
     </>
   );
