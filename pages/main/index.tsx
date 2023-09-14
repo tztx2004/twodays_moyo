@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import Promotion1 from './promotion1';
 import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
-import PhonePlan from './phoneplan2';
+
 import Promotion4 from './promotion4';
 
 const WrapperBox = styled.div`
@@ -480,10 +480,7 @@ const MainPage = () => {
       <Promotion2Bx>
         <Promotion2 />
       </Promotion2Bx>
-      <PhonePlanBx>
-        {/* <PhonePlan data={data} /> */}
-        {/* <PhonePlan /> */}
-      </PhonePlanBx>
+      
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
