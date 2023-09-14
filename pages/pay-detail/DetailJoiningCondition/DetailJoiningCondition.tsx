@@ -1,3 +1,4 @@
+'use client';
 import styled from 'styled-components';
 
 import InfoMarker from '@/src/components/InfoMarker/InfoMarker';

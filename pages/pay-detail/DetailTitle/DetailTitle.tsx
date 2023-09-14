@@ -1,3 +1,4 @@
+'use client';
 import { useRef } from 'react';
 import { GoShare } from 'react-icons/go';
 import { styled } from 'styled-components';
