@@ -1,7 +1,3 @@
-'use client';
-import { useRouter } from 'next/router';
-
-// const router = useRouter()
 const onClick = (id: string) => {
   console.log(id);
 };

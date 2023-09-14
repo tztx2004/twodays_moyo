@@ -1,32 +1,7 @@
 import Link from 'next/link';
 import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
-// import QuestionMarkBox from '../components/QuestionMark/QuestionMark';
 
-interface PrivateObject {
-  call: string;
-  carrier: string;
-  carrier_logo: null;
-  daily_data: string;
-  discount_period: number;
-  discounted_price: number;
-  monthly_data: string;
-  network: string;
-  original_price: number;
-  plan_title: string;
-  postExhaustedSpeed: string;
-  short_message: string;
-  thread_id: number;
-}
-
-interface PlanData {
-  pageObject: object;
-  threads: PrivateObject[];
-}
-interface Data {
-  data: PlanData;
-}
-
-export async function PhonePlan({ data }: Data) {
+export async function PhonePlan() {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
   return (
     <section>
@@ -34,13 +9,12 @@ export async function PhonePlan({ data }: Data) {
         요금제가 고민이신가요? <br />
         모요가 추천해 드릴게요
       </h2>
-      <PlanCard data={data} />
+      <PlanCard />
     </section>
   );
 }
 
-export async function PlanCard({ data }: Data) {
-  console.log({ data });
+export async function PlanCard() {
 
   const clickHandler = (e: MouseEvent) => {
     if (!(e.target instanceof Element)) return;
@@ -55,16 +29,16 @@ export async function PlanCard({ data }: Data) {
   const tempData = [
     {
       id: 1,
-      company: '',
+      company: 'kt',
       src: './images/kTskylife.svg',
       개통: true,
-      title: '',
-      dataPlan: '',
-      callPlan: '',
-      smsPlan: '',
+      title: '기본요금제 1',
+      dataPlan: '5GB',
+      callPlan: '무제한',
+      smsPlan: '무제한',
       price: 16200,
-      mno: '',
-      net: '',
+      mno: 'Kt',
+      net: 'LTE',
       mvnoRating: 4.4,
       numOfSignup: 4346,
       desc1: '데이터 소진 시 유튜브 화질 1080p를 볼 수 있어요',
@@ -75,13 +49,13 @@ export async function PlanCard({ data }: Data) {
       company: '',
       src: './images/이야기모바일.svg',
       개통: false,
-      title: '',
-      dataPlan: '',
-      callPlan: '',
-      smsPlan: '',
+      title: '기본요금제 2',
+      dataPlan: '10GB',
+      callPlan: '100분',
+      smsPlan: '100건',
       price: 16200,
-      mno: '',
-      net: '',
+      mno: 'SK',
+      net: '5G',
       mvnoRating: 4.4,
       numOfSignup: 4346,
       desc1: '데이터 소진 시 유튜브 화질 720p를 볼 수 있어요',
@@ -89,9 +63,6 @@ export async function PlanCard({ data }: Data) {
     },
   ];
 
-  if (!{ data }) {
-    <div>로딩중</div>;
-  }
 
   return (
     <>
@@ -105,7 +76,7 @@ export async function PlanCard({ data }: Data) {
               <div>{x.개통 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
             </div>
             <div>
-              <h4>{data ? data.threads[i].plan_title : '로딩중'}</h4>
+              <h4>{x.title}</h4>
               <AiFillHeart size='24px' color='rgb(173 181 189/1)' onClick={clickHandler} />
             </div>
             <h3>
@@ -118,18 +89,16 @@ export async function PlanCard({ data }: Data) {
             </h3>
             <ul>
               <li>
-                {data?.threads[i].call === 'Unlimited' ? '통화 무제한' : data?.threads[i].call}
+                {x.dataPlan}
               </li>
               <li></li>
               <li>
-                {data?.threads[i].short_message === 'Unlimited'
-                  ? '문자 무제한'
-                  : data?.threads[i].short_message}
+                {x.callPlan}
               </li>
               <li></li>
-              <li>KT망</li>
+              <li>{x.mno}</li>
               <li></li>
-              <li>{data?.threads[i].network}</li>
+              <li>{x.net}</li>
             </ul>
             <div>
               <div>
