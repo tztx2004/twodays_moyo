@@ -73,6 +73,10 @@ const Promotion1Bx = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        > a {
+          text-decoration: none;
+          color: #fff;
+        }
       }
       button:hover {
         background-color: #425ad5;
@@ -464,7 +468,7 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-const MainPage = ({ data }: Idata) => {
+const MainPage = () => {
   return (
     <WrapperBox>
       <Promotion1Bx>

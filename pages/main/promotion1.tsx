@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const PromotionCard = () => {
@@ -13,7 +14,9 @@ const PromotionCard = () => {
       </div>
 
       <div>
-        <button>혜택 쿠폰 받기</button>
+        <button>
+          <Link href={'/pay-detail/2'}>혜택 쿠폰 받기</Link>
+        </button>
       </div>
     </div>
   );
