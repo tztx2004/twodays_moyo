@@ -5,6 +5,7 @@ import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
 
 import Promotion4 from './promotion4';
+import PhonePlan from './phoneplan2';
 
 const WrapperBox = styled.div`
   margin: 0 auto;
@@ -352,7 +353,8 @@ const PhonePlanBx = styled.div`
       }
     }
 
-    > div:last-child {
+    > section:last-child {
+      // div->section
       display: flex;
       border: none;
       box-shadow: none;
@@ -480,12 +482,18 @@ const MainPage = () => {
       <Promotion2Bx>
         <Promotion2 />
       </Promotion2Bx>
-
+      <PhonePlanBx>
+        <PhonePlan />
+      </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
     </WrapperBox>
   );
 };
+
+// async function name(params:type) {
+
+// }
 
 export default MainPage;
