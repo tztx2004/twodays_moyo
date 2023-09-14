@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import DetailCoupon from './DetailCoupon';
+import DetailCoupon from '../../pages/pay-detail/DetailCoupon/DetailCoupon';
 import Coupon from '@/src/components/Coupon/Coupon';
 
 describe('DetailCoupon', () => {
