@@ -480,7 +480,7 @@ const MainPage = () => {
       <Promotion2Bx>
         <Promotion2 />
       </Promotion2Bx>
-      
+
       <Promotion3Bx>
         <Promotion3 />
       </Promotion3Bx>
