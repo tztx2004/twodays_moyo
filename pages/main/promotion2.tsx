@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const onClick = (id: string) => {
   console.log(id);
@@ -25,7 +25,13 @@ const Promotion2 = () => {
         {arr.map((x, i) => (
           <div key={i}>
             <div>
-              <Image src={x.images[0]} alt='랭킹이미지' onClick={() => onClick(x.title[0])} width={76} height={76}/>
+              <Image
+                src={x.images[0]}
+                alt='랭킹이미지'
+                onClick={() => onClick(x.title[0])}
+                width={76}
+                height={76}
+              />
             </div>
 
             <div>

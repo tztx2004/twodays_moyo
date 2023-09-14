@@ -35,7 +35,12 @@ function Promotion1() {
         </div>
 
         <div>
-          <Image src='/images/benefit_naver_with_coin.png' alt='네이버코인이미지' width={112} height={100}/>
+          <Image
+            src='/images/benefit_naver_with_coin.png'
+            alt='네이버코인이미지'
+            width={112}
+            height={100}
+          />
         </div>
 
         <div>

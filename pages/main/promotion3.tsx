@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Promotion3() {
   const arr = [
@@ -153,7 +153,7 @@ export default function Promotion3() {
         <ul>
           {arr.map((x, i) => (
             <li key={x.title}>
-              <Image src={x.url} alt={x.title} loading='lazy' width={117} height={40}/>
+              <Image src={x.url} alt={x.title} loading='lazy' width={117} height={40} />
             </li>
           ))}
         </ul>
