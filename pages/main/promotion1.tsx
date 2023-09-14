@@ -15,7 +15,7 @@ const PromotionCard = () => {
 
       <div>
         <button>
-          <Link href={"/pay-detail/2"}>혜택 쿠폰 받기</Link>
+          <Link href={'/pay-detail/2'}>혜택 쿠폰 받기</Link>
         </button>
       </div>
     </div>

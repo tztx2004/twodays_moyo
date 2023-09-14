@@ -73,7 +73,7 @@ const Promotion1Bx = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        >a{
+        > a {
           text-decoration: none;
           color: #fff;
         }
