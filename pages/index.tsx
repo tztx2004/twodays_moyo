@@ -2,7 +2,6 @@ import { useState } from 'react';
 import MainPage from './main';
 import Footer from '@/src/components/Footer/Footer';
 import { GetServerSidePropsContext } from 'next';
-import { Idata } from './main/type';
 
 export default function Home({ data }: Idata) {
   return (

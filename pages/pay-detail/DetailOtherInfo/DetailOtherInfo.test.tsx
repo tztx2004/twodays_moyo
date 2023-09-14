@@ -4,7 +4,7 @@ import DetailOtherInfo from './DetailOtherInfo';
 
 describe('DetailOtherInfo', () => {
   beforeEach(() => {
-    render(<DetailOtherInfo />);
+    render(<DetailOtherInfo SMS={''} voice={''} carrier={''} network={''} />);
   });
 
   it('통화에 대한 정보를 가지고 있습니다.', () => {

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Idata } from '../type';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
