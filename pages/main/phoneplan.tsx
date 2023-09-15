@@ -38,7 +38,7 @@ function PlanCard({ data }: Idata) {
             <div>
               <div style={{ display: 'block' }}>
                 <Image
-                  src={'/images/kTskylife.svg'}
+                  src={x.carrier_logo}
                   alt={x.carrier}
                   width={50}
                   height={20}

@@ -2,19 +2,19 @@ import MainPage from './main';
 import Footer from '@/src/components/Footer/Footer';
 import { GetServerSidePropsContext } from 'next';
 
-export default function Home() {
+export default function Home({data}:Idata) {
   return (
     <>
-      <MainPage />
+      <MainPage data={data}/>
       <Footer />
     </>
   );
 }
 
-// export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-//   const pageNumber = context.query.page || 1;
-//   const res = await fetch(`http://172.30.1.68:3000/plans?page=${pageNumber}&items-per-page=50`);
-//   const data = await res.json();
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const pageNumber = context.query.page || 1;
+  const res = await fetch(`https://port-0-bee-smart-4fju66f2clmj8oy00.sel5.cloudtype.app/plans?page=1`);
+  const data = await res.json();
 
-//   return { props: { data } };
-// };
+  return { props: { data } };
+};

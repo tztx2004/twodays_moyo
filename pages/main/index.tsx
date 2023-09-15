@@ -5,7 +5,7 @@ import Promotion2 from './promotion2';
 import Promotion3 from './promotion3';
 
 import Promotion4 from './promotion4';
-import PhonePlan from './phoneplan2';
+import PhonePlan from './phoneplan';
 
 const WrapperBox = styled.div`
   margin: 0 auto;
@@ -470,7 +470,7 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-const MainPage = () => {
+const MainPage = ({data}:Idata) => {
   return (
     <WrapperBox>
       <Promotion1Bx>
@@ -483,7 +483,7 @@ const MainPage = () => {
         <Promotion2 />
       </Promotion2Bx>
       <PhonePlanBx>
-        <PhonePlan />
+        <PhonePlan data={data}/>
       </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />
