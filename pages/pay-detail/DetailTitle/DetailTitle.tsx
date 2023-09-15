@@ -30,7 +30,7 @@ export default function DetailTitle({ title, userNum }: IDetailTitle) {
         />
       </TagBox>
 
-      <PlanName data-testid='title'>{title ?? ''}</PlanName>
+      <PlanName data-testid='title'>{title}</PlanName>
 
       <AdditionalInfoBox>
         <NumberOfSubscribers>{`${userNum?.toLocaleString()}명이 선택`}</NumberOfSubscribers>

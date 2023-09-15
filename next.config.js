@@ -19,6 +19,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   output: 'standalone',
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
