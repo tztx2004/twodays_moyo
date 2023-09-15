@@ -10,8 +10,7 @@
     "lint": "eslint --cache .",
     "format": "prettier --cache --write .",
     "test": "jest --watch",
-    "test:ci": "jest --ci",
-    "output": "next export"
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@types/node": "20.5.7",
