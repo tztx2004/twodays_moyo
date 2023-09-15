@@ -27,70 +27,72 @@ export default function PayDetail() {
   const {
     query: { id },
   } = useRouter();
-  const data = useGetData<Data>(`plans/${id}`);
+  const [data, success] = useGetData<Data>(`plans/${id}`);
 
   return (
     <WrapperBox>
-      <ErrorBoundary fallback={<ErrorMessage message={'잠시 후 다시 시도해주세요'} />}>
-        <Suspense fallback={<Loading />}>
-          <DetailTitle title={data?.plan.plan_title || null} userNum={data?.numberOfUser || 0} />
+      {success && data ? (
+        <ErrorBoundary fallback={<ErrorMessage message={'잠시 후 다시 시도해주세요'} />}>
+          <Suspense fallback={<Loading />}>
+            <DetailTitle title={data?.plan.plan_title || null} userNum={data?.numberOfUser || 0} />
 
-          <DetailDataInfo
-            monthData={data?.plan.monthly_data || 0}
-            dailyData={data?.plan.daily_data || null}
-            exhaustedData={data?.plan.postExhaustedDataSpeed || null}
-          />
+            <DetailDataInfo
+              monthData={data?.plan.monthly_data || 0}
+              dailyData={data?.plan.daily_data || null}
+              exhaustedData={data?.plan.postExhaustedDataSpeed || null}
+            />
 
-          <DetailOtherInfo
-            voice={data?.plan.voice || null}
-            SMS={data?.plan.SMS || null}
-            carrier={data?.plan.parent_carrier || null}
-            network={data?.plan.network || null}
-          />
+            <DetailOtherInfo
+              voice={data?.plan.voice || null}
+              SMS={data?.plan.SMS || null}
+              carrier={data?.plan.parent_carrier || null}
+              network={data?.plan.network || null}
+            />
 
-          <DivideBox />
+            <DivideBox />
 
-          <DetailCoupon />
+            <DetailCoupon />
 
-          <DivideBox />
+            <DivideBox />
 
-          <DetailFee
-            originalPrice={data?.plan.original_price}
-            period={data?.plan.discount_period}
-            discountPrice={data?.plan.discounted_price}
-          />
+            <DetailFee
+              originalPrice={data?.plan.original_price}
+              period={data?.plan.discount_period}
+              discountPrice={data?.plan.discounted_price}
+            />
 
-          {data?.plan.requirement !== '-' ? (
-            <DetailJoiningCondition requirement={data?.plan.requirement} />
-          ) : null}
+            {data?.plan.requirement !== '-' ? (
+              <DetailJoiningCondition requirement={data?.plan.requirement} />
+            ) : null}
 
-          <DetailFeeBaseInfo
-            contractPeriod={data?.plan.contract_period}
-            simDelivery={data?.plan.sim_delivery}
-            additionCall={data?.plan.addition_call}
-            nfcDelivery={data?.plan.nfc_delivery}
-            eSIM={data?.plan.eSIM}
-          />
+            <DetailFeeBaseInfo
+              contractPeriod={data?.plan.contract_period}
+              simDelivery={data?.plan.sim_delivery}
+              additionCall={data?.plan.addition_call}
+              nfcDelivery={data?.plan.nfc_delivery}
+              eSIM={data?.plan.eSIM}
+            />
 
-          <DetailFeeExtraService
-            isSupported={data?.additional_service.isSupported || []}
-            isUnSupported={data?.additional_service.isUnsupported || []}
-            plan={data?.plan || {}}
-          />
+            <DetailFeeExtraService
+              isSupported={data?.additional_service.isSupported || []}
+              isUnSupported={data?.additional_service.isUnsupported || []}
+              plan={data?.plan || {}}
+            />
 
-          <DetailExtraInfo
-            authMethod={data?.plan.authentication_method}
-            underAge={data?.plan.underage_registration}
-            foreigner={data?.plan.foreigner_registration}
-            transferCharge={data?.plan.transfer_charge}
-            videoPrice={data?.plan.video_price}
-            callPrice={data?.plan.call_price}
-            LMS={data?.plan.LMS_price}
-            MMSImg={data?.plan.MMS_image_price}
-            MMSVideo={data?.plan.MMS_video_price}
-          />
-        </Suspense>
-      </ErrorBoundary>
+            <DetailExtraInfo
+              authMethod={data?.plan.authentication_method}
+              underAge={data?.plan.underage_registration}
+              foreigner={data?.plan.foreigner_registration}
+              transferCharge={data?.plan.transfer_charge}
+              videoPrice={data?.plan.video_price}
+              callPrice={data?.plan.call_price}
+              LMS={data?.plan.LMS_price}
+              MMSImg={data?.plan.MMS_image_price}
+              MMSVideo={data?.plan.MMS_video_price}
+            />
+          </Suspense>
+        </ErrorBoundary>
+      ) : null}
     </WrapperBox>
   );
 }

@@ -14,9 +14,9 @@ test('useGetData', async () => {
 
   const { result } = renderHook(() => useGetData(`plans/1`));
 
-  expect(result.current).toBeUndefined();
+  expect(result.current[0]).toBeUndefined();
 
   await waitFor(() => {
-    expect(result.current).toEqual(plans);
+    expect(result.current[0]).toEqual(plans);
   });
 });

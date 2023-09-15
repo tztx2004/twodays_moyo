@@ -26,16 +26,35 @@ describe('DetailDataInfo', () => {
     expect(text).toBeInTheDocument();
   });
 
-  it('매일 채워지는 데이터를 보여주는 section이 존재한다.', () => {
-    const text = screen.getByText(/매일/);
+  context('매일 채워지는 데이터를 보여주는 section이 존재한다.', () => {
+    it('dailyData가 0이면 화면에서 사라진다.', () => {
+      const text = screen.queryByText(/매일/);
 
-    expect(text).toBeInTheDocument();
+      expect(text).toBeNull();
+    });
+
+    it('dailyData가 0이 아니면 화면에 보인다.', () => {
+      render(<DetailDataInfo monthData={1} dailyData={1} exhaustedData={1} />);
+      const text = screen.getByText(/매일/);
+
+      expect(text).toBeInTheDocument();
+    });
   });
 
-  it('데이터 소진시 데이터 속도를 표시해주는 section이 존재한다.', () => {
-    const text = screen.getByText(/소진시/);
+  context('데이터 소진시 데이터 속도를 표시해주는 section이 존재한다.', () => {
+    it('exhaustedData가 0이 아니면 화면에 나온다', () => {
+      render(<DetailDataInfo monthData={1} dailyData={1} exhaustedData={1} />);
 
-    expect(text).toBeInTheDocument();
+      const text = screen.getByText(/소진시/);
+
+      expect(text).toBeInTheDocument();
+    });
+
+    it('exhaustedData가 0이면 화면에서 사라진다.', () => {
+      const text = screen.queryByText(/소진시/);
+
+      expect(text).toBeNull();
+    });
   });
 
   it('소진시 데이터 속도에 대한 설명을 보여주는 아이콘이 존재한다.', () => {
@@ -57,8 +76,9 @@ describe('DetailDataInfo', () => {
     });
   });
 
-  context('hover를 하면', () => {
-    it('TextBox가 보인다.', async () => {
+  context('exhaustedData 값에 따라 info가 보인다.', () => {
+    it('0이면 hover를 하면 TextBox가 보인다.', async () => {
+      render(<DetailDataInfo monthData={1} dailyData={1} exhaustedData={1} />);
       const { result } = renderHook(() => useHover());
 
       act(() => {
@@ -74,6 +94,12 @@ describe('DetailDataInfo', () => {
       const text = await screen.findByTestId('hover-text');
 
       expect(text).toBeInTheDocument();
+    });
+
+    it('1이면 hover를 하면 TextBox가 보이지 않는다.', () => {
+      const hoverEl = screen.queryByText('?');
+
+      expect(hoverEl).toBeNull();
     });
   });
 });
