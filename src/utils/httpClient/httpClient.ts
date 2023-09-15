@@ -1,5 +1,5 @@
 class HttpClient {
-  #baseUrl = 'http://localhost:4000';
+  #baseUrl = process.env.NEXT_PUBLIC_URL;
 
   fetch(url: string, options = {}) {
     return fetch(`${this.#baseUrl}/${url}`, {

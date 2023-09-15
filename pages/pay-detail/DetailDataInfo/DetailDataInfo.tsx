@@ -30,37 +30,41 @@ export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: 
 
       {dailyData ? <p>+</p> : <p></p>}
 
-      <Div>
-        <ExplanationText>매일</ExplanationText>
-        <DataText>{`${dailyData}GB`}</DataText>
-      </Div>
+      {dailyData ? (
+        <Div>
+          <ExplanationText>매일</ExplanationText>
+          <DataText>{`${dailyData}GB`}</DataText>
+        </Div>
+      ) : null}
 
       {exhaustedData ? <p>+</p> : <p></p>}
 
-      <Div>
-        <EmptyDataBox>
-          <ExplanationText>소진시</ExplanationText>
-          <QuestionMarker onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave} />
+      {exhaustedData ? (
+        <Div>
+          <EmptyDataBox>
+            <ExplanationText>소진시</ExplanationText>
+            <QuestionMarker onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave} />
 
-          {hover ? (
-            <HoverTextBoxArea>
-              <HoverTextBox>
-                <HoverText data-testid='hover-text'>
-                  데이터 소진시 유튜브 화질 720p 볼 수 있어요
-                </HoverText>
-              </HoverTextBox>
-            </HoverTextBoxArea>
-          ) : null}
-        </EmptyDataBox>
+            {hover ? (
+              <HoverTextBoxArea>
+                <HoverTextBox>
+                  <HoverText data-testid='hover-text'>
+                    데이터 소진시 유튜브 화질 720p 볼 수 있어요
+                  </HoverText>
+                </HoverTextBox>
+              </HoverTextBoxArea>
+            ) : null}
+          </EmptyDataBox>
 
-        <DataText>{`${exhaustedData}Mbps`}</DataText>
-      </Div>
+          <DataText>{`${exhaustedData}Mbps`}</DataText>
+        </Div>
+      ) : null}
     </WrapperBox>
   );
 }
 
 const addData = (month = 0, daily: number | null) => {
-  if (!daily) return null;
+  if (!daily) return month;
 
   return month + daily * 30;
 };

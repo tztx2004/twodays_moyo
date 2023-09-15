@@ -21,7 +21,7 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
             <HoverTextBoxArea>
               <HoverTextBox>
                 <HoverTextContent data-testid='hover-text'>
-                  <TopText>{`${period}개월까지만 사용해도 위약금이 발생하지 않아요`}</TopText>
+                  <TopText>{hoverTopPhrases(period)}</TopText>
 
                   <BottomText>
                     <BottomLeftText>
@@ -50,7 +50,7 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
           ) : null}
         </MonthFeeBox>
 
-        <ExtraFeeInfoText>{`${period}개월 이후 ${originalPrice.toLocaleString()}원`}</ExtraFeeInfoText>
+        <ExtraFeeInfoText>{salePhrases(period, originalPrice)}</ExtraFeeInfoText>
       </InnerBox>
 
       <ApplyBtn>신청하기</ApplyBtn>
@@ -58,8 +58,33 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
   );
 }
 
-const periodPrice = (period = 0, originalPrice = 0, discountPrice = 0, totalPeriod = 0) =>
-  discountPrice * period + (totalPeriod - period) * originalPrice;
+const periodPrice = (period = 0, originalPrice = 0, discountPrice = 0, totalPeriod = 0): number => {
+  if (period === 999999) return discountPrice * totalPeriod;
+
+  return discountPrice * period + (totalPeriod - period) * originalPrice;
+};
+
+const hoverTopPhrases = (period: number) => {
+  switch (period) {
+    case 999999:
+      return `평생 위약금이 발생하지 않는 요금제에요.`;
+    case 0:
+      return `할인이 없는 요금제에요.`;
+    default:
+      return `${period}개월까지만 사용해도 위약금이 발생하지 않아요`;
+  }
+};
+
+const salePhrases = (period: number, originalPrice: number) => {
+  switch (period) {
+    case 999999:
+      return `기존 ${originalPrice.toLocaleString()}원`;
+    case 0:
+      return ``;
+    default:
+      return `${period}개월 이후 ${originalPrice.toLocaleString()}원`;
+  }
+};
 
 const WrapperBox = styled.section`
   color: var(--fontColor);

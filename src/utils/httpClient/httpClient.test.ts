@@ -31,7 +31,7 @@ describe('httpClient', () => {
 
     const res = await httpClient.fetch(url, options);
 
-    expect(mockFetch).toHaveBeenCalledWith(`http://localhost:4000/${url}`, options);
+    expect(mockFetch).toHaveBeenCalledWith(`${process.env.NEXT_PUBLIC_URL}/${url}`, options);
 
     const data = await res.json();
 
