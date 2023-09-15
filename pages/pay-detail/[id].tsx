@@ -31,7 +31,6 @@ export default function PayDetail() {
 
   return (
     <WrapperBox>
-      (
       <ErrorBoundary fallback={<ErrorMessage message={'잠시 후 다시 시도해주세요'} />}>
         <Suspense fallback={<Loading />}>
           <DetailTitle title={data?.plan.plan_title || null} userNum={data?.numberOfUser || 0} />
@@ -92,7 +91,6 @@ export default function PayDetail() {
           />
         </Suspense>
       </ErrorBoundary>
-      )
     </WrapperBox>
   );
 }

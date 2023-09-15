@@ -159,6 +159,10 @@ const HoverTextBoxArea = styled.div`
   top: calc(100% - 175px);
   left: calc(100% - 298px);
 
+  & > div {
+    min-width: 320px;
+  }
+
   @media all and (max-width: 479px) {
     top: calc(100% - 190px);
     left: calc(100% - 190px);
