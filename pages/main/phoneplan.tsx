@@ -32,7 +32,7 @@ function PlanCard({ data }: Idata) {
 
   return (
     <>
-      {data.plans.map((x: any, i: number) => (
+      {data?.plans.map((x: any, i: number) => (
         <div key={x.plan_id}>
           <div>
             <div>
