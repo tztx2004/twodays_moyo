@@ -1,56 +1,45 @@
 'use client';
 import { styled } from 'styled-components';
 
-import useHover from '../../../src/hooks/useHover/useHover';
-import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
-import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
-import HoverTextInfoMarker from '@/src/components/HoverTextInfoMarker/HoverTextInfoMarker';
+import Tooltip from '@/src/components/Tooltip/Tooltip';
+import InfoMarker from '@/src/components/InfoMarker/InfoMarker';
 
 export default function DetailFee({ originalPrice = 0, period = 0, discountPrice = 0 }) {
-  const [hover, mouseOver, mouseLeave] = useHover();
-
   return (
     <WrapperBox>
       <WrongInfo>잘못된 정보 제보</WrongInfo>
 
       <InnerBox>
         <MonthFeeBox>
-          {/* <QuestionMarker onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave} /> */}
-          <HoverTextInfoMarker marker='?' hoverText='111' />
+          <Tooltip Marker={InfoMarker} width='270px'>
+            <>
+              <TopText>{hoverTopPhrases(period)}</TopText>
+
+              <BottomTextBox>
+                <BottomText>
+                  <p>12개월 사용 시</p>
+                  <p>{`총 ${periodPrice(
+                    period,
+                    originalPrice,
+                    discountPrice,
+                    12,
+                  ).toLocaleString()}원`}</p>
+                </BottomText>
+
+                <BottomText>
+                  <p>24개월 사용 시</p>
+                  <p>{`총 ${periodPrice(
+                    period,
+                    originalPrice,
+                    discountPrice,
+                    24,
+                  ).toLocaleString()}원`}</p>
+                </BottomText>
+              </BottomTextBox>
+            </>
+          </Tooltip>
 
           <MonthFeeContent>{`월 ${discountPrice.toLocaleString()}원`}</MonthFeeContent>
-
-          {/* {hover ? (
-            <HoverTextBoxArea>
-              <HoverTextBox>
-                <HoverTextContent data-testid='hover-text'>
-                  <TopText>{hoverTopPhrases(period)}</TopText>
-
-                  <BottomText>
-                    <BottomLeftText>
-                      <p>12개월 사용 시</p>
-                      <p>{`총 ${periodPrice(
-                        period,
-                        originalPrice,
-                        discountPrice,
-                        12,
-                      ).toLocaleString()}원`}</p>
-                    </BottomLeftText>
-
-                    <BottomRightText>
-                      <p>24개월 사용 시</p>
-                      <p>{`총 ${periodPrice(
-                        period,
-                        originalPrice,
-                        discountPrice,
-                        24,
-                      ).toLocaleString()}원`}</p>
-                    </BottomRightText>
-                  </BottomText>
-                </HoverTextContent>
-              </HoverTextBox>
-            </HoverTextBoxArea>
-          ) : null} */}
         </MonthFeeBox>
 
         <ExtraFeeInfoText>{salePhrases(period, originalPrice)}</ExtraFeeInfoText>
@@ -157,54 +146,18 @@ const MonthFeeContent = styled.p`
   }
 `;
 
-const HoverTextBoxArea = styled.div`
-  position: absolute;
-  top: calc(100% - 175px);
-  left: calc(100% - 298px);
-
-  & > div {
-    min-width: 320px;
-  }
-
-  @media all and (max-width: 479px) {
-    top: calc(100% - 190px);
-    left: calc(100% - 190px);
-    & > div {
-      &::before {
-        left: 25%;
-      }
-    }
-  }
-`;
-
-const HoverTextContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-`;
-
 const TopText = styled.p`
   margin-bottom: 15px;
+  text-align: start;
 `;
 
-const BottomText = styled.div`
+const BottomTextBox = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const BottomLeftText = styled.div`
-  p:nth-of-type(1) {
-    color: var(--fontGray);
-    margin-bottom: 5px;
-  }
-  p:nth-of-type(2) {
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-`;
-
-const BottomRightText = styled.div`
+const BottomText = styled.div`
+  text-align: start;
   p:nth-of-type(1) {
     color: var(--fontGray);
     margin-bottom: 5px;

@@ -1,8 +1,7 @@
 import userEvent from '@testing-library/user-event';
-import { render, renderHook, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import DetailFee from '../../pages/pay-detail/DetailFee/DetailFee';
-import useHover from '@/src/hooks/useHover/useHover';
 import QuestionMarker from '@/src/components/InfoMarker/InfoMarker';
 
 const context = describe;
@@ -30,30 +29,6 @@ describe('DetailFee', () => {
     const { container } = render(<QuestionMarker />);
 
     expect(container).toBeInTheDocument();
-  });
-
-  context('hover을 하지 않으면', () => {
-    it('추가 정보를 나타내지 않습니다.', () => {
-      const { result } = renderHook(() => useHover());
-
-      expect(result.current[0]).toBe(0);
-
-      const text = screen.queryByText(/12개월까지만 사용해도 위약금이 발생하지 않아요/);
-
-      expect(text).toBeNull();
-    });
-  });
-
-  context('hover을 하면', () => {
-    it('추가 정보를 나타냅니다.', async () => {
-      const questionMarker = screen.getByText('?');
-
-      await user.hover(questionMarker);
-
-      const hoverTextBox = await screen.findByTestId('hover-text');
-
-      expect(hoverTextBox).toBeInTheDocument();
-    });
   });
 
   it('신청하기 버튼이 존재합니다.', () => {

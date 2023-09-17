@@ -1,7 +1,8 @@
 'use client';
 import { styled } from 'styled-components';
 
-import HoverTextInfoMarker from '@/src/components/HoverTextInfoMarker/HoverTextInfoMarker';
+import Tooltip from '@/src/components/Tooltip/Tooltip';
+import InfoMarker from '@/src/components/InfoMarker/InfoMarker';
 
 interface IDetailDataInfo {
   monthData: number;
@@ -39,10 +40,10 @@ export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: 
         <Div>
           <EmptyDataBox>
             <ExplanationText>소진시</ExplanationText>
-            <HoverTextInfoMarker
-              marker='?'
-              hoverText='데이터 소진시 유튜브 화질 720p 볼 수 있어요'
-            />
+
+            <Tooltip Marker={InfoMarker} width='260px'>
+              <TooltipText>데이터 소진시 유튜브 화질 720p 볼 수 있어요</TooltipText>
+            </Tooltip>
           </EmptyDataBox>
 
           <DataText>{`${exhaustedData}Mbps`}</DataText>
@@ -125,4 +126,9 @@ const EmptyDataBox = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+`;
+
+const TooltipText = styled.p`
+  font-size: 0.9rem;
+  font-weight: 400;
 `;
