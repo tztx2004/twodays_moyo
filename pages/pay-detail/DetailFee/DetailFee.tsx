@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import useHover from '../../../src/hooks/useHover/useHover';
 import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
 import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
+import HoverTextInfoMarker from '@/src/components/HoverTextInfoMarker/HoverTextInfoMarker';
 
 export default function DetailFee({ originalPrice = 0, period = 0, discountPrice = 0 }) {
   const [hover, mouseOver, mouseLeave] = useHover();
@@ -14,10 +15,12 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
 
       <InnerBox>
         <MonthFeeBox>
-          <QuestionMarker onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave} />
+          {/* <QuestionMarker onMouseOver={() => mouseOver(1)} onMouseLeave={mouseLeave} /> */}
+          <HoverTextInfoMarker marker='?' hoverText='111' />
+
           <MonthFeeContent>{`월 ${discountPrice.toLocaleString()}원`}</MonthFeeContent>
 
-          {hover ? (
+          {/* {hover ? (
             <HoverTextBoxArea>
               <HoverTextBox>
                 <HoverTextContent data-testid='hover-text'>
@@ -47,7 +50,7 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
                 </HoverTextContent>
               </HoverTextBox>
             </HoverTextBoxArea>
-          ) : null}
+          ) : null} */}
         </MonthFeeBox>
 
         <ExtraFeeInfoText>{salePhrases(period, originalPrice)}</ExtraFeeInfoText>

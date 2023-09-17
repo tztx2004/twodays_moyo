@@ -1,9 +1,7 @@
 'use client';
 import { styled } from 'styled-components';
 
-import useHover from '../../../src/hooks/useHover/useHover';
-import QuestionMarker from '../../../src/components/InfoMarker/InfoMarker';
-import HoverTextBox from '../../../src/components/HoverTextBox/HoverTextBox';
+import HoverTextInfoMarker from '@/src/components/HoverTextInfoMarker/HoverTextInfoMarker';
 
 interface IDetailDataInfo {
   monthData: number;
@@ -12,8 +10,6 @@ interface IDetailDataInfo {
 }
 
 export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: IDetailDataInfo) {
-  const [hover, mouseHover, mouseLeave] = useHover();
-
   return (
     <WrapperBox>
       <Div>
@@ -43,17 +39,10 @@ export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: 
         <Div>
           <EmptyDataBox>
             <ExplanationText>소진시</ExplanationText>
-            <QuestionMarker onMouseOver={() => mouseHover(1)} onMouseLeave={mouseLeave} />
-
-            {hover ? (
-              <HoverTextBoxArea>
-                <HoverTextBox>
-                  <HoverText data-testid='hover-text'>
-                    데이터 소진시 유튜브 화질 720p 볼 수 있어요
-                  </HoverText>
-                </HoverTextBox>
-              </HoverTextBoxArea>
-            ) : null}
+            <HoverTextInfoMarker
+              marker='?'
+              hoverText='데이터 소진시 유튜브 화질 720p 볼 수 있어요'
+            />
           </EmptyDataBox>
 
           <DataText>{`${exhaustedData}Mbps`}</DataText>
@@ -136,48 +125,4 @@ const EmptyDataBox = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-`;
-
-const HoverTextBoxArea = styled.div`
-  position: absolute;
-  bottom: calc(100% - 150px);
-  left: calc(100% - 216px);
-
-  @media all and (min-width: 701px) and (max-width: 767px) {
-    bottom: calc(100% - 145px);
-    left: calc(100% - 281px);
-
-    & > div {
-      &::before {
-        left: 70%;
-      }
-    }
-  }
-
-  @media all and (min-width: 480px) and (max-width: 700px) {
-    bottom: calc(100% - 145px);
-    left: calc(100% - 304px);
-
-    & > div {
-      &::before {
-        left: 60%;
-      }
-    }
-  }
-
-  @media all and (max-width: 479px) {
-    bottom: calc(100% - 135px);
-    left: calc(100% - 305px);
-
-    & > div {
-      &::before {
-        left: 85%;
-      }
-    }
-  }
-`;
-
-const HoverText = styled.p`
-  padding: 15px;
-  font-weight: 400;
 `;
