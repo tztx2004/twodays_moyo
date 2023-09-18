@@ -13,8 +13,7 @@ export default function Home({ data }: Idata) {
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const pageNumber = context.query.page || 1;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/plans?page=${pageNumber}`);
-
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/plans?page=1`);
   const data = await res.json();
 
   return { props: { data } };
