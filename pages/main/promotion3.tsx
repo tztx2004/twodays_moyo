@@ -153,7 +153,13 @@ export default function Promotion3() {
         <ul>
           {arr.map(x => (
             <li key={x.title}>
-              <Image src={x.url} alt={x.title} loading='lazy' width={117} height={40} />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${x.url}`}
+                alt={x.title}
+                loading='lazy'
+                width={117}
+                height={40}
+              />
             </li>
           ))}
         </ul>

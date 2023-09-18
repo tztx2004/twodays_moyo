@@ -52,7 +52,7 @@ export default function DetailFeBaseInfo({
           return (
             <InformationContentBox key={info.title}>
               <Image
-                src={`/images/${info.icon}.svg`}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/${info.icon}.svg`}
                 alt={`${info}`}
                 width={SIZE.current}
                 height={SIZE.current}

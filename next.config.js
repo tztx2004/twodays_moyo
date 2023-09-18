@@ -20,6 +20,14 @@ const nextConfig = {
   },
   output: 'standalone',
   swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'phoneb.s3.ap-northeast-2.amazonaws.com',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
