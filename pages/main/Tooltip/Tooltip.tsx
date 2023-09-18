@@ -14,13 +14,13 @@ const Tooltip = ({ text, top, left }: TooltipProps) => {
   );
 };
 
-const WrapperBox = styled.p<{top:number; left:number}>`
+const WrapperBox = styled.p<{ top: number; left: number }>`
   position: absolute;
   background: var(--fontColor);
   height: 30px;
   color: white;
-  top: ${props=>props.top}%;
-  left: ${props=>props.left}%;
+  top: ${props => props.top}%;
+  left: ${props => props.left}%;
   padding: 1%;
   border-radius: 10px;
 `;
@@ -34,8 +34,8 @@ const Contents = styled.span`
   justify-content: center;
   align-items: center;
 
-  &::after{
-    content:'';
+  &::after {
+    content: '';
     position: absolute;
     top: 100%;
     left: 50%;
