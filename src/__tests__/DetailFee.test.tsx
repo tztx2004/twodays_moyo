@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 
-import DetailFee from '../../pages/pay-detail/DetailFee/DetailFee';
+import DetailFee from '../../pages/plans/DetailFee/DetailFee';
 import QuestionMarker from '@/src/components/InfoMarker/InfoMarker';
 
 const context = describe;

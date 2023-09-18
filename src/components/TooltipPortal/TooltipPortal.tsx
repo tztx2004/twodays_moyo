@@ -1,21 +1,21 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { ReactNode, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 
-const Portal = ({ children }: { children: ReactElement }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+interface PortalProps {
+  children: ReactNode;
+  selector: string;
+}
+
+const Portal = ({ children, selector }: PortalProps) => {
+  const [element, setElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
+    setElement(document.getElementById(selector));
+  }, [selector]);
 
-  if (typeof window === 'undefined') return <></>;
+  if (!element) return null;
 
-  return mounted ? (
-    createPortal(children, document.getElementById('tooltip-root') as HTMLElement)
-  ) : (
-    <></>
-  );
+  return ReactDOM.createPortal(children, element);
 };
 
 export default Portal;

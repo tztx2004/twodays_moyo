@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 
-import DetailDataInfo from '../../pages/pay-detail/DetailDataInfo/DetailDataInfo';
+import DetailDataInfo from '../../pages/plans/DetailDataInfo/DetailDataInfo';
 import InfoMarker from '../components/InfoMarker/InfoMarker';
 
 const context = describe;
