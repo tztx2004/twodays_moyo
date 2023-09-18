@@ -28,7 +28,7 @@ export default function Promotion3() {
     },
     {
       title: `U+알뜰모바일`,
-      url: `/images/U+알뜰모바일.svg`,
+      url: `/images/U%2B알뜰모바일.svg`,
     },
     {
       title: `KCTV`,
