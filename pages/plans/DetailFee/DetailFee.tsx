@@ -11,7 +11,7 @@ export default function DetailFee({ originalPrice = 0, period = 0, discountPrice
 
       <InnerBox>
         <MonthFeeBox>
-          <Tooltip Marker={InfoMarker} width='270px'>
+          <Tooltip Marker={InfoMarker} width='270px' position={20} space={true}>
             <>
               <TopText>{hoverTopPhrases(period)}</TopText>
 

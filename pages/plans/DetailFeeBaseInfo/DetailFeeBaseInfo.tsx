@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import { styled } from 'styled-components';
 import { useRef } from 'react';
+import Tooltip from '@/src/components/Tooltip/Tooltip';
+import InfoMarker from '@/src/components/InfoMarker/InfoMarker';
 
 export default function DetailFeBaseInfo({
   contractPeriod = 0,
@@ -22,24 +24,28 @@ export default function DetailFeBaseInfo({
       title: '일반 유심 배송',
       content: simDelivery ? '무료' : '지원 안 함',
       hoverText: 'NFC 기능이 없어도 삼성페이는 사용할 수 있어요',
+      position: 70,
     },
     {
       icon: '부가통화',
       title: '부가통화',
       content: additionCall ? '무료' : '지원 안 함',
       hoverText: '전국대표번호로 발신하거나 영상통화를 할 때 사용해요',
+      position: 20,
     },
     {
       icon: 'NFC유심배송',
       title: 'NFC 유심 배송',
       content: nfcDelivery ? '무료' : '지원 안 함',
       hoverText: '휴대폰을 교통카드로 사용할 수 있어요',
+      position: 70,
     },
     {
       icon: 'eSIM',
       title: 'eSIM',
       content: eSIM ? '무료' : '지원 안 함',
       hoverText: 'eSIM은 스마트폰에 내장되어 있으므로 유심을 배송 받지 않아도 돼요',
+      position: 10,
     },
   ];
 
@@ -61,6 +67,11 @@ export default function DetailFeBaseInfo({
               <InformationText>
                 <InformationTitleBox>
                   <p>{info.title}</p>
+                  {info.hoverText ? (
+                    <Tooltip Marker={InfoMarker} width='auto' position={info.position} space={true}>
+                      <p>{info.hoverText}</p>
+                    </Tooltip>
+                  ) : null}
                 </InformationTitleBox>
                 <InformationContent>{info.content}</InformationContent>
               </InformationText>

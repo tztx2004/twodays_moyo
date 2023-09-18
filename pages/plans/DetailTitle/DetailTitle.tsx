@@ -18,11 +18,16 @@ export default function DetailTitle({ title, userNum }: IDetailTitle) {
   return (
     <WrapperBox>
       <TagBox>
-        <Tooltip Marker={() => Tag({ title: '모요개통' })} width='300px'>
+        <Tooltip Marker={() => Tag({ title: '모요개통' })} width='300px' position={10} space={true}>
           <p>상담사를 기다리지 않고 직접 개통할 수 있어요!</p>
         </Tooltip>
 
-        <Tooltip Marker={() => Tag({ title: '모요ONLY', color: '#425ad5' })} width='400px'>
+        <Tooltip
+          Marker={() => Tag({ title: '모요ONLY', color: '#425ad5' })}
+          width='400px'
+          position={20}
+          space={true}
+        >
           <p>BeeSmart에서만 할인된 가격이나 혜택으로 개통할 수 있어요!</p>
         </Tooltip>
       </TagBox>

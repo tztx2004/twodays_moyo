@@ -41,7 +41,7 @@ export default function DetailDataInfo({ monthData, dailyData, exhaustedData }: 
           <EmptyDataBox>
             <ExplanationText>소진시</ExplanationText>
 
-            <Tooltip Marker={InfoMarker} width='260px'>
+            <Tooltip Marker={InfoMarker} width='260px' position={80} space={true}>
               <TooltipText>데이터 소진시 유튜브 화질 720p 볼 수 있어요</TooltipText>
             </Tooltip>
           </EmptyDataBox>
@@ -126,6 +126,9 @@ const EmptyDataBox = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  & > div {
+  }
 `;
 
 const TooltipText = styled.p`

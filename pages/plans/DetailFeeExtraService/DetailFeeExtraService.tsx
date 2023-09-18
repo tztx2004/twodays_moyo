@@ -1,18 +1,53 @@
 'use client';
+import InfoMarker from '@/src/components/InfoMarker/InfoMarker';
+import Tooltip from '@/src/components/Tooltip/Tooltip';
 import Image from 'next/image';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
+interface IData {
+  title: string;
+  space: boolean;
+  hoverText: string;
+  width: string;
+}
+
 interface IDataName {
-  [name: string]: string;
+  [name: string]: IData;
 }
 
 const dataName: IDataName = {
-  micropayment: '소액 결제',
-  roaming: '해외 로밍',
-  family_combination: '가족 결합',
-  mobile_hotSpot: '모바일 핫스팟',
-  data_sharing: '데이터 쉐어링',
+  micropayment: {
+    title: '소액 결제',
+    space: false,
+    hoverText:
+      '온라인에서 상품을 구매할 때 휴대폰으로 결제할 수 있어요. 결제 금액은 다음 달 휴대폰 요금제 부과돼요',
+    width: '330px',
+  },
+  roaming: {
+    title: '해외 로밍',
+    space: true,
+    hoverText: '해외에서도 내 번호를 그대로 사용할 수 있어요',
+    width: 'auto',
+  },
+  family_combination: {
+    title: '가족 결합',
+    space: true,
+    hoverText: '휴대폰과 인터넷 결합시, 각각 요금을 할인받을 수 있어요',
+    width: 'auto',
+  },
+  mobile_hotSpot: {
+    title: '모바일 핫스팟',
+    space: true,
+    hoverText: '휴대폰을 와이파이 공유기로 사용할 수 있어요',
+    width: 'auto',
+  },
+  data_sharing: {
+    title: '데이터 쉐어링',
+    space: true,
+    hoverText: '데이터를 다른 기기와 함께 사용할 수 있어요',
+    width: 'auto',
+  },
 };
 
 interface IDetailFeeExtraService {
@@ -38,19 +73,29 @@ export default function DetailFeeExtraService({
 
           {isSupported?.map(data => {
             return (
-              <ProvideItemBox key={dataName[data]}>
+              <ProvideItemBox key={dataName[data].title}>
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/${dataName[data].replace(
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/${dataName[data].title.replace(
                     ' ',
                     '',
                   )}.svg`}
-                  alt={`${dataName[data]}`}
+                  alt={`${dataName[data].title}`}
                   width={SIZE.current}
                   height={SIZE.current}
                 />
 
                 <ProvideContent>
-                  <p>{dataName[data]}</p>
+                  <ProvideContentTitle>
+                    <p>{dataName[data].title}</p>
+                    <Tooltip
+                      Marker={InfoMarker}
+                      width={dataName[data].width}
+                      position={20}
+                      space={dataName[data].space}
+                    >
+                      <p>{dataName[data].hoverText}</p>
+                    </Tooltip>
+                  </ProvideContentTitle>
                   <p>{plan[data]}</p>
                 </ProvideContent>
               </ProvideItemBox>
@@ -62,14 +107,25 @@ export default function DetailFeeExtraService({
           <NoneProvideTitle>미지원</NoneProvideTitle>
           {isUnSupported?.map(data => {
             return (
-              <NoneProvideItemBox key={dataName[data]}>
+              <NoneProvideItemBox key={dataName[data].title}>
                 <Image
-                  src={`/images/${dataName[data].replace(' ', '')}.svg`}
-                  alt={`${dataName[data].replace(' ', '')}`}
+                  src={`/images/${dataName[data].title.replace(' ', '')}.svg`}
+                  alt={`${dataName[data].title.replace(' ', '')}`}
                   width={SIZE.current}
                   height={SIZE.current}
                 />
-                <p>{dataName[data]}</p>
+
+                <ProvideContentTitle>
+                  <p>{dataName[data].title}</p>
+                  <Tooltip
+                    Marker={InfoMarker}
+                    width={dataName[data].width}
+                    position={70}
+                    space={dataName[data].space}
+                  >
+                    <p>{dataName[data].hoverText}</p>
+                  </Tooltip>
+                </ProvideContentTitle>
               </NoneProvideItemBox>
             );
           })}
@@ -131,6 +187,12 @@ const ProvideContent = styled.div`
   p:nth-of-type(2) {
     color: var(--buttonColor);
   }
+`;
+
+const ProvideContentTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
 `;
 
 const NoneProvideBox = styled.div`
