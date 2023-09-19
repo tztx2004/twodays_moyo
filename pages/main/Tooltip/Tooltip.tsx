@@ -23,9 +23,25 @@ const WrapperBox = styled.p<{ top: number; left: number }>`
   left: ${props => props.left}%;
   padding: 1%;
   border-radius: 10px;
+
+  animation: appear 0.2s linear;
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    top: ${props => props.top - 8}%;
+  }
 `;
 
 const Contents = styled.span`
+  color: #fff;
+  font-weight: normal;
   position: relative;
   width: 100%;
   height: 100%;
