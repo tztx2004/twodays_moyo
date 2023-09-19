@@ -26,6 +26,8 @@ const WrapperBox = styled.p<{ top: number; left: number }>`
 `;
 
 const Contents = styled.span`
+  color: #fff;
+  font-weight: normal;
   position: relative;
   width: 100%;
   height: 100%;

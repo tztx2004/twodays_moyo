@@ -3,6 +3,8 @@ import { AiFillQuestionCircle, AiFillHeart, AiFillStar } from 'react-icons/ai';
 
 import Image from 'next/image';
 import Pagination from './Pagination/Pagination';
+import Tooltip from './Tooltip/Tooltip';
+import { useEffect, useState } from 'react';
 
 function PhonePlan({ data }: Idata) {
   // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
@@ -25,9 +27,16 @@ function PlanCard({ data }: Idata) {
     e.target.classList.toggle('on');
   };
 
-  const hoverHandler = (e: MouseEvent) => {
-    if (!(e.target instanceof Element)) return;
-    console.log(e.target);
+  const [tooltipOver, setTooltipOver] = useState<boolean[]>(
+    new Array(data?.plans.length).fill(false),
+  );
+
+  const hoverHandler = (index: number) => {
+    setTooltipOver(prevState => prevState.map((val, i) => (i === index ? true : val)));
+  };
+
+  const hoverOutHandler = (index: number) => {
+    setTooltipOver(prevState => prevState.map((val, i) => (i === index ? false : val)));
   };
 
   return (
@@ -83,7 +92,18 @@ function PlanCard({ data }: Idata) {
               >
                 <div>
                   월 {x.discounted_price.toLocaleString()}원
-                  <AiFillQuestionCircle color='#dee2e6' />
+                  {tooltipOver[i] && (
+                    <Tooltip
+                      text={'7개월까지만 사용해도 위약금이 발생하지 않아요'}
+                      top={45}
+                      left={0}
+                    />
+                  )}
+                  <AiFillQuestionCircle
+                    color='#dee2e6'
+                    onMouseEnter={() => hoverHandler(i)}
+                    onMouseLeave={() => hoverOutHandler(i)}
+                  />
                 </div>
                 <div>
                   {x.discount_period >= 999999 || x.discount_period === 0 ? (
