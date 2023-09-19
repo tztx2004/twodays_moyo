@@ -26,7 +26,7 @@ const Promotion2 = () => {
           <div key={i}>
             <div>
               <Image
-                src={x.images[0]}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${x.images[0]}`}
                 alt='랭킹이미지'
                 onClick={() => onClick(x.title[0])}
                 width={76}

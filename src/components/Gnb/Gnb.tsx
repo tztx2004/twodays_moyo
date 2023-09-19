@@ -86,12 +86,17 @@ function Gnb() {
           <Link href={'/'}>
             <picture>
               <source
-                srcSet='/images/moyo-icon.svg'
+                srcSet={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/moyo-icon.svg`}
                 media='(max-width : 700px)'
                 width={40}
                 height={24}
               />
-              <Image src='/images/moyo-full.svg' alt='메인로고' width={130} height={30} />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/moyo-full.svg`}
+                alt='메인로고'
+                width={130}
+                height={30}
+              />
             </picture>
           </Link>
         </div>

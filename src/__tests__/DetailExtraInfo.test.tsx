@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import DetailExtraInfo from '../../pages/pay-detail/DetailExtraInfo/DetailExtraInfo';
+import DetailExtraInfo from '../../pages/plans/DetailExtraInfo/DetailExtraInfo';
 
 describe('DetailExtraInfo', () => {
   beforeEach(() => {

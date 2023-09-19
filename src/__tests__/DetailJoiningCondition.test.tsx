@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import DetailJoiningCondition from '../../pages/pay-detail/DetailJoiningCondition/DetailJoiningCondition';
+import DetailJoiningCondition from '../../pages/plans/DetailJoiningCondition/DetailJoiningCondition';
 
 describe('DetailJoiningCondition', () => {
   beforeEach(() => {

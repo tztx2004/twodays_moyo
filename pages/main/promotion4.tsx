@@ -41,7 +41,12 @@ export default function Promotion4() {
               <p>{x.desc}</p>
             </li>
             <li>
-              <Image src='/images/enter.svg' alt={x.desc} width='20' height='20' />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/enter.svg`}
+                alt={x.desc}
+                width='20'
+                height='20'
+              />
             </li>
           </ul>
         </div>

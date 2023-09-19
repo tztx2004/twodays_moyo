@@ -13,12 +13,12 @@ export default function DetailOtherInfo({ voice, SMS, carrier, network }: IDetai
     <WrapperBox>
       <div>
         <p>통화</p>
-        <p>{voice}</p>
+        <p>{voice === '999999' ? voice : `${voice}분`}</p>
       </div>
 
       <div>
         <p>문자</p>
-        <p>{SMS}</p>
+        <p>{SMS === '999999' ? SMS : `${SMS}건`}</p>
       </div>
 
       <div>

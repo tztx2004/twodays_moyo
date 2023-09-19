@@ -51,4 +51,45 @@ export const handlers = [
       }),
     );
   }),
+  rest.get('http://localhost:4000/plans?page=1', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        pageObject: {
+          numberOfPlans: 480,
+          numberOfPlansPerPage: 1,
+          maxDisplayedPages: 10,
+          startIndex: 0,
+          endIndex: 0,
+          startPage: 1,
+          current_page: 1,
+          endPage: 5,
+        },
+        plans: [
+          {
+            carrier_logo:
+              'https://phoneb.s3.ap-northeast-2.amazonaws.com/images/%EC%95%84%EC%9D%B4%EC%A6%88%EB%AA%A8%EB%B0%94%EC%9D%BC.svg',
+            plan_id: 960,
+            carrier: '아이즈모바일',
+            plan_title: '보이스안심요금제(200분/7GB)',
+            monthly_data: '7',
+            daily_data: 0,
+            postExhaustedDataSpeed: 0,
+            voice: '200',
+            SMS: '100',
+            network: '5G',
+            parent_carrier: 'LGU+',
+            original_price: 17000,
+            discount_period: 999999,
+            discounted_price: 11500,
+            starPoint: {
+              score: '1.3',
+              numberOfParticipants: 3961,
+            },
+            isAppliableHere: 0,
+          },
+        ],
+      }),
+    );
+  }),
 ];

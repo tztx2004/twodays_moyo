@@ -21,7 +21,9 @@ describe('httpMethod', () => {
 
     const res = await httpMethod.GET(endPoint);
 
-    expect(mockFetch).toHaveBeenCalledWith(`http://localhost:4000/${endPoint}`, { method: 'get' });
+    expect(mockFetch).toHaveBeenCalledWith(`${process.env.NEXT_PUBLIC_URL}/${endPoint}`, {
+      method: 'get',
+    });
 
     const data = await res.json();
 

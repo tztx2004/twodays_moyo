@@ -32,7 +32,7 @@ function PlanCard({ data }: Idata) {
 
   return (
     <>
-      {data.plans.map((x: any, i: number) => (
+      {data?.plans.map((x: any, i: number) => (
         <div key={x.plan_id}>
           <div>
             <div>
@@ -106,7 +106,7 @@ function PlanCard({ data }: Idata) {
               </div>
 
               <div>
-                <Link href={`/pay-detail/${x.plan_id}`}>
+                <Link href={`/plans/${x.plan_id}`}>
                   <button>자세히 보기</button>
                 </Link>
               </div>

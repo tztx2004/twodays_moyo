@@ -1,9 +1,8 @@
 import userEvent from '@testing-library/user-event';
-import { render, renderHook, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import DetailDataInfo from '../../pages/pay-detail/DetailDataInfo/DetailDataInfo';
-import useHover from '@/src/hooks/useHover/useHover';
-import QuestionMarker from '@/src/components/InfoMarker/InfoMarker';
+import DetailDataInfo from '../../pages/plans/DetailDataInfo/DetailDataInfo';
+import InfoMarker from '../components/InfoMarker/InfoMarker';
 
 const context = describe;
 
@@ -26,54 +25,40 @@ describe('DetailDataInfo', () => {
     expect(text).toBeInTheDocument();
   });
 
-  it('매일 채워지는 데이터를 보여주는 section이 존재한다.', () => {
-    const text = screen.getByText(/매일/);
+  context('매일 채워지는 데이터를 보여주는 section이 존재한다.', () => {
+    it('dailyData가 0이면 화면에서 사라진다.', () => {
+      const text = screen.queryByText(/매일/);
 
-    expect(text).toBeInTheDocument();
+      expect(text).toBeNull();
+    });
+
+    it('dailyData가 0이 아니면 화면에 보인다.', () => {
+      render(<DetailDataInfo monthData={1} dailyData={1} exhaustedData={1} />);
+      const text = screen.getByText(/매일/);
+
+      expect(text).toBeInTheDocument();
+    });
   });
 
-  it('데이터 소진시 데이터 속도를 표시해주는 section이 존재한다.', () => {
-    const text = screen.getByText(/소진시/);
+  context('데이터 소진시 데이터 속도를 표시해주는 section이 존재한다.', () => {
+    it('exhaustedData가 0이 아니면 화면에 나온다', () => {
+      render(<DetailDataInfo monthData={1} dailyData={1} exhaustedData={1} />);
 
-    expect(text).toBeInTheDocument();
-  });
+      const text = screen.getByText('소진시');
 
-  it('소진시 데이터 속도에 대한 설명을 보여주는 아이콘이 존재한다.', () => {
-    const { container } = render(<QuestionMarker />);
+      expect(text).toBeInTheDocument();
+    });
 
-    expect(container).toBeInTheDocument();
-  });
+    it('exhaustedData가 0이면 화면에서 사라진다.', () => {
+      const text = screen.queryByText('소진시');
 
-  context('hover를 안하면', () => {
-    it('TextBox가 보이지 않는다.', () => {
-      const {
-        result: { current },
-      } = renderHook(() => useHover());
-      const [hover] = current;
-      const text = screen.queryByText(/데이터 소진시 유뷰브 화질 720p 볼 수 있어요/);
-
-      expect(hover).toBe(0);
       expect(text).toBeNull();
     });
   });
 
-  context('hover를 하면', () => {
-    it('TextBox가 보인다.', async () => {
-      const { result } = renderHook(() => useHover());
+  it('소진시 데이터 속도에 대한 설명을 보여주는 아이콘이 존재한다.', () => {
+    const { container } = render(<InfoMarker />);
 
-      act(() => {
-        result.current[1](1);
-      });
-
-      expect(result.current[0]).toBe(1);
-
-      const hoverEl = screen.getByText('?');
-
-      await user.hover(hoverEl);
-
-      const text = await screen.findByTestId('hover-text');
-
-      expect(text).toBeInTheDocument();
-    });
+    expect(container).toBeInTheDocument();
   });
 });

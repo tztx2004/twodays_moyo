@@ -11,10 +11,23 @@ const nextConfig = {
     });
     return config;
   },
-  // experimental: {
-  //   scrollRestoration: true,
-  // },
+  experimental: {
+    scrollRestoration: true,
+  },
   pageExtensions: ['test.ts', 'test.tsx', 'tsx', 'ts', 'd.ts'],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  output: 'standalone',
+  swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'phoneb.s3.ap-northeast-2.amazonaws.com',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

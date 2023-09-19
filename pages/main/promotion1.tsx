@@ -6,7 +6,7 @@ const PromotionCard = () => {
     <div>
       <div>
         <Image
-          src='/images/benefit_naver_with_coin.png'
+          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/benefit_naver_with_coin.png`}
           alt='네이버코인이미지'
           width={112}
           height={100}
@@ -41,7 +41,7 @@ function Promotion1() {
 
         <div>
           <Image
-            src='/images/benefit_naver_with_coin.png'
+            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/benefit_naver_with_coin.png`}
             alt='네이버코인이미지'
             width={112}
             height={100}

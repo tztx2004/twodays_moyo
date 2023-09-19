@@ -29,7 +29,7 @@ export function PlanCard() {
     {
       id: 1,
       company: 'kt',
-      src: './images/kTskylife.svg',
+      src: '/images/kTskylife.svg',
       개통: true,
       title: '기본요금제 1',
       dataPlan: '5GB',
@@ -46,7 +46,7 @@ export function PlanCard() {
     {
       id: 2,
       company: '',
-      src: './images/이야기모바일.svg',
+      src: '/images/이야기모바일.svg',
       개통: false,
       title: '기본요금제 2',
       dataPlan: '10GB',
@@ -69,9 +69,16 @@ export function PlanCard() {
           <div>
             <div>
               <div>
-                <img src={x.src} alt='kTskylife' />
+                <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${x.src}`} alt='kTskylife' />
               </div>
-              <div>{x.개통 && <img src='./images/모요개통아이콘.svg' alt='모요개통아이콘' />}</div>
+              <div>
+                {x.개통 && (
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/모요개통아이콘.svg`}
+                    alt='모요개통아이콘'
+                  />
+                )}
+              </div>
             </div>
             <div>
               <h4>{x.title}</h4>

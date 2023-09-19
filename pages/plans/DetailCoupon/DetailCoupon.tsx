@@ -13,7 +13,12 @@ export default function DetailCoupon() {
 
       <UseBox>
         <UseContentBox>
-          <Image src={'/images/flag.png'} alt='flag' width={35} height={35} />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/flag.png`}
+            alt='flag'
+            width={35}
+            height={35}
+          />
           <UseContentText>쿠폰 사용 방법을 꼭 확인해보세요</UseContentText>
         </UseContentBox>
 
