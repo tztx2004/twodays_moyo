@@ -1,18 +1,25 @@
 import MainPage from './main';
 import Footer from '@/src/components/Footer/Footer';
 import { GetServerSidePropsContext } from 'next';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_KEY}/plans`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) console.error('error! res.status: ', res.status);
+        return res.json();
+      })
       .then(data => {
-        setData(data);
-      });
+        return setData(data);
+      })
+      .catch((error: any) => setError(error.message));
   }, []);
 
+  if (error) return <div>Error : {error}</div>;
   return (
     <>
       <MainPage data={data} />

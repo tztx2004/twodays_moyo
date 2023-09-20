@@ -5,9 +5,22 @@ import Image from 'next/image';
 import Pagination from './Pagination/Pagination';
 import Tooltip from './Tooltip/Tooltip';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-function PhonePlan({ data }: Idata) {
-  // 데이터 장소 : data/data.json/ props.pageProps.planMetas[idx]
+function PhonePlan() {
+  const [data, setData] = useState<Iobject | null>(null);
+  const router = useRouter();
+  const page = router.query.page || '1';
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_KEY}/plans?page=${page}`)
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, [page]); // 의존성 배열에 page 추가
+
+  if (!data) {
+    return <div>Loading...</div>; // 데이터가 로드되지 않았을 때 보여줄 컴포넌트
+  }
 
   return (
     <section>
@@ -74,9 +87,9 @@ function PlanCard({ data }: Idata) {
             </h3>
 
             <ul>
-              <li>{x.voice === '기본제공' ? x.voice : `${x.voice}분`}</li>
+              <li>{x.voice === '999999' ? '기본제공' : `${x.voice}분`}</li>
               <li></li>
-              <li>{x.SMS === '기본제공' ? x.SMS : `${x.SMS}건`}</li>
+              <li>{x.SMS === '999999' ? '기본제공' : `${x.SMS}건`}</li>
               <li></li>
               <li>{x.parent_carrier}</li>
               <li></li>

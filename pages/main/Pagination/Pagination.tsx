@@ -10,20 +10,29 @@ const Wrapper = styled.section`
   }
 `;
 
+interface PaginationProps {
+  data: Idata;
+}
+
 export const Pagination = ({ data }: Idata) => {
   const [activeButton, setActiveButton] = useState<number | null>(null);
-  const router = useRouter(); // 추가
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window?.location.search.length > 0) {
-      window.scrollTo({ top: 940 }); // 추가
+      window.scrollTo({ top: 940 });
     }
+
     const currentPage = parseInt((router.query.page as string) || '1');
+
     setActiveButton(currentPage);
-  }, [router.asPath]); // 라우터의 경로가 변경될 때마다 실행
+  }, [router.asPath]);
 
   const handleButtonClick = (idx: number) => {
     setActiveButton(idx);
+
+    // Page navigation
+    router.push(`?page=${idx}`);
   };
 
   if (!data?.pageObject.startPage || !data?.pageObject.endPage) {
@@ -31,7 +40,7 @@ export const Pagination = ({ data }: Idata) => {
   }
 
   const buttons = [];
-  for (let i = data?.pageObject.startPage; i <= data?.pageObject.endPage; i++) {
+  for (let i = data.pageObject.startPage; i <= data.pageObject.endPage; i++) {
     buttons.push(
       <button key={i} onClick={() => handleButtonClick(i)}>
         <Link

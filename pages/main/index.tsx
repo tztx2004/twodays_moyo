@@ -470,7 +470,7 @@ const Promotion4Bx = styled.div`
   }
 `;
 
-const MainPage = ({ data }: Idata) => {
+const MainPage = ({ data }: Idata, setData: any) => {
   return (
     <WrapperBox>
       <Promotion1Bx>
@@ -483,7 +483,7 @@ const MainPage = ({ data }: Idata) => {
         <Promotion2 />
       </Promotion2Bx>
       <PhonePlanBx>
-        <PhonePlan data={data} />
+        <PhonePlan />
       </PhonePlanBx>
       <Promotion3Bx>
         <Promotion3 />
