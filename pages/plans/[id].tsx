@@ -27,7 +27,7 @@ export default function PayDetail() {
   const {
     query: { id },
   } = useRouter();
-  const [data] = useGetData<Data>(`plans/${id}`);
+  const [data] = useGetData<Data>(`/plans/${id}`);
 
   return (
     <WrapperBox>

@@ -26,6 +26,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'phoneb.s3.ap-northeast-2.amazonaws.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost'
+      }
     ],
   },
 };
