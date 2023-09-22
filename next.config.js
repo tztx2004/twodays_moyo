@@ -28,8 +28,8 @@ const nextConfig = {
       },
       {
         protocol: 'http',
-        hostname: 'localhost'
-      }
+        hostname: 'localhost',
+      },
     ],
   },
 };

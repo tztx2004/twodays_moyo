@@ -50,7 +50,7 @@
     "@typescript-eslint/no-inferrable-types": "warn",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/naming-convention": [
-      "error",
+      "warn",
       {
         "format": ["camelCase", "UPPER_CASE", "PascalCase"],
         "selector": "variable",

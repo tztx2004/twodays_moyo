@@ -15,7 +15,7 @@ interface IDetailTitle {
 export default function DetailTitle({ title, userNum }: IDetailTitle) {
   const SIZE = useRef<number>(23);
 
-  console.log(title,userNum)
+  console.log(title, userNum);
 
   return (
     <WrapperBox>
