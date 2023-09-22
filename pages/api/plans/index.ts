@@ -91,7 +91,7 @@ ORDER BY
   const offset = pageObject.startIndex === 0 ? 0 : pageObject.startIndex;
   const values = [limit, offset];
 
-  let plans = await handleMySql(sql, values);
+  const plans = await handleMySql(sql, values);
   for (let i = 0; i < plans.length; i++) {
     plans[i]['starPoint'] = getStarPoint(1.0, 5.0);
     plans[i]['isAppliableHere'] = getRandomNumber(0, 1);
